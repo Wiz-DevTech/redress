@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from redressright.me/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:58 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedressRight | Lawful Self-Governance and Redress</title>
+    <meta name="description" content="Explore the historical record of continuous US national emergency governance since 1933. Lawful framework for education, association, and redress.">
+    
+    <!-- RESTORED: Identical Favicon Link from Original Code -->
+    <link rel="shortcut icon" href="../r.mobirisesite.com/2130286/assets/images/photo-1611079830811-865ff4428d17.html" type="image/x-icon">
+
+    <!-- Fonts: Playfair Display (Serif/Official) & Inter (Clean/Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #0f172a; /* Deep Navy */
+            --primary-light: #1e293b;
+            --accent: #d4af37; /* Gold */
+            --accent-hover: #b5952f;
+            --bg-light: #f8fafc; /* Paper White */
+            --text-dark: #334155;
+            --text-light: #94a3b8;
+            --white: #ffffff;
+            --danger: #ef4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        strong {
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-white { color: var(--white); }
+        .font-bold { font-weight: 700; }
+        
+        /* Utility classes to support Bootstrap-like structure */
+        .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
+        .col, .col-md-6, .col-lg-10, .col-lg-8, .col-md-12, .col-lg-12 {
+            position: relative; width: 100%; padding-right: 15px; padding-left: 15px; min-height: 1px;
+        }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mb-5 { margin-bottom: 3rem; }
+        .mt-4 { margin-top: 1.5rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .ms-2 { margin-left: 0.5rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .max-width-800 { max-width: 800px; margin-left: auto; margin-right: auto; }
+        .bg-light { background-color: var(--bg-light); }
+        
+        /* Flex alignments */
+        .align-items-center { align-items: center; }
+        .justify-content-center { justify-content: center; }
+        .d-flex { display: flex; }
+
+        /* List styles */
+        .fa-ul { padding-left: 2rem; list-style-type: none; }
+        .fa-li { position: relative; padding-left: 1.5rem; display: list-item; margin-bottom: 0.5rem;}
+        .fa-li::before { position: absolute; left: 0; top: 0.25rem; font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f00c"; color: var(--accent); }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 2px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border-color: var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-outline-dark {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+        
+        .btn-outline-dark:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* --- ANIMATION UTILS (Scroll Reveal) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: transparent;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-link:hover { color: var(--white); }
+
+        .hamburger {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            overflow: hidden;
+            padding-bottom: 50px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://picsum.photos/seed/constitution/1920/1080') no-repeat center center/cover;
+            z-index: -2;
+            animation: kenburns 20s infinite alternate;
+        }
+
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.8) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 15px;
+        }
+
+        /* --- ACCORDION STYLES (For Documentation) --- */
+        .accordion-container {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .accordion-item {
+            background-color: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255,255,255,0.05);
+            transition: background-color 0.3s;
+            color: var(--white);
+        }
+
+        .accordion-header:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            padding: 0 20px;
+            background-color: rgba(0,0,0,0.2);
+        }
+        
+        .accordion-content.open {
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .accordion-content p {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .rotate-icon {
+            transition: transform 0.3s;
+            color: var(--white);
+        }
+        .rotate-icon.open {
+            transform: rotate(180deg);
+        }
+
+        /* --- SCROLLING MARQUEE --- */
+        .marquee-container {
+            background-color: var(--primary);
+            color: var(--white);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 15px 0;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-item {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-right: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- TIMELINE SECTION --- */
+        .timeline-section {
+            background-color: var(--bg-light);
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #e2e8f0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 0;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 1;
+            height: 0;
+            transition: height 0.1s linear;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 3;
+            transition: background-color 0.3s;
+        }
+
+        .timeline-item.active-dot::after {
+            background-color: var(--accent);
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--white);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--white);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--white);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--white) transparent transparent;
+        }
+
+        .right::after { left: -10px; }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+        }
+
+        /* --- VIDEO CONTAINER --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- WARNING / CONSPIRACY SECTION --- */
+        .warning-section {
+            background-color: var(--primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-section h2 {
+            color: var(--danger);
+        }
+
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        .legal-text-block {
+            background-color: rgba(255,255,255,0.05);
+            border-left: 3px solid var(--accent);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media screen and (max-width: 992px) {
+            .container { max-width: 100%; padding: 0 15px; }
+            .col-lg-10, .col-lg-8 { flex: 0 0 100%; max-width: 100%; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .timeline::after { left: 31px; }
+            .timeline-progress { left: 31px; }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after { left: 21px; }
+            .left::before, .right::before { left: 60px; border: medium solid var(--white); border-width: 10px 10px 10px 0; border-color: transparent var(--white) transparent transparent; }
+            .right { left: 0%; }
+            
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                height: 100vh;
+                background-color: var(--primary);
+                flex-direction: column;
+                justify-content: center;
+                width: 70%;
+                transition: 0.4s;
+            }
+            
+            .nav-links.active { right: 0; }
+            .hamburger { display: block; z-index: 1001; }
+        }
+    
+    /* === STANDARD REDRESSRIGHT NAV === */
+    .redressright-header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+    .redressright-nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+    .redressright-logo { font-size: 28px; font-weight: bold; color: #ffffff; text-decoration: none; letter-spacing: 1px; transition: color 0.3s ease; }
+    .redressright-logo:hover { color: #ffd700; }
+    .redressright-nav-links { display: flex; gap: 5px; list-style: none; overflow-x: auto; }
+    .redressright-nav-links::-webkit-scrollbar { height: 0; }
+    .redressright-nav-links li a { display: block; padding: 12px 15px; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 500; border-radius: 6px; transition: all 0.3s ease; position: relative; white-space: nowrap; }
+    .redressright-nav-links li a:hover { background-color: rgba(255,255,255,0.15); color: #ffd700; }
+    .redressright-nav-links li a::after { content: ''; position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: #ffd700; transition: width 0.3s; }
+    .redressright-nav-links li a:hover::after { width: 60%; }
+    .redressright-mobile-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .redressright-mobile-toggle span { width: 30px; height: 3px; background-color: #ffffff; border-radius: 3px; transition: all 0.3s ease; }
+    @media (max-width: 768px) {
+        .redressright-nav-links { position: absolute; top: 70px; left: 0; right: 0; background: linear-gradient(135deg, #1e3c72, #2a5298); flex-direction: column; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .redressright-nav-links.active { max-height: 600px; }
+        .redressright-nav-links li { border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .redressright-nav-links li a { padding: 16px 20px; border-radius: 0; }
+        .redressright-mobile-toggle { display: flex; }
+    }
+    /* === END STANDARD NAV === */
+
+</style>
+</head>
+<body>
+<!-- REDRESSRIGHT NAVIGATION HEADER - START -->
+<style>
+    @media (max-width: 768px) {
+    }
+</style>
+
+<header class="redressright-header">
+    <nav class="redressright-nav-container">
+        <a href="https://redressright.com/" class="redressright-logo">RedressRight</a>
+        <ul class="redressright-nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="PFR.html" style="color:#ffd700;font-weight:700">PETITION FOR REDRESS</a></li>
+            <li><a href="GAAP.html">GAAP LEDGER</a></li>
+            <li><a href="CLMP.html">MEMORIAL AND CONGRESSIONAL PETITION</a></li>
+            <li><a href="CPSA.html">CPSA</a></li>
+            <li><a href="PORG.html">PORG</a></li>
+            <li><a href="TRCF.html">TRCF</a></li>
+            <li><a href="DIBE.html">DIBE</a></li>
+            <li><a href="CCSN.html">CCSN</a></li>
+            <li><a href="EEEJ.html">EEEJ</a></li>
+            <li><a href="FDRF.html">FDRF</a></li>
+            <li><a href="At-PAR.html">At-Par Tutorial</a></li>
+            <li><a href="Agent.html" style="color:#00d4ff;font-weight:700">AI AGENT</a></li>
+            <li><a href="huma.html" style="color:#ffd700">AI HUMANIZER</a></li>
+            <li><a href="Terms.html">TERMS &amp; CONDITIONS</a></li>
+        </ul>
+        <div class="redressright-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('mobileToggle');
+        var navLinks = document.getElementById('navLinks');
+
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function () {
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function (event) {
+                var isClickInsideNav =
+                    toggle.contains(event.target) || navLinks.contains(event.target);
+                if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                    toggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
+<!-- REDRESSRIGHT NAVIGATION HEADER - END -->
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content reveal">
+                <p class="text-accent font-bold">EST. 1933 - PRESENT</p>
+                <h1>RedressRight</h1>
+                <p>Restoring Lawful Self-Governance Through Record, Consent, and Redress.</p>
+                
+                <!-- CORRECTED: Full URL -->
+                <a href="https://www.congress.gov/crs_external_products/RL/PDF/98-505/98-505.21.pdf" target="_blank" class="btn btn-primary">Learn More</a>
+                <!-- CORRECTED: Full URL -->
+                <a href="PFR.html" class="btn btn-outline">Act</a>
+
+                <!-- RESTORED ORIGINAL TEXT IN ACCORDION -->
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4><i class="fas fa-file-alt mr-2"></i> Read Historical Record (NEA & 1933-1971)</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>"...As enacted, the National Emergencies Act consisted of five titles. The first of these generally returned all standby statutory delegations of emergency power, activated by an outstanding declaration of national emergency, to a dormant state two years after the statute’s approval.</p>
+                            <p>However, the act did not cancel the 1933, 1950, 1970, and 1971 national emergency proclamations, because the President issued them pursuant to his Article II constitutional authority..."</p>
+                            <p>Do not be fooled by the rhetoric "...Nevertheless, it did render them ineffective by returning to dormancy the statutory authorities they had activated, thereby necessitating a new declaration to activate standby statutory emergency authorities...."</p>
+                            <p><strong>Emergency Powers Were Not Automatically Terminated</strong></p>
+                            <p>National Emergencies Act, Title I, § 101(a), 90 Stat. 1255 (1976)</p>
+                            <p>Emergency powers in effect were terminated only unless the President acted to continue them by notice to Congress.</p>
+                            <p>➡ The statute did not self-terminate emergency powers.</p>
+                            <p>➡ Termination was conditional, not automatic.</p>
+                            <p><strong>2. Prior Emergency Actions Were Expressly Preserved</strong></p>
+                            <p>NEA § 502(a), 90 Stat. 1265 (Savings Clause)</p>
+                            <p>Termination of an emergency “shall not affect any action taken” under that emergency.</p>
+                            <p>➡ All legal effects, delegations, and consequences remained valid.</p>
+                            <p>➡ No rollback, no restoration, no nullification occurred.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="marquee-item">Record. Consent. Redress.</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i></span> 
+            <span class="marquee-item">Restoring Self-Governance.</span> <i class="fas fa-star text-accent"></i> 
+            <span class="marquee-item">The Historical Record.</span> <i class="fas fa-star text-accent"></i>
+        </div>
+    </div>
+
+    <!-- INTRO / OVERVIEW SECTION (RESTORED) -->
+    <section class="section-padding bg-white">
+        <div class="container reveal">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>INTRODUCTION / OVERVIEW</h2>
+                    <p><strong>The unimaginable has happened and we all kept their eyes shut</strong></p>
+                    <p>This website documents, explains, and preserves the official historical record showing that since March 9, 1933, the United States has operated under declared national emergencies that activated hundreds of federal statutes granting extraordinary powers.</p>
+                    <p>Congress itself acknowledged that these statutes, taken together, confer enough authority to rule this country not simply to govern the country outside normal constitutional processes. U.S. Congress there that it was designed so that the executive branch could operate outside the Constitution, that means it's unconstitutional government!</p>
+                    <p>Millions of people have lived their entire lives under this framework—often without notice, transparency, or access to remedy when their rights were abridged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION (ANIMATION SHOWCASE) -->
+    <section class="section-padding timeline-section" id="history">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2>A History of Emergency Powers</h2>
+            </div>
+            <div class="timeline" id="timelineSection">
+                <div class="timeline-progress" id="timeline-progress"></div>
+                
+                <!-- 1933 -->
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <h3>March 9, 1933</h3>
+                        <p class="text-accent font-bold">Proclamation 2039</p>
+                        <p>National emergency declared by President Franklin D. Roosevelt. This began the activation of extraordinary statutory powers, including the amendment of the Trading with the Enemy Act to apply domestically.</p>
+                    </div>
+                </div>
+
+                <!-- 1950 -->
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <h3>December 16, 1950</h3>
+                        <p class="text-accent font-bold">Proclamation 2914</p>
+                        <p>President Harry S. Truman declares a national emergency during the Korean conflict, further expanding the scope of executive powers available under existing statutes.</p>
+                    </div>
+                </div>
+
+                <!-- 1970/1971 -->
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <h3>1970 & 1971</h3>
+                        <p class="text-accent font-bold">Economic & Postal Crises</p>
+                        <p>President Richard Nixon declared national emergencies regarding the postal strike and international monetary crisis, utilizing the broad authority accumulated over decades.</p>
+                    </div>
+                </div>
+
+                <!-- 1976 -->
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <h3>1976</h3>
+                        <p class="text-accent font-bold">The National Emergencies Act</p>
+                        <p>Congress passed the NEA to terminate existing emergencies. However, the Act did not cancel the proclamations; it merely returned statutory delegations to a dormant state unless the President acted to continue them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="section-padding bg-light">
+        <div class="container reveal">
+            <div class="text-center mb-5">
+                <h2>Visual Evidence</h2>
+                <p>Rebutting the procedural misrepresentation.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- CORRECTED: Full Link parameters -->
+                    <div class="video-container">
+                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/9QTfzN4Az8k?rel=0&amp;showinfo=0&amp;autoplay=0&amp;loop=0" title="Rebutting the presumption" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL REBUTTAL SECTION (RESTORED TEXT IN ACCORDIONS) -->
+    <section class="section-padding legal-section" id="rebuttal">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2>Rebutting the Procedural Misrepresentation</h2>
+                <p>Concerning the National Emergencies Act and the 1933–1971 Emergency Regime</p>
+            </div>
+
+            <div class="reveal">
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>The Challenged Statement (Restated)</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>“The National Emergencies Act returned all standby statutory delegations of emergency power to a dormant state… rendered the proclamations ineffective… necessitating a new declaration to activate emergency authorities.”</p>
+                        <p><strong>This statement is legally false and procedurally misleading.</strong></p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>I. The National Emergencies Act Did NOT Return All Emergency Powers to Dormancy</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Controlling Statutory Text</strong></p>
+                        <p>National Emergencies Act, Title I, § 101(a), 90 Stat. 1255 (1976):</p>
+                        <p>“All powers and authorities possessed by the President, any other officer or employee of the Federal Government, or any executive agency, as a result of the existence of any national emergency in effect on the effective date of this Act, are terminated two years after the date of enactment of this Act unless the President publishes in the Federal Register and transmits to the Congress a notice stating that such emergency is to continue in effect…”</p>
+                        <p><strong>Key point:</strong><br>The statute does not self-terminate emergency powers.<br>It conditions termination on affirmative presidential action and Congressional notice.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>II. The Act Explicitly Preserved Prior Emergency Actions</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Savings Clause (Controlling)</strong></p>
+                        <p>NEA § 502(a), 90 Stat. 1265:</p>
+                        <p>“The termination of a national emergency shall not affect—<br>(1) any action taken or proceeding pending not finally concluded or determined on the date of termination…”</p>
+                        <p><strong>Legal effect:</strong></p>
+                        <ul>
+                            <li>All actions taken under emergency authority remain valid</li>
+                            <li>All structures, delegations, and legal consequences are preserved</li>
+                            <li>There is no retroactive nullification</li>
+                            <li>The emergency regime was frozen in place, not dismantled.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>III. The Emergency Proclamations Were NOT Rendered “Ineffective”</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The claim that the proclamations were “rendered ineffective” is demonstrably false.</p>
+                        <p><strong>Why:</strong></p>
+                        <ul>
+                            <li>The proclamations were never revoked</li>
+                            <li>The statutory delegations they activated were never repealed</li>
+                            <li>The Act preserved all effects and consequences</li>
+                            <li>Congress acknowledged the regime and left it intact</li>
+                        </ul>
+                        <p>A proclamation does not need to be “effective” in the abstract if its legal effects are preserved by statute.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>IV. The Claim of “Article II Authority” Is a Red Herring</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The statement asserts that proclamations were issued “pursuant to Article II authority” and therefore did not need cancellation.</p>
+                        <p>This is irrelevant and misleading, because:</p>
+                        <ul>
+                            <li>The Senate Committee documented that the power came from statutes, not Article II alone</li>
+                            <li>The issue is statutory delegation, not inherent executive power</li>
+                            <li>Congress admitted the delegated powers were ordinarily exercised by Congress</li>
+                        </ul>
+                        <p>Congress cannot evade responsibility by relabeling statutory delegation as “Article II authority.”</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>V. The Standby Authorities Were NOT Returned to Dormancy</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The record shows the opposite:</p>
+                        <ul>
+                            <li>Emergency statutes were catalogued, preserved, and reorganized</li>
+                            <li>Congress did not repeal the Trading with the Enemy Act amendments</li>
+                            <li>Congress did not restore normal constitutional processes</li>
+                            <li>Congress allowed continuity through savings clauses</li>
+                        </ul>
+                        <p>“Dormancy” is a fiction when:</p>
+                        <ul>
+                            <li>Legal effects remain operative</li>
+                            <li>Enforcement mechanisms remain in place</li>
+                            <li>Judicial and administrative reliance continues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>VI. Congressional Admissions Contradict the Claim</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The Senate Special Committee expressly stated:</p>
+                        <p>“This vast range of powers… confer enough authority to rule the country without reference to normal constitutional processes.”</p>
+                        <p>And further:</p>
+                        <p>“There is no present need for the United States Government to continue to function under emergency conditions.”</p>
+                        <p>Despite this:</p>
+                        <ul>
+                            <li>Congress preserved the regime</li>
+                            <li>Congress did not terminate its effects</li>
+                            <li>Congress did not restore constitutional governance</li>
+                        </ul>
+                        <p>A framework acknowledged as unnecessary but preserved is not dormant.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>VII. The “New Declaration Required” Claim Is Procedural Sleight of Hand</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The statement claims a new declaration would be required to activate emergency powers.</p>
+                        <p>This ignores that:</p>
+                        <ul>
+                            <li>Many emergency-derived authorities were recodified and normalized</li>
+                            <li>The administrative state continued operating under preserved delegations</li>
+                            <li>Courts continued to enforce emergency-based statutes</li>
+                            <li>Agencies continued exercising authority without interruption</li>
+                        </ul>
+                        <p>A “new declaration” is irrelevant where the legal machinery never stopped.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>VIII. Correct Statement of Law</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Accurate description:</strong></p>
+                        <ul>
+                            <li>The National Emergencies Act acknowledged the emergency regime</li>
+                            <li>It catalogued and regularized emergency powers</li>
+                            <li>It preserved all prior actions and effects</li>
+                            <li>It did not repeal the delegating statutes</li>
+                            <li>It did not restore normal constitutional processes</li>
+                            <li>It institutionalized emergency governance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h4>IX. Conclusion — Why the Statement Is a Lie</h4>
+                        <i class="fas fa-chevron-down rotate-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The statement is false because it:</p>
+                        <ul>
+                            <li>Claims termination where the statute preserved effects</li>
+                            <li>Claims dormancy where continuity was legislated</li>
+                            <li>Claims ineffectiveness where legal consequences remained</li>
+                            <li>Claims restoration where none occurred</li>
+                            <li>Contradicts Congress’s own findings</li>
+                        </ul>
+                        <p>This is not a difference of interpretation.<br>It is contradicted by the Statutes at Large and the Congressional Record.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCOPE OF POWERS SECTION (RESTORED FULL TEXT) -->
+    <section class="section-padding bg-white">
+        <div class="container reveal">
+            <h2>Scope of Powers Documented by Congress</h2>
+            <p>According to the Committee’s findings, the powers delegated under these emergency statutes include authority for the Executive to:</p>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Seize property</li>
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Organize and control the means of production</li>
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Seize commodities</li>
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Assign military forces abroad</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Institute martial law</li>
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Seize and control transportation and communications</li>
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Regulate private enterprise</li>
+                        <li><span class="fa-li"><i class="fas fa-check text-accent"></i></span>Restrict travel</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="legal-text-block">
+                <p>Control the lives of American citizens in numerous specific ways.</p>
+                <p>These powers were identified as ordinarily exercised by Congress, yet made available to the Executive through emergency statutes.</p>
+                <hr class="my-3 bg-light">
+                <h5>Absence of Present Necessity</h5>
+                <p>The Senate Committee further documented that, as of its investigation:</p>
+                <ul>
+                    <li>The Cold War was diminishing;</li>
+                    <li>Diplomatic détente with the Soviet Union and China was developing;</li>
+                    <li>The Korean conflict had been in a stable truce for over twenty years;</li>
+                    <li>United States involvement in Indochina had ended.</li>
+                </ul>
+                <p>Based on these conditions, the Committee concluded:</p>
+                <p><em>“There is no present need for the United States Government to continue to function under emergency conditions.”</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESERVATION SECTION (RESTORED) -->
+    <section class="section-padding" style="background-color: #a6a99c; color: white;">
+        <div class="container reveal">
+            <h2 style="color: white;">Preservation of the Emergency Framework</h2>
+            <hr style="border-color: white; opacity: 0.5;">
+            <h3>Despite these findings:</h3>
+            <ul style="margin-top: 20px;">
+                <li class="mb-2">The emergency-activated statutory framework was not fully repealed;</li>
+                <li class="mb-2">The legal effects of prior emergency actions were preserved;</li>
+                <li class="mb-2">The governance structure enabled by these statutes remained operative.</li>
+            </ul>
+            <p><strong>As a result, the condition identified by Congress in 1973 — governance enabled without reference to normal constitutional processes — was acknowledged, and never dismantled.</strong></p>
+        </div>
+    </section>
+
+    <!-- WARNING / CONSPIRACY SECTION (RESTORED FULL TEXT) -->
+    <section class="section-padding warning-section paper-texture" id="warning">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 reveal">
+                    <div class="text-center mb-4">
+                        <h2 class="display-4">STATEMENT OF CRIMINAL CONSPIRACY</h2>
+                        <h5>Governmental Coup Against the People</h5>
+                    </div>
+                    
+                    <!-- RESTORED CONSPIRACY TEXT IN ACCORDION FOR READABILITY -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>I. Applicable Criminal Framework</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Under longstanding federal criminal law, a criminal conspiracy exists where:</p>
+                            <ul>
+                                <li>Two or more persons conspire or agree</li>
+                                <li>To commit an offense against the United States, or to defraud the United States</li>
+                                <li>With knowledge of the unlawful objective</li>
+                                <li>And at least one overt act is committed in furtherance of the conspiracy</li>
+                            </ul>
+                            <p>The conspiracy is ongoing until terminated.</p>
+                            <p><em>(See generally: 18 Stat. 113; later codified at (18 U.S.C. § 371))</em></p>
+                            <p>A coup is established where:</p>
+                            <ul>
+                                <li>Constitutional governance is displaced,</li>
+                                <li>Authority is exercised outside lawful constitutional processes,</li>
+                                <li>The displacement is maintained by force of law rather than consent,</li>
+                                <li>And the condition persists after knowledge and notice.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>II. Element One — Agreement / Combination</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Finding</strong></p>
+                            <p>A combination of Congress and the Executive agreed to operate a governance framework activated by emergency declarations that transferred legislative power to the Executive.</p>
+                            <p><strong>Supporting Record</strong></p>
+                            <ul>
+                                <li>Congress enacted statutes designed to activate upon presidential emergency proclamation.</li>
+                                <li>Presidents proclaimed national emergencies in 1933, 1950, 1970, and 1971.</li>
+                                <li>Congress allowed all proclamations to coexist simultaneously.</li>
+                                <li>Congress preserved the statutory framework enabling those powers.</li>
+                            </ul>
+                            <p>This constitutes agreement by structure, enactment, and continuation.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>III. Element Two — Criminal Objective</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Finding</strong></p>
+                            <p>The objective was to govern the United States outside normal constitutional processes.</p>
+                            <p><strong>Congressional Admission (Quoted)</strong></p>
+                            <p>“This vast range of powers, taken together, confer enough authority to rule the country without reference to normal constitutional processes.”</p>
+                            <p>This is not inference. This is Congress’s own description of the objective and effect.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>IV. Element Three — Knowledge and Intent</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Finding</strong></p>
+                            <p>Congress had actual knowledge of:</p>
+                            <ul>
+                                <li>The scope of the powers,</li>
+                                <li>Their constitutional displacement,</li>
+                                <li>The absence of present necessity,</li>
+                                <li>The length of time the condition had persisted.</li>
+                            </ul>
+                            <p><strong>Supporting Record</strong></p>
+                            <p>The Senate Special Committee documented:</p>
+                            <ul>
+                                <li>470 statutes activated;</li>
+                                <li>Powers ordinarily exercised by Congress;</li>
+                                <li>Decades of abridged constitutional freedoms;</li>
+                                <li>No present need for emergency governance.</li>
+                            </ul>
+                            <p>Knowledge is conclusively established by formal Congressional findings.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>V. Element Four — Overt Acts</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Overt Acts Committed</strong></p>
+                            <ul>
+                                <li>Enactment of the Emergency Banking Act of 1933.</li>
+                                <li>Amendment of the Trading with the Enemy Act to apply domestically.</li>
+                                <li>Issuance of multiple emergency proclamations.</li>
+                                <li>Activation of 470 federal statutes.</li>
+                                <li>Exercise of powers including: Property seizure, Control of production, Control of communications and transportation, Martial law authority.</li>
+                                <li>Passage of the National Emergencies Act preserving prior emergency actions after knowledge.</li>
+                                <li>Failure to repeal, unwind, or terminate the framework after admission.</li>
+                            </ul>
+                            <p>Each is an independent overt act.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>VI. Element Five — Injury to the United States and the People</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Finding</strong></p>
+                            <p>The conspiracy resulted in:</p>
+                            <ul>
+                                <li>Displacement of constitutional governance;</li>
+                                <li>Transfer of legislative power to the Executive;</li>
+                                <li>A population living entirely under emergency rule;</li>
+                                <li>Abridgment of enumerated and unenumerated rights;</li>
+                                <li>Denial of effective judicial redress.</li>
+                            </ul>
+                            <p>Congress expressly acknowledged these injuries.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>VII. Element Six — Continuity and Ongoing Nature</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Finding</strong></p>
+                            <p>The conspiracy is ongoing.</p>
+                            <p><strong>Basis</strong></p>
+                            <ul>
+                                <li>Congress acknowledged the condition;</li>
+                                <li>Congress declared no necessity;</li>
+                                <li>Congress preserved the framework anyway;</li>
+                                <li>Emergency-derived statutes remain operative;</li>
+                                <li>No full restoration occurred.</li>
+                            </ul>
+                            <p>An un-terminated conspiracy continues as a matter of law.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>VIII. Coup Determination (Based on Record)</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Based on the above:</p>
+                            <ul>
+                                <li>Constitutional processes were displaced;</li>
+                                <li>Extraordinary authority replaced ordinary governance;</li>
+                                <li>The displacement was maintained by statute;</li>
+                                <li>The people did not consent;</li>
+                                <li>Congress admitted the condition;</li>
+                                <li>Congress preserved it anyway.</li>
+                            </ul>
+                            <p>That satisfies the definition of a governmental coup against the people, as asserted.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>IX. Statement of Record</h4>
+                            <i class="fas fa-chevron-down rotate-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>This statement relies on:</p>
+                            <ul>
+                                <li>Congressional admissions,</li>
+                                <li>Statutory enactments,</li>
+                                <li>Presidential proclamations,</li>
+                                <li>Documented preservation after notice.</li>
+                            </ul>
+                            <p>It introduces no motive, no rhetoric, and no speculation.</p>
+                            <p>It memorializes the elements of criminal conspiracy and coup as evidenced by Congress’s own words and actions. documenting the complacency of the executive branch and eventually the judicial branch.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <!-- CORRECTED: Full URL for Google Search -->
+                        <a href="https://www.google.com/search?q=The+national+emergency+act+did+not+terminate+the+proclamation+of+Roosevelt%2C+Truman%2C+and+Nixon&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" class="btn btn-outline">
+                            More research on the topic <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding bg-white text-center">
+        <div class="container reveal">
+            <h2>About RedressRight</h2>
+            <p class="max-width-800 mx-auto">RedressRight is dedicated to preserving the official historical record of continuous national emergency governance in the United States. We aim to provide a lawful and voluntary framework for education, association, and the pursuit of redress.</p>
+            <p class="max-width-800 mx-auto">Since March 9, 1933, the U.S. has operated under declared national emergencies, activating hundreds of federal statutes that grant extraordinary powers. Congress has recognized these statutes as sufficient to govern outside normal constitutional processes.</p>
+            <p class="max-width-800 mx-auto">Millions have lived under this framework, often without full awareness or recourse when their rights were impacted. We strive to bring transparency and accessible remedies to all citizens.</p>
+            <p class="max-width-800 mx-auto fst-italic">The aforementioned statements are not sovereign citizen this sovereign citizen that, these are congresses words, their definition, and there statutory scheme!</p>
+            <p class="max-width-800 mx-auto text-muted">Currently at this time we cannot offer support respect and inquiries, we hope to have this remedied soon.</p>
+            <div class="mt-4">
+                <!-- CORRECTED: Full URL -->
+                <a href="Terms.html" class="btn btn-outline-dark">View Terms & Conditions</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 RedressRight.me. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- MOBILE MENU ---
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+            if(hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    hamburger.querySelector('i').classList.toggle('fa-bars');
+                    hamburger.querySelector('i').classList.toggle('fa-times');
+                });
+
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        hamburger.querySelector('i').classList.add('fa-bars');
+                        hamburger.querySelector('i').classList.remove('fa-times');
+                    });
+                });
+            }
+
+            // --- SCROLL REVEAL ---
+            const reveals = document.querySelectorAll('.reveal');
+
+            function checkReveal() {
+                const triggerBottom = window.innerHeight * 0.85;
+                reveals.forEach(reveal => {
+                    const boxTop = reveal.getBoundingClientRect().top;
+                    if(boxTop < triggerBottom) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkReveal);
+            checkReveal();
+
+            // --- NAVBAR SCROLL ---
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // --- TIMELINE ANIMATION ---
+            const timelineSection = document.getElementById('timelineSection');
+            const timelineProgress = document.getElementById('timeline-progress');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            if(timelineSection && timelineProgress) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > timelineSection.offsetTop - window.innerHeight / 2 && window.scrollY < timelineSection.offsetTop + timelineSection.offsetHeight) {
+                        let progress = ((window.scrollY + window.innerHeight / 2) - timelineSection.offsetTop) / timelineSection.offsetHeight * 100;
+                        progress = Math.max(0, Math.min(progress, 100));
+                        timelineProgress.style.height = `${progress}%`;
+
+                        timelineItems.forEach((item) => {
+                            const itemTop = item.getBoundingClientRect().top + window.scrollY;
+                            if (window.scrollY + window.innerHeight / 2 > itemTop) {
+                                item.classList.add('active-dot');
+                            } else {
+                                item.classList.remove('active-dot');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // --- ACCORDION LOGIC (All Accordions) ---
+            const accordions = document.querySelectorAll('.accordion-header');
+
+            accordions.forEach(acc => {
+                acc.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.rotate-icon');
+                    
+                    content.classList.toggle('open');
+                    icon.classList.toggle('open');
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+
+        });
+    </script>
+  <!-- E2ZERO AGENT SYPHER -->
+  <script src="e2zero-sypher.js"></script>
+</body>
+
+<!-- Mirrored from redressright.me/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:58 GMT -->
+</html>

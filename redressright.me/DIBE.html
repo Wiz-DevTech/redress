@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from redressright.me/DIBE.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:47 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common-Law Memorial, Remonstrance, and Demand for Remedy - Electronic Signature Portal</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&amp;family=EB+Garamond:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="../www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="../www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy-primary: #1a2a4a;
+            --navy-light: #2c3e5a;
+            --gold-dark: #8b7355;
+            --gold-primary: #c9a962;
+            --gold-light: #e8d5a3;
+            --cream: #faf8f3;
+            --cream-dark: #f0ebe0;
+            --parchment: #f5f0e6;
+            --ink-black: #1a1a1a;
+            --ink-gray: #4a4a4a;
+            --seal-red: #8b2942;
+            --success-green: #2d5a3d;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            color: var(--ink-black);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+
+        .header {
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--gold-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23c9a962' fill-opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .seal {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, var(--navy-light) 0%, var(--navy-dark) 100%);
+            box-shadow: 0 0 20px rgba(201, 169, 98, 0.3);
+        }
+
+
+        .seal-text {
+            color: var(--gold-primary);
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+
+        .header h1 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+
+        .header h2 {
+            font-family: 'EB Garamond', serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--cream);
+            letter-spacing: 0.1em;
+        }
+
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: var(--navy-primary);
+            padding: 0;
+            border-bottom: 2px solid var(--gold-dark);
+        }
+
+
+        .nav-tab {
+            padding: 1rem 2rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+
+        .nav-tab:hover {
+            background: var(--navy-light);
+            color: var(--gold-light);
+        }
+
+
+        .nav-tab.active {
+            background: var(--navy-light);
+            color: var(--gold-primary);
+            border-bottom-color: var(--gold-primary);
+        }
+
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+
+        .tab-content.active {
+            display: block;
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        .document-section {
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+
+        .document-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-dark));
+        }
+
+
+        .document-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+
+        .document-content {
+            font-size: 1.05rem;
+            text-align: justify;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+
+        .document-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+
+        .document-content::-webkit-scrollbar-track {
+            background: var(--cream-dark);
+            border-radius: 4px;
+        }
+
+
+        .document-content::-webkit-scrollbar-thumb {
+            background: var(--gold-dark);
+            border-radius: 4px;
+        }
+
+
+        .document-content p {
+            margin-bottom: 1.5rem;
+            text-indent: 2rem;
+        }
+
+
+        .document-content h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy-primary);
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+
+        .document-content h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy-light);
+            margin: 1.5rem 0 0.75rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--gold-primary);
+        }
+
+
+        .document-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+
+        .document-header h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+
+        .document-header h4 {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--ink-gray);
+            margin: 0;
+            text-align: center;
+            border: none;
+            padding: 0;
+        }
+
+
+        .statute-quote {
+            background: var(--cream-dark);
+            border-left: 4px solid var(--gold-primary);
+            padding: 1rem 1.5rem;
+            margin: 1rem 2rem;
+            font-style: italic;
+            font-size: 0.95rem;
+            text-indent: 0;
+        }
+
+
+        .document-content ul {
+            margin: 1rem 3rem;
+            list-style-type: disc;
+        }
+
+
+        .document-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+
+        .signature-panel {
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+
+        .signature-panel h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .signature-panel .subtitle {
+            text-align: center;
+            color: var(--ink-gray);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+
+        .form-group label {
+            display: block;
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-family: 'EB Garamond', serif;
+            font-size: 1.1rem;
+            border: 2px solid var(--gold-dark);
+            border-radius: 4px;
+            background: var(--cream);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            user-select: text;
+        }
+
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px rgba(201, 169, 98, 0.3);
+        }
+
+
+        .signature-canvas-container {
+            margin: 1.5rem 0;
+        }
+
+
+        .signature-canvas-container label {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            color: var(--navy-primary);
+            font-size: 1.1rem;
+        }
+
+
+        .canvas-wrapper {
+            margin-top: 0.5rem;
+            border: 3px solid var(--navy-primary);
+            border-radius: 4px;
+            background: #fff;
+            position: relative;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+
+        #signatureCanvas {
+            width: 100%;
+            height: 200px;
+            cursor: crosshair;
+            display: block;
+            touch-action: none;
+        }
+
+
+        .canvas-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--ink-gray);
+            font-style: italic;
+            pointer-events: none;
+            opacity: 0.5;
+            font-size: 1.2rem;
+        }
+
+
+        .signature-line {
+            position: absolute;
+            bottom: 40px;
+            left: 10%;
+            right: 10%;
+            border-bottom: 1px solid var(--ink-gray);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+
+        .signature-x {
+            position: absolute;
+            bottom: 35px;
+            left: 8%;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--ink-gray);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+
+        .signature-instruction {
+            text-align: center;
+            font-style: italic;
+            color: var(--ink-gray);
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+
+        .citizenship-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--cream);
+            border: 2px solid var(--gold-dark);
+            border-radius: 4px;
+        }
+
+
+        .citizenship-section .section-label {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            color: var(--navy-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+
+        .citizenship-section .required {
+            color: var(--seal-red);
+        }
+
+
+        .citizenship-instruction {
+            color: var(--ink-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+
+        .citizenship-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+
+        .citizenship-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+
+        .citizenship-option:hover {
+            border-color: var(--gold-primary);
+            box-shadow: 0 2px 8px rgba(201, 169, 98, 0.2);
+        }
+
+
+        .citizenship-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 0.2rem;
+            accent-color: var(--navy-primary);
+            cursor: pointer;
+        }
+
+
+        .citizenship-option label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+
+        .citizenship-option label strong {
+            display: block;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            color: var(--navy-dark);
+            margin-bottom: 0.25rem;
+        }
+
+
+        .citizenship-option .option-desc {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--ink-gray);
+            font-style: italic;
+        }
+
+
+        .citizenship-option:has(input:checked) {
+            border-color: var(--navy-primary);
+            background: var(--gold-light);
+            box-shadow: 0 2px 8px rgba(26, 42, 74, 0.15);
+        }
+
+
+        .canvas-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+
+        .btn-secondary {
+            background: var(--cream-dark);
+            color: var(--navy-primary);
+            border: 2px solid var(--gold-dark);
+        }
+
+
+        .btn-secondary:hover {
+            background: var(--gold-light);
+        }
+
+
+        .btn-primary {
+            background: linear-gradient(180deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+            color: var(--gold-light);
+            border: 2px solid var(--gold-primary);
+            flex: 1;
+        }
+
+
+        .btn-primary:hover {
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy-primary) 100%);
+            box-shadow: 0 4px 15px rgba(201, 169, 98, 0.3);
+        }
+
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--cream);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+        }
+
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 0.25rem;
+            accent-color: var(--navy-primary);
+        }
+
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            color: var(--ink-black);
+            line-height: 1.6;
+        }
+
+
+        .success-message {
+            display: none;
+            background: linear-gradient(180deg, var(--success-green) 0%, #1e4030 100%);
+            color: var(--cream);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 1.5rem;
+            border: 2px solid var(--gold-primary);
+        }
+
+
+        .success-message h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .signatory-count {
+            background: var(--navy-primary);
+            color: var(--gold-light);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 2px solid var(--gold-primary);
+        }
+
+
+        .signatory-count span {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+
+        .addendum-section {
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+
+        .addendum-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .addendum-subtitle {
+            text-align: center;
+            color: var(--ink-gray);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+
+        .signatories-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+
+        .signatory-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: var(--cream);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+
+        .signatory-item:hover {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+
+        .signatory-number {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--navy-primary);
+            min-width: 40px;
+        }
+
+
+        .signatory-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+
+        .signatory-name {
+            font-size: 1.1rem;
+        }
+
+
+        .signatory-location {
+            font-size: 0.9rem;
+            color: var(--ink-gray);
+        }
+
+
+        .signatory-status {
+            font-size: 0.85rem;
+            color: var(--navy-primary);
+            font-style: italic;
+            padding: 0.2rem 0.5rem;
+            background: var(--gold-light);
+            border-radius: 3px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+
+        .signatory-signature {
+            max-width: 150px;
+            max-height: 60px;
+            border: 1px solid var(--gold-dark);
+            border-radius: 3px;
+            padding: 3px;
+            background: #fff;
+        }
+
+
+        .signatory-date {
+            font-size: 0.9rem;
+            color: var(--ink-gray);
+            min-width: 120px;
+            text-align: right;
+        }
+
+
+        .no-signatories {
+            text-align: center;
+            color: var(--ink-gray);
+            font-style: italic;
+            padding: 3rem;
+        }
+
+
+        .export-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gold-primary);
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        .footer {
+            background: var(--navy-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 4px solid var(--gold-primary);
+        }
+
+
+        .footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .nav-tab {
+                flex: 1;
+                min-width: 120px;
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .document-section,
+            .signature-panel,
+            .addendum-section {
+                padding: 1.5rem;
+            }
+            
+            .citizenship-section {
+                padding: 1rem;
+            }
+            
+            .citizenship-option {
+                padding: 0.75rem;
+            }
+            
+            .citizenship-option label strong {
+                font-size: 1rem;
+            }
+            
+            .signatory-item {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            
+            .signatory-info {
+                flex: 1 1 100%;
+                order: 1;
+            }
+            
+            .signatory-number {
+                order: 0;
+            }
+            
+            .signatory-signature {
+                order: 2;
+                max-width: 120px;
+            }
+            
+            .signatory-date {
+                order: 3;
+                text-align: left;
+                min-width: auto;
+            }
+        }
+
+
+        @media print {
+            /* Force color printing for backgrounds and borders */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* Reset body for print */
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Hide navigation elements */
+            body > nav:first-of-type,
+            .nav-tabs,
+            .export-section,
+            .footer,
+            .header {
+                display: none !important;
+            }
+            
+            /* Hide the signature form tab completely */
+            #sign,
+            #sign.tab-content {
+                display: none !important;
+            }
+            
+            /* Override tab-content default display:none for printing */
+            .tab-content {
+                display: block !important;
+                animation: none !important;
+            }
+            
+            /* Ensure document and signatories tabs are visible */
+            #document,
+            #document.tab-content,
+            #signatories,
+            #signatories.tab-content {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+            
+            /* Make document content fully visible */
+            .document-content {
+                max-height: none !important;
+                overflow: visible !important;
+                page-break-inside: auto;
+            }
+            
+            /* Ensure document section appears */
+            .document-section {
+                page-break-after: auto;
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            /* Add page break before signatories */
+            .addendum-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+            }
+            
+            /* Ensure container is visible */
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            /* Make sure all text content is visible */
+            p, h1, h2, h3, h4, h5, h6, div, span {
+                page-break-inside: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Ensure backgrounds print */
+            .document-section,
+            .signature-panel,
+            .addendum-section,
+            .signatory-item,
+            .signatory-count {
+                background: #f5f0e6 !important;
+                border: 1px solid #8b7355 !important;
+            }
+        }
+    
+    /* === STANDARD REDRESSRIGHT NAV === */
+    .redressright-header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+    .redressright-nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+    .redressright-logo { font-size: 28px; font-weight: bold; color: #ffffff; text-decoration: none; letter-spacing: 1px; transition: color 0.3s ease; }
+    .redressright-logo:hover { color: #ffd700; }
+    .redressright-nav-links { display: flex; gap: 5px; list-style: none; overflow-x: auto; }
+    .redressright-nav-links::-webkit-scrollbar { height: 0; }
+    .redressright-nav-links li a { display: block; padding: 12px 15px; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 500; border-radius: 6px; transition: all 0.3s ease; position: relative; white-space: nowrap; }
+    .redressright-nav-links li a:hover { background-color: rgba(255,255,255,0.15); color: #ffd700; }
+    .redressright-nav-links li a::after { content: ''; position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: #ffd700; transition: width 0.3s; }
+    .redressright-nav-links li a:hover::after { width: 60%; }
+    .redressright-mobile-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .redressright-mobile-toggle span { width: 30px; height: 3px; background-color: #ffffff; border-radius: 3px; transition: all 0.3s ease; }
+    @media (max-width: 768px) {
+        .redressright-nav-links { position: absolute; top: 70px; left: 0; right: 0; background: linear-gradient(135deg, #1e3c72, #2a5298); flex-direction: column; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .redressright-nav-links.active { max-height: 600px; }
+        .redressright-nav-links li { border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .redressright-nav-links li a { padding: 16px 20px; border-radius: 0; }
+        .redressright-mobile-toggle { display: flex; }
+    }
+    /* === END STANDARD NAV === */
+
+</style>
+</head>
+<body>
+
+<!-- REDRESSRIGHT NAVIGATION HEADER - START -->
+<style>
+    @media (max-width: 768px) {
+    }
+</style>
+<header class="redressright-header">
+    <nav class="redressright-nav-container">
+        <a href="https://redressright.com/" class="redressright-logo">RedressRight</a>
+        <ul class="redressright-nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="PFR.html" style="color:#ffd700;font-weight:700">PETITION FOR REDRESS</a></li>
+            <li><a href="GAAP.html">GAAP LEDGER</a></li>
+            <li><a href="CLMP.html">MEMORIAL AND CONGRESSIONAL PETITION</a></li>
+            <li><a href="CPSA.html">CPSA</a></li>
+            <li><a href="PORG.html">PORG</a></li>
+            <li><a href="TRCF.html">TRCF</a></li>
+            <li><a href="DIBE.html">DIBE</a></li>
+            <li><a href="CCSN.html">CCSN</a></li>
+            <li><a href="EEEJ.html">EEEJ</a></li>
+            <li><a href="FDRF.html">FDRF</a></li>
+            <li><a href="At-PAR.html">At-Par Tutorial</a></li>
+            <li><a href="Agent.html" style="color:#00d4ff;font-weight:700">AI AGENT</a></li>
+            <li><a href="huma.html" style="color:#ffd700">AI HUMANIZER</a></li>
+            <li><a href="Terms.html">TERMS &amp; CONDITIONS</a></li>
+        </ul>
+        <div class="redressright-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('mobileToggle');
+        var navLinks = document.getElementById('navLinks');
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function () {
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            document.addEventListener('click', function (event) {
+                var isClickInside = toggle.contains(event.target) || navLinks.contains(event.target);
+                if (!isClickInside && navLinks.classList.contains('active')) {
+                    toggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
+<!-- REDRESSRIGHT NAVIGATION HEADER - END -->
+        <div class="redressright-mobile-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('mobileToggle');
+        var navLinks = document.getElementById('navLinks');
+
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function () {
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function (event) {
+                var isClickInsideNav =
+                    toggle.contains(event.target) || navLinks.contains(event.target);
+                if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                    toggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
+<!-- REDRESSRIGHT NAVIGATION HEADER - END -->
+
+<script>
+  // highlight current page in nav
+  (function () {
+    var links = document.querySelectorAll('#nav-links a');
+    var here = window.location.pathname.toLowerCase();
+
+    links.forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      var path = href.replace('index.html', '').toLowerCase();
+      if (path && here.endsWith(path)) {
+        a.classList.add('text-accent');
+      }
+    });
+
+    // optional hamburger behavior if you have mobile CSS for .open
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+      });
+    }
+  })();
+</script>
+
+<!-- Rest of the original Document HEAD -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill of Exchange - International and Domestic</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        
+        .form-row {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .form-label {
+            flex: 1;
+            font-weight: bold;
+            min-width: 150px;
+        }
+        
+        .form-input {
+            flex: 2;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .editable-area {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #fff;
+            min-height: 100px;
+            border-radius: 4px;
+        }
+        
+        .signature-area {
+            border-top: 1px dotted #000;
+            margin-top: 10px;
+            padding-top: 5px;
+            min-height: 50px;
+        }
+        
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #1a252f;
+        }
+        
+        .language-selector, .document-selector {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        
+        .selector-button {
+            padding: 6px 12px;
+            background-color: #34495e;
+            margin-left: 5px;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .active-content {
+            display: block !important;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            resize: vertical;
+        }
+        
+        .form-input-group {
+            flex: 2;
+            display: flex;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body, .container {
+                margin: 0;
+                padding: 10px;
+                box-shadow: none;
+                background-color: white;
+            }
+            .navbar {
+                display: none;
+            }
+            body {
+                padding-top: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Action buttons for Save, Print, Share -->
+        <div class="action-buttons no-print">
+            <button type="button" onclick="saveDocument()" title="Save as PDF or HTML file">Save Document</button>
+            <button type="button" onclick="printDocument()" title="Print physical copy">Print</button>
+            <button type="button" onclick="shareDocument()" title="Email or share link">Share</button>
+        </div>
+        
+        <!-- Document Type Selector -->
+        <div class="document-selector no-print">
+            <button type="button" onclick="switchDocument('international')" class="selector-button" id="international-button">International BOE</button>
+            <button type="button" onclick="switchDocument('domestic')" class="selector-button" id="domestic-button">Domestic BOE</button>
+        </div>
+        
+        <!-- International BOE Container -->
+        <div id="international-container" class="content-section active-content">
+            <!-- Language selector for International BOE -->
+            <div class="language-selector no-print">
+                <button type="button" onclick="changeLanguage('english')" class="selector-button" id="english-button">English</button>
+                <button type="button" onclick="changeLanguage('french')" class="selector-button" id="french-button">Français</button>
+                <button type="button" onclick="changeLanguage('spanish')" class="selector-button" id="spanish-button">Español</button>
+            </div>
+
+            <!-- English Version -->
+            <div id="english-content" class="content-section active-content">
+                <h1>INTERNATIONAL BILL OF EXCHANGE</h1>
+                <p><strong>Compliant with the United Nations Commission on International Trade Law (UNCITRAL)</strong></p>
+                
+                <div class="form-row">
+                    <div class="form-label">Serial Number:</div>
+                    <div class="form-input-group">
+                        <input type="text" id="serial-number-en" class="form-input" style="flex: 1; margin-right: 10px;" maxlength="46" readonly>
+                        <button type="button" onclick="generateSerialNumber(46, 'en')" style="white-space: nowrap;">Generate Serial</button>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Date of Issue:</div>
+                    <input type="date" id="issue-date-en" class="form-input" value="2025-04-10">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Amount:</div>
+                    <input type="text" id="amount-en" class="form-input" value="$ 300,000.00">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Payee:</div>
+                    <input type="text" id="payee-en" class="form-input" placeholder="Enter payee name">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Payor:</div>
+                    <input type="text" id="payor-en" class="form-input" placeholder="Enter payor name">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Maturity Date:</div>
+                    <input type="date" id="maturity-date-en" class="form-input">
+                </div>
+                
+                <h2>TERMS AND DECLARATIONS</h2>
+                <div class="editable-area" contenteditable="true" id="terms-en">
+                    This INTERNATIONAL BILL OF EXCHANGE is a legally recognized financial instrument in accordance with Federal Reserve Act Title IV §401 §§18(6) and §403(13), United States statutory law, binding judicial precedent, and the provisions of the United Nations Commission on International Trade Law (UNCITRAL) standards which have been ratified by the United States pursuant to Article VI, Clause 2 of the United States Constitution.
+
+                    This instrument is a valid and enforceable obligation for the payment of debts and tax liabilities, structured in accordance with the Federal Reserve Act, IRS regulations, applicable legal statutes, and international trade law conventions to which the United States is a signatory.
+
+                    This INTERNATIONAL BILL OF EXCHANGE is fully securitized and assigned as a collateralized obligation through federal credits recognized under the established financial system. The substitution of gold-backed payments with financial obligations, including this instrument, was mandated through the Federal Reserve Act (as amended 1933), ensuring that instruments such as this maintain the same force and effect as legal tender.
+
+                    Under binding case law, obligations legally structured and assigned within the financial system must be honored at full value when tendered for payment. This bill shall be processed in accordance with its terms, ensuring the full discharge of financial obligations upon proper execution.
+                </div>
+                
+                <h2>LEGAL FACTS AND CONCLUSIONS</h2>
+                <div class="editable-area" contenteditable="true" id="legal-en">
+                    It is an established legal fact that obligations structured as financial instruments must be accepted as full and final settlement of debts. The Supreme Court in Juilliard v. Greenman, 110 U.S. 421 (1884) confirmed that Congress has plenary authority to define legal tender, affirming the enforceability of assigned financial obligations.
+
+                    In Norman v. Baltimore & Ohio R. Co., 294 U.S. 240 (1935), the substitution of gold for financial instruments was upheld, confirming that such obligations carry the same enforceability as traditional monetary payments. Perry v. United States, 294 U.S. 330 (1935) established that all U.S. government obligations must be settled in lawful money or its equivalent, validating the function of such financial instruments in settlement.
+
+                    Knox v. Lee, 79 U.S. 457 (1871) upheld Congress' unrestricted power to expand the definition of legal tender in response to economic necessity. United States v. Rickman, 638 F.2d 182 (10th Cir. 1980) affirmed that government-backed obligations carry intrinsic value for debt settlement purposes.
+                </div>
+                
+                <h2>UNCITRAL COMPLIANCE SECTION</h2>
+                <div class="editable-area" contenteditable="true" id="uncitral-en">
+                    This INTERNATIONAL BILL OF EXCHANGE is executed in accordance with UNCITRAL standards as ratified by the United States. The United States Constitution Article VI, Clause 2 (the Supremacy Clause) establishes that treaties made under the authority of the United States "shall be the supreme Law of the Land," binding all judges in every state.
+
+                    Per 1 U.S.C. § 112a, properly ratified international agreements constitute legal evidence of treaties in all courts of the United States. The United States has ratified key UNCITRAL conventions, including the United Nations Convention on the Assignment of Receivables in International Trade, ratified in 2019, which addresses contractual rights to payment.
+
+                    The Resolution of Advice and Consent to Ratification for UNCITRAL conventions establishes these as self-executing treaties, which take effect immediately upon ratification without requiring additional implementing legislation, further confirming their binding status on United States financial institutions.
+                </div>
+                
+                <h2>ENDORSEMENT SECTION</h2>
+                <div class="editable-area" contenteditable="true" id="endorsement-en">
+                    For value received, this INTERNATIONAL BILL OF EXCHANGE is hereby endorsed and transferred to [PAYEE NAME] for full and final settlement of the stated obligation.
+
+                    Pay to the order of [PAYEE NAME] without recourse.
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Authorized Signature:</div>
+                    <div class="signature-area" id="signature-en" contenteditable="true"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Printed Name:</div>
+                    <input type="text" id="printed-name-en" class="form-input">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Date:</div>
+                    <input type="date" id="sign-date-en" class="form-input">
+                </div>
+                
+                <h2>AUTHORIZATION SECTION</h2>
+                <div class="editable-area" contenteditable="true" id="authorization-en">
+                    This INTERNATIONAL BILL OF EXCHANGE is issued and executed in full compliance with Internal Revenue Manual (IRM) 3.8.45.5.10.1, which governs the processing and acceptance of such instruments for financial settlement. It is recognized as lawful money and functions as a valid negotiable instrument under UNCITRAL Model Law, United States statutory law, and governing financial regulations.
+
+                    The acceptance of this instrument is mandated under the applicable legal framework, and its processing is required under financial settlement protocols. This document is authorized as a valid and enforceable financial obligation for the designated purpose of offsetting liabilities, paying debts, or discharging outstanding tax obligations.
+                </div>
+                
+                <h2>ASSIGNMENT SECTION</h2>
+                <div class="editable-area" contenteditable="true" id="assignment-en">
+                    This INTERNATIONAL BILL OF EXCHANGE is assigned, securitized, and collateralized through federal credits, ensuring its enforceability for financial settlement purposes. The assignment of federal credits as collateral guarantees that this obligation is fully backed and structured within the financial system for lawful execution.
+
+                    The securitization of this instrument is recognized under established monetary policy, ensuring that it is processed as valid consideration for the settlement of outstanding financial obligations. The assignment and execution of this instrument are fully supported by binding legal precedent, statutory authority, and international law principles as adopted by the United States.
+                </div>
+                
+                <h2>CONCLUSION</h2>
+                <div class="editable-area" contenteditable="true" id="conclusion-en">
+                    This INTERNATIONAL BILL OF EXCHANGE is lawfully executed under financial and commercial law, including internationally recognized UNCITRAL standards. It is valid, enforceable, and structured in accordance with UNCITRAL conventions, IRS regulations, and Supreme Court rulings. It shall be processed without restriction for its intended purpose, ensuring the full and final discharge of financial obligations upon acceptance.
+                </div>
+            </div>
+
+            <!-- French Version -->
+            <div id="french-content" class="content-section">
+                <h1>LETTRE DE CHANGE INTERNATIONALE</h1>
+                <p><strong>Conforme à la Commission des Nations Unies pour le droit commercial international (CNUDCI)</strong></p>
+                
+                <div class="form-row">
+                    <div class="form-label">Numéro de série:</div>
+                    <div class="form-input-group">
+                        <input type="text" id="serial-number-fr" class="form-input" style="flex: 1; margin-right: 10px;" maxlength="46" readonly>
+                        <button type="button" onclick="generateSerialNumber(46, 'fr')" style="white-space: nowrap;">Générer Numéro</button>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Date d'émission:</div>
+                    <input type="date" id="issue-date-fr" class="form-input" value="2025-04-10">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Montant:</div>
+                    <input type="text" id="amount-fr" class="form-input" value="$ 300 000,00">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Bénéficiaire:</div>
+                    <input type="text" id="payee-fr" class="form-input" placeholder="Entrez le nom du bénéficiaire">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Payeur:</div>
+                    <input type="text" id="payor-fr" class="form-input" placeholder="Entrez le nom du payeur">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Date d'échéance:</div>
+                    <input type="date" id="maturity-date-fr" class="form-input">
+                </div>
+                
+                <h2>TERMES ET DÉCLARATIONS</h2>
+                <div class="editable-area" contenteditable="true" id="terms-fr">
+                    Cette LETTRE DE CHANGE INTERNATIONALE est un instrument financier légalement reconnu conformément à la Loi sur la Réserve Fédérale, Titre IV §401 §§18(6) et §403(13), à la loi statutaire des États-Unis, à la jurisprudence contraignante, et aux dispositions des normes de la Commission des Nations Unies pour le droit commercial international (CNUDCI) qui ont été ratifiées par les États-Unis en vertu de l'Article VI, Clause 2 de la Constitution des États-Unis.
+
+                    Cet instrument est une obligation valide et exécutoire pour le paiement des dettes et des obligations fiscales, structurée conformément à la Loi sur la Réserve Fédérale, aux réglementations de l'IRS, aux lois applicables et aux conventions de droit commercial international dont les États-Unis sont signataires.
+
+                    Cette LETTRE DE CHANGE INTERNATIONALE est entièrement titrisée et attribuée comme une obligation garantie par des crédits fédéraux reconnus dans le cadre du système financier établi. La substitution des paiements garantis par l'or par des obligations financières, y compris cet instrument, a été mandatée par la Loi sur la Réserve Fédérale (telle que modifiée en 1933), garantissant que des instruments comme celui-ci maintiennent la même force et le même effet que la monnaie légale.
+
+                    Selon la jurisprudence contraignante, les obligations légalement structurées et attribuées au sein du système financier doivent être honorées à leur pleine valeur lorsqu'elles sont présentées pour paiement. Cette lettre sera traitée conformément à ses conditions, assurant la décharge complète des obligations financières lors de son exécution appropriée.
+                </div>
+                
+                <h2>FAITS JURIDIQUES ET CONCLUSIONS</h2>
+                <div class="editable-area" contenteditable="true" id="legal-fr">
+                    C'est un fait juridique établi que les obligations structurées en tant qu'instruments financiers doivent être acceptées comme règlement complet et final des dettes. La Cour suprême dans l'affaire Juilliard v. Greenman, 110 U.S. 421 (1884) a confirmé que le Congrès dispose d'une autorité plénière pour définir la monnaie légale, affirmant le caractère exécutoire des obligations financières assignées.
+
+                    Dans l'affaire Norman v. Baltimore & Ohio R. Co., 294 U.S. 240 (1935), la substitution de l'or par des instruments financiers a été maintenue, confirmant que de telles obligations ont la même force exécutoire que les paiements monétaires traditionnels. Perry v. United States, 294 U.S. 330 (1935) a établi que toutes les obligations du gouvernement américain doivent être réglées en monnaie légale ou son équivalent, validant la fonction de tels instruments financiers dans le règlement.
+
+                    Knox v. Lee, 79 U.S. 457 (1871) a confirmé le pouvoir illimité du Congrès d'élargir la définition de la monnaie légale en réponse aux nécessités économiques. United States v. Rickman, 638 F.2d 182 (10th Cir. 1980) a affirmé que les obligations garanties par le gouvernement ont une valeur intrinsèque aux fins de règlement des dettes.
+                </div>
+                
+                <h2>SECTION DE CONFORMITÉ À LA CNUDCI</h2>
+                <div class="editable-area" contenteditable="true" id="uncitral-fr">
+                    Cette LETTRE DE CHANGE INTERNATIONALE est exécutée conformément aux normes de la CNUDCI telles que ratifiées par les États-Unis. La Constitution des États-Unis, Article VI, Clause 2 (la Clause de Suprématie) établit que les traités conclus sous l'autorité des États-Unis "seront la Loi Suprême du Pays", liant tous les juges dans chaque État.
+
+                    Selon 1 U.S.C. § 112a, les accords internationaux dûment ratifiés constituent une preuve légale des traités dans tous les tribunaux des États-Unis. Les États-Unis ont ratifié des conventions clés de la CNUDCI, notamment la Convention des Nations Unies sur la cession de créances dans le commerce international, ratifiée en 2019, qui traite des droits contractuels au paiement.
+
+                    La Résolution d'Avis et de Consentement à la Ratification pour les conventions de la CNUDCI établit celles-ci comme des traités auto-exécutoires, qui prennent effet immédiatement après ratification sans nécessiter de législation de mise en œuvre supplémentaire, confirmant davantage leur statut contraignant pour les institutions financières des États-Unis.
+                </div>
+                
+                <h2>SECTION D'ENDOSSEMENT</h2>
+                <div class="editable-area" contenteditable="true" id="endorsement-fr">
+                    Pour valeur reçue, cette LETTRE DE CHANGE INTERNATIONALE est par la présente endossée et transférée à [NOM DU BÉNÉFICIAIRE] pour le règlement complet et final de l'obligation indiquée.
+
+                    Payez à l'ordre de [NOM DU BÉNÉFICIAIRE] sans recours.
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Signature autorisée:</div>
+                    <div class="signature-area" id="signature-fr" contenteditable="true"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Nom imprimé:</div>
+                    <input type="text" id="printed-name-fr" class="form-input">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Date:</div>
+                    <input type="date" id="sign-date-fr" class="form-input">
+                </div>
+                
+                <h2>SECTION D'AUTORISATION</h2>
+                <div class="editable-area" contenteditable="true" id="authorization-fr">
+                    Cette LETTRE DE CHANGE INTERNATIONALE est émise et exécutée en pleine conformité avec le Manuel de l'Internal Revenue (IRM) 3.8.45.5.10.1, qui régit le traitement et l'acceptation de tels instruments pour le règlement financier. Elle est reconnue comme monnaie légale et fonctionne comme un instrument négociable valide selon la Loi modèle de la CNUDCI, la loi statutaire des États-Unis et les réglementations financières en vigueur.
+
+                    L'acceptation de cet instrument est mandatée par le cadre juridique applicable, et son traitement est requis selon les protocoles de règlement financier. Ce document est autorisé comme une obligation financière valide et exécutoire dans le but désigné de compenser les passifs, de payer des dettes ou de s'acquitter d'obligations fiscales en suspens.
+                </div>
+                
+                <h2>SECTION D'ASSIGNATION</h2>
+                <div class="editable-area" contenteditable="true" id="assignment-fr">
+                    Cette LETTRE DE CHANGE INTERNATIONALE est assignée, titrisée et garantie par des crédits fédéraux, assurant son caractère exécutoire à des fins de règlement financier. L'assignation de crédits fédéraux comme garantie assure que cette obligation est entièrement soutenue et structurée au sein du système financier pour une exécution légale.
+
+                    La titrisation de cet instrument est reconnue selon la politique monétaire établie, assurant qu'il est traité comme une contrepartie valide pour le règlement des obligations financières en suspens. L'assignation et l'exécution de cet instrument sont pleinement soutenues par des précédents juridiques contraignants, l'autorité statutaire et les principes du droit international tels qu'adoptés par les États-Unis.
+                </div>
+                
+                <h2>CONCLUSION</h2>
+                <div class="editable-area" contenteditable="true" id="conclusion-fr">
+                    Cette LETTRE DE CHANGE INTERNATIONALE est légalement exécutée selon le droit financier et commercial, y compris les normes de la CNUDCI reconnues internationalement. Elle est valide, exécutoire et structurée conformément aux conventions de la CNUDCI, aux réglementations de l'IRS et aux décisions de la Cour suprême. Elle sera traitée sans restriction pour son objectif prévu, assurant la décharge complète et finale des obligations financières lors de son acceptation.
+                </div>
+            </div>
+
+            <!-- Spanish Version -->
+            <div id="spanish-content" class="content-section">
+                <h1>LETRA DE CAMBIO INTERNACIONAL</h1>
+                <p><strong>Conforme a la Comisión de las Naciones Unidas para el Derecho Mercantil Internacional (CNUDMI)</strong></p>
+                
+                <div class="form-row">
+                    <div class="form-label">Número de serie:</div>
+                    <div class="form-input-group">
+                        <input type="text" id="serial-number-es" class="form-input" style="flex: 1; margin-right: 10px;" maxlength="46" readonly>
+                        <button type="button" onclick="generateSerialNumber(46, 'es')" style="white-space: nowrap;">Generar Número</button>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Fecha de emisión:</div>
+                    <input type="date" id="issue-date-es" class="form-input" value="2025-04-10">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Cantidad:</div>
+                    <input type="text" id="amount-es" class="form-input" value="$ 300.000,00">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Beneficiario:</div>
+                    <input type="text" id="payee-es" class="form-input" placeholder="Ingrese el nombre del beneficiario">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Pagador:</div>
+                    <input type="text" id="payor-es" class="form-input" placeholder="Ingrese el nombre del pagador">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Fecha de vencimiento:</div>
+                    <input type="date" id="maturity-date-es" class="form-input">
+                </div>
+                
+                <h2>TÉRMINOS Y DECLARACIONES</h2>
+                <div class="editable-area" contenteditable="true" id="terms-es">
+                    Esta LETRA DE CAMBIO INTERNACIONAL es un instrumento financiero legalmente reconocido de acuerdo con la Ley de la Reserva Federal Título IV §401 §§18(6) y §403(13), la ley estatutaria de los Estados Unidos, precedentes judiciales vinculantes, y las disposiciones de los estándares de la Comisión de las Naciones Unidas para el Derecho Mercantil Internacional (CNUDMI) que han sido ratificados por los Estados Unidos conforme al Artículo VI, Cláusula 2 de la Constitución de los Estados Unidos.
+
+                    Este instrumento es una obligación válida y ejecutable para el pago de deudas y obligaciones fiscales, estructurada de acuerdo con la Ley de la Reserva Federal, las regulaciones del IRS, los estatutos legales aplicables y las convenciones de derecho comercial internacional de las que Estados Unidos es signatario.
+
+                    Esta LETRA DE CAMBIO INTERNACIONAL está completamente titulizada y asignada como una obligación colateralizada a través de créditos federales reconocidos bajo el sistema financiero establecido. La sustitución de pagos respaldados por oro con obligaciones financieras, incluido este instrumento, fue ordenada a través de la Ley de la Reserva Federal (según enmienda de 1933), asegurando que instrumentos como este mantengan la misma fuerza y efecto que la moneda de curso legal.
+
+                    Según la jurisprudencia vinculante, las obligaciones legalmente estructuradas y asignadas dentro del sistema financiero deben ser honradas a su valor total cuando se presentan para pago. Esta letra se procesará de acuerdo con sus términos, asegurando el cumplimiento total de las obligaciones financieras tras su debida ejecución.
+                </div>
+                
+                <h2>SECCIÓN DE CUMPLIMIENTO CON LA CNUDMI</h2>
+                <div class="editable-area" contenteditable="true" id="uncitral-es">
+                    Esta LETRA DE CAMBIO INTERNACIONAL se ejecuta de acuerdo con los estándares de la CNUDMI ratificados por los Estados Unidos. La Constitución de los Estados Unidos, Artículo VI, Cláusula 2 (la Cláusula de Supremacía) establece que los tratados realizados bajo la autoridad de los Estados Unidos "serán la Ley Suprema del País", vinculando a todos los jueces en cada estado.
+
+                    Según 1 U.S.C. § 112a, los acuerdos internacionales debidamente ratificados constituyen evidencia legal de tratados en todas las cortes de los Estados Unidos. Los Estados Unidos han ratificado convenciones clave de la CNUDMI, incluida la Convención de las Naciones Unidas sobre la Cesión de Créditos en el Comercio Internacional, ratificada en 2019, que aborda los derechos contractuales de pago.
+
+                    La Resolución de Consejo y Consentimiento para la Ratificación de las convenciones de la CNUDMI establece éstas como tratados autoejecutables, que entran en vigor inmediatamente tras la ratificación sin requerir legislación de implementación adicional, confirmando aún más su estado vinculante para las instituciones financieras de los Estados Unidos.
+                </div>
+                
+                <h2>SECCIÓN DE ENDOSO</h2>
+                <div class="editable-area" contenteditable="true" id="endorsement-es">
+                    Por valor recibido, esta LETRA DE CAMBIO INTERNACIONAL es por la presente endosada y transferida a [NOMBRE DEL BENEFICIARIO] para la liquidación completa y final de la obligación indicada.
+
+                    Páguese a la orden de [NOMBRE DEL BENEFICIARIO] sin recurso.
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Firma autorizada:</div>
+                    <div class="signature-area" id="signature-es" contenteditable="true"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Nombre impreso:</div>
+                    <input type="text" id="printed-name-es" class="form-input">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Fecha:</div>
+                    <input type="date" id="sign-date-es" class="form-input">
+                </div>
+                
+                <h2>SECCIÓN DE AUTORIZACIÓN</h2>
+                <div class="editable-area" contenteditable="true" id="authorization-es">
+                    Esta LETRA DE CAMBIO INTERNACIONAL se emite y ejecuta en pleno cumplimiento con el Manual del Internal Revenue (IRM) 3.8.45.5.10.1, que rige el procesamiento y aceptación de tales instrumentos para liquidación financiera. Es reconocida como dinero de curso legal y funciona como un instrumento negociable válido bajo la Ley Modelo de la CNUDMI, la ley estatutaria de los Estados Unidos y las regulaciones financieras vigentes.
+
+                    La aceptación de este instrumento está ordenada por el marco legal aplicable, y su procesamiento es requerido según los protocolos de liquidación financiera. Este documento está autorizado como una obligación financiera válida y ejecutable para el propósito designado de compensar pasivos, pagar deudas o cumplir con obligaciones fiscales pendientes.
+                </div>
+                
+                <h2>SECCIÓN DE ASIGNACIÓN</h2>
+                <div class="editable-area" contenteditable="true" id="assignment-es">
+                    Esta LETRA DE CAMBIO INTERNACIONAL es asignada, titulizada y garantizada mediante créditos federales, asegurando su ejecutabilidad para fines de liquidación financiera. La asignación de créditos federales como garantía asegura que esta obligación esté completamente respaldada y estructurada dentro del sistema financiero para su ejecución legal.
+
+                    La titulización de este instrumento es reconocida bajo la política monetaria establecida, asegurando que sea procesado como contraprestación válida para la liquidación de obligaciones financieras pendientes. La asignación y ejecución de este instrumento están completamente respaldadas por precedentes legales vinculantes, autoridad estatutaria y principios de derecho internacional adoptados por los Estados Unidos.
+                </div>
+                
+                <h2>CONCLUSIÓN</h2>
+                <div class="editable-area" contenteditable="true" id="conclusion-es">
+                    Esta LETRA DE CAMBIO INTERNACIONAL es legalmente ejecutada bajo la ley financiera y comercial, incluyendo los estándares de la CNUDMI reconocidos internacionalmente. Es válida, ejecutable y estructurada de acuerdo con las convenciones de la CNUDMI, las regulaciones del IRS y las decisiones de la Corte Suprema. Será procesada sin restricción para su propósito previsto, asegurando el cumplimiento completo y final de las obligaciones financieras tras su aceptación.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Domestic BOE Container -->
+        <div id="domestic-container" class="content-section">
+            <div id="domestic-content" class="content-section active-content">
+                <h1>DOMESTIC BILL OF EXCHANGE</h1>
+                <p><strong>With Authorization, Assignment of Federal Credit, and Legal Justification</strong></p>
+                <p><strong>For Settlement and Offset of Public Obligation under Public Law and Internal Revenue Procedure</strong></p>
+                
+                <div class="form-row">
+                    <div class="form-label">Instrument Title:</div>
+                    <input type="text" id="instrument-title" class="form-input" value="BILL OF EXCHANGE (BOE-6M-ASSIGN-CREDIT)">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Date of Issue:</div>
+                    <input type="date" id="domestic-issue-date" class="form-input" value="2025-04-10">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">BOE No.:</div>
+                    <div class="form-input-group">
+                        <input type="text" id="domestic-serial-number" class="form-input" style="flex: 1; margin-right: 10px;" maxlength="42" readonly>
+                        <button type="button" onclick="generateSerialNumber(42, 'dom')" style="white-space: nowrap;">Generate Serial</button>
+                    </div>
+                </div>
+                
+                <h2>PAY TO THE ORDER OF:</h2>
+                <div class="editable-area" contenteditable="true" id="payee-details">
+United States Department of the Treasury
+Office of Executive Secretary
+1500 Pennsylvania Avenue, NW
+Room 3413
+Washington, DC 20220
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">AMOUNT:</div>
+                    <input type="text" id="domestic-amount" class="form-input" value="$6,000,000.00">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Amount in Words:</div>
+                    <input type="text" id="amount-words" class="form-input" value="Six Million United States Dollars">
+                </div>
+                
+                <h2>DRAWER / CREDITOR / ASSIGNOR:</h2>
+                <div class="editable-area" contenteditable="true" id="drawer-details">
+[Full Legal Name],
+SELF-Autonomous Sole Proprietor and Authorized Representative
+c/o [Mailing Address]
+Non-Domestic, Without U.S., [ZIP in brackets]
+                </div>
+                
+                <h2>DRAWEE:</h2>
+                <div class="editable-area" contenteditable="true" id="drawee-details">
+Internal Revenue Service
+c/o U.S. Department of the Treasury
+Washington, DC 20220
+                </div>
+                
+                <h2>AUTHORIZATION STATEMENT (PER IRS IRM 3.8.45.5.10.1)</h2>
+                <div class="editable-area" contenteditable="true" id="authorization-statement">
+I, [Full Name], the undersigned, do hereby authorize the Internal Revenue Service and affiliated processing campus to settle my account through Fedwire, as established in IRM 3.8.45.5.10.1, using this lawful Bill of Exchange and the assigned federal credits acknowledged herein, under public law and commercial authority.
+
+This Bill of Exchange is hereby tendered for full and final settlement of all tax-related obligations and public claims assessed by the Internal Revenue Service against the undersigned or related parties, in the amount of $2.5 million, with additional application of $3.5 million in reserve credit as contribution toward offsetting the national public debt.
+                </div>
+                
+                <h2>SOURCE AND BACKING OF INSTRUMENT: ASSIGNMENT OF FEDERAL CREDIT</h2>
+                <div class="editable-area" contenteditable="true" id="source-backing">
+This instrument is backed by federal credit assigned from my public non-commercial activity as a private contractor and asset manager in service to the reduction of the national debt, per:
+
+31 U.S.C. § 3123 – Obligation of the United States to pay principal and interest on the public debt via "an act to uniform the value of the coins and currencies of the United States" (June 5, 1933) – Prohibition against creditor demand for payment in ANY COIN OR CURRENCY OF THE UNITED STATES; obligation to discharge debts through inclusive instruments identified as securities by the United States Congress:
+
+Title IV § 401 (18)(6) – "ANY Notes", drafts, bills of exchanges, bankers acceptances, trade acceptances, as obligations of the United States
+
+31 U.S.C. § 321(d) – The Secretary of the Treasury may accept gifts or credits to reduce the national debt
+
+United States v. Rickman, 638 F.2d 182 (10th Cir. 1980) – Commercial instruments tendered to the United States must be processed according to accepted financial procedures
+                </div>
+                
+                <h2>ASSIGNMENT LETTER</h2>
+                <div class="editable-area" contenteditable="true" id="assignment-letter">
+Assignment of Federal Credit Toward National Debt Offset and Tax Discharge
+
+TO WHOM IT MAY CONCERN:
+
+I, [Full Name], self autonomous American civilian and sole proprietor, do hereby assign $6,000,000.00 in accumulated  private non-commercial credit and contribution, derived from lawful activities in private commerce and recognized through operational communal benefit, toward discharge of obligations currently through the Department of the Treasury in the form of the offset program.
+
+This assignment is made in good faith and backed by:
+
+Over $6 million in verified business operational accounts receivables  over the past [X] years,
+
+Lawful claim to credit by service in economic support of the national monetary system,
+
+Commercial "ELIGIBLE PAPERS" classification of my property and operational holdings, which have been taxed and managed under commercial jurisdiction via the Federal Reserve act as amended, presidential proclamation 2039, and the Fifth Amendment right to just compensation without equitable remedy.
+
+This assignment is tendered under commercial authority and executed under:
+
+Uniform Commercial Code §§ 3-104, 3-303, and 3-419,
+
+Federal common law,
+
+Internal Revenue Manual § 3.8.45.5.10.1,
+
+And the full reservation of rights under UCC 1-308.
+
+Please accept this instrument for full and final discharge of IRS-assessed liabilities, and record the remaining value as contribution credit toward reduction of national public obligations in accordance with 31 U.S.C. § 321(d).
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Autograph:</div>
+                    <div class="signature-area" id="domestic-signature" contenteditable="true"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Full Name:</div>
+                    <input type="text" id="full-name" class="form-input" placeholder="[Full Name], Sole Proprietor">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Title:</div>
+                    <input type="text" id="signer-title" class="form-input" value="Secured Party Creditor / Authorized Agent">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-label">Date:</div>
+                    <input type="date" id="signing-date" class="form-input">
+                </div>
+                
+                <h2>End of Instrument</h2>
+                <div class="editable-area" contenteditable="true" id="disclaimer">
+This Bill of Exchange is executed without prejudice, and in good faith. Any refusal to process this instrument may be treated as dishonor in commerce under UCC 3-505 and 3-501(b)(2).
+
+All rights retained and reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the document
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set International English as default
+            switchDocument('international');
+            changeLanguage('english');
+            
+            // Setup field sync between languages
+            setupFieldSync();
+        });
+        
+        // Switch between document types (International vs Domestic)
+        function switchDocument(docType) {
+            // Hide all document containers
+            document.getElementById('international-container').classList.remove('active-content');
+            document.getElementById('domestic-container').classList.remove('active-content');
+            
+            // Show selected document
+            document.getElementById(docType + '-container').classList.add('active-content');
+            
+            // Highlight the active button
+            document.getElementById('international-button').style.backgroundColor = '#34495e';
+            document.getElementById('domestic-button').style.backgroundColor = '#34495e';
+            document.getElementById(docType + '-button').style.backgroundColor = '#1a252f';
+        }
+        
+        // Change language for International BOE
+        function changeLanguage(language) {
+            // Hide all language contents
+            document.getElementById('english-content').classList.remove('active-content');
+            document.getElementById('french-content').classList.remove('active-content');
+            document.getElementById('spanish-content').classList.remove('active-content');
+            
+            // Show selected language content
+            document.getElementById(language + '-content').classList.add('active-content');
+            
+            // Highlight the active button
+            document.getElementById('english-button').style.backgroundColor = '#34495e';
+            document.getElementById('french-button').style.backgroundColor = '#34495e';
+            document.getElementById('spanish-button').style.backgroundColor = '#34495e';
+            document.getElementById(language + '-button').style.backgroundColor = '#1a252f';
+        }
+        
+        // Generate serial number
+        function generateSerialNumber(length, type) {
+            // Character sets for serial number generation
+            const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+            const numbers = '0123456789';
+            const specialChars = '!@#$%^&*()_+-=[]{}|;:,./<>?\'"`~\\';
+            
+            // Combined character set
+            const allChars = upperCase + lowerCase + numbers + specialChars;
+            
+            // Generate a random string with a mix of all character types
+            let serialNumber = '';
+            
+            // Ensure at least one character from each set
+            serialNumber += upperCase.charAt(Math.floor(Math.random() * upperCase.length));
+            serialNumber += lowerCase.charAt(Math.floor(Math.random() * lowerCase.length));
+            serialNumber += numbers.charAt(Math.floor(Math.random() * numbers.length));
+            serialNumber += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+            
+            // Add remaining characters randomly from all sets
+            for (let i = 4; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * allChars.length);
+                serialNumber += allChars.charAt(randomIndex);
+            }
+            
+            // Shuffle the string to ensure randomness
+            serialNumber = shuffleString(serialNumber);
+            
+            // Set the value in the appropriate fields
+            if (type === 'dom') {
+                document.getElementById('domestic-serial-number').value = serialNumber;
+            } else {
+                // Update all language versions for international BOE
+                document.getElementById('serial-number-en').value = serialNumber;
+                document.getElementById('serial-number-fr').value = serialNumber;
+                document.getElementById('serial-number-es').value = serialNumber;
+            }
+        }
+        
+        // Shuffle a string (Fisher-Yates algorithm)
+        function shuffleString(str) {
+            const arr = str.split('');
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr.join('');
+        }
+        
+        // Sync fields between languages
+        function setupFieldSync() {
+            // Array of field IDs to sync across languages
+            const fieldSets = [
+                ['issue-date-en', 'issue-date-fr', 'issue-date-es'],
+                ['amount-en', 'amount-fr', 'amount-es'],
+                ['payee-en', 'payee-fr', 'payee-es'],
+                ['payor-en', 'payor-fr', 'payor-es'],
+                ['maturity-date-en', 'maturity-date-fr', 'maturity-date-es'],
+                ['printed-name-en', 'printed-name-fr', 'printed-name-es'],
+                ['sign-date-en', 'sign-date-fr', 'sign-date-es']
+            ];
+            
+            // Set up event listeners for each field set
+            fieldSets.forEach(set => {
+                const fields = set.map(id => document.getElementById(id)).filter(el => el !== null);
+                
+                fields.forEach(field => {
+                    if (field) {
+                        field.addEventListener('input', function(e) {
+                            // Sync value to all other fields in this set
+                            fields.forEach(target => {
+                                if (target !== e.target) {
+                                    target.value = e.target.value;
+                                }
+                            });
+                        });
+                    }
+                });
+            });
+        }
+
+        // Document Actions
+        function saveDocument() {
+            // Basic implementation to save as HTML blob
+            var htmlContent = document.documentElement.outerHTML;
+            var blob = new Blob([htmlContent], {type: "text/html"});
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = "Bill_Of_Exchange_" + new Date().toISOString().slice(0,10) + ".html";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        function printDocument() {
+            window.print();
+        }
+
+        function shareDocument() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'RedressRight Bill of Exchange',
+                    text: 'Please review this Bill of Exchange document.',
+                    url: window.location.href,
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing', error));
+            } else {
+                // Fallback: copy URL
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link copied to clipboard!");
+            }
+        }
+    </script>
+  <!-- Shared Accessibility Toolbar -->
+  <script src="shared-toolbar.js"></script>
+  <!-- E2ZERO AGENT SYPHER -->
+  <script src="e2zero-sypher.js"></script>
+</body>
+
+<!-- Mirrored from redressright.me/DIBE.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:47 GMT -->
+</html>

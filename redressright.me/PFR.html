@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from redressright.me/PFR.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:37 GMT -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petition for Redress — Document Editor | RedressRight</title>
+<link rel="shortcut icon" href="../r.mobirisesite.com/2130286/assets/images/photo-1611079830811-865ff4428d17.html" type="image/x-icon">
+<link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="../cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/html-docx-js/0.3.1/html-docx.html"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* NAV */
+.redressright-header{background:linear-gradient(135deg,#1e3c72,#2a5298);box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:9000;width:100%;}
+.redressright-nav-container{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;height:70px;}
+.redressright-logo{font-size:28px;font-weight:bold;color:#fff;text-decoration:none;letter-spacing:1px;}.redressright-logo:hover{color:#ffd700;}
+.redressright-nav-links{display:flex;gap:5px;list-style:none;overflow-x:auto;}.redressright-nav-links::-webkit-scrollbar{height:0;}
+.redressright-nav-links li a{display:block;padding:12px 15px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;border-radius:6px;transition:all .3s;white-space:nowrap;}
+.redressright-nav-links li a:hover{background:rgba(255,255,255,.15);color:#ffd700;}
+.redressright-mobile-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;}.redressright-mobile-toggle span{width:30px;height:3px;background:#fff;border-radius:3px;}
+@media(max-width:768px){.redressright-nav-links{position:absolute;top:70px;left:0;right:0;background:linear-gradient(135deg,#1e3c72,#2a5298);flex-direction:column;max-height:0;overflow:hidden;transition:max-height .3s;}.redressright-nav-links.active{max-height:500px;}.redressright-mobile-toggle{display:flex;}}
+
+/* APP */
+:root{--brand:#2b579a;--blt:#4472c4;--ui:#eceef2;--bdr:#c8c8c8;--hover:#dce4f0;--tx:#1a1a1a;--tx2:#555;--tx3:#888;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter','Segoe UI',sans-serif;font-size:13px;color:var(--tx);background:var(--ui);}
+
+/* MENU BAR */
+.mb{position:sticky;top:70px;z-index:8500;background:#fff;border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 4px;height:28px;user-select:none;}
+.mi{position:relative;padding:3px 12px;font-size:12px;color:var(--tx);cursor:pointer;border-radius:3px;font-weight:500;}
+.mi:hover,.mi.open{background:var(--hover);}
+.dd{display:none;position:absolute;top:100%;left:0;min-width:280px;background:#fff;border:1px solid #bbb;border-radius:6px;box-shadow:0 8px 28px rgba(0,0,0,.18);padding:4px 0;z-index:9999;}
+.mi.open .dd{display:block;}
+.mo{display:flex;align-items:center;padding:6px 14px;font-size:12px;color:var(--tx);cursor:pointer;}.mo:hover{background:#e0e8f8;}
+.mo i{width:18px;text-align:center;margin-right:10px;font-size:11px;color:var(--tx2);}
+.mo .k{margin-left:auto;font-size:10px;color:var(--tx3);font-family:Consolas,monospace;padding-left:16px;}
+.ms{height:1px;background:#e5e5e5;margin:3px 6px;}
+
+/* TOOLBARS */
+.tb1,.tb2{position:sticky;z-index:8000;background:linear-gradient(to bottom,#fff,#f6f6f6);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 6px;height:36px;gap:2px;overflow-x:auto;}
+.tb1{top:98px;}.tb2{top:134px;}
+.tb1::-webkit-scrollbar,.tb2::-webkit-scrollbar{height:0;}
+.sep{width:1px;height:22px;background:var(--bdr);margin:0 3px;flex-shrink:0;}
+.b{width:26px;height:26px;border:1px solid transparent;border-radius:3px;background:transparent;color:var(--tx);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;transition:.1s;flex-shrink:0;}
+.b:hover{background:var(--hover);border-color:#b8b8b8;}.b.on{background:#cdddf5;border-color:#8ab0da;}
+.bw{width:auto;padding:0 6px;height:24px;font-size:10px;font-weight:600;gap:3px;white-space:nowrap;}
+.sel{height:22px;border:1px solid var(--bdr);border-radius:3px;padding:0 3px;font-size:11px;background:#fff;color:var(--tx);cursor:pointer;font-family:inherit;}.sel:focus{outline:none;border-color:var(--blt);}
+.sel-f{width:120px;}.sel-s{width:44px;}.sel-sp{width:44px;}
+.cw{position:relative;}.cl{position:absolute;bottom:2px;left:5px;right:5px;height:3px;border-radius:1px;}
+
+/* RULER */
+.ruler{position:sticky;top:170px;z-index:7500;background:#fff;border-bottom:1px solid var(--bdr);height:22px;display:flex;justify-content:center;overflow:hidden;}
+.ruler-t{width:8.5in;height:100%;position:relative;}.rt2{position:absolute;bottom:0;width:1px;background:#bbb;}.rt2.maj{height:11px;background:#666;}.rt2.half{height:6px;}.rt2.qtr{height:3px;background:#ccc;}.rn2{position:absolute;top:2px;font-size:7px;color:#777;transform:translateX(-50%);}.rmg{position:absolute;top:0;bottom:0;background:rgba(43,87,154,.05);}
+
+/* PAGE */
+.canvas{background:var(--ui);padding:16px 0 40px;}
+.page{width:8.5in;background:#fff;margin:0 auto 20px;box-shadow:0 1px 6px rgba(0,0,0,.12);padding:1in;}
+#editor{outline:none;font-family:'Times New Roman',Georgia,serif;font-size:12pt;line-height:2;color:#000;}
+#editor h1{text-align:center;font-size:18pt;margin-bottom:30pt;font-weight:bold;}
+#editor h2{font-size:14pt;margin:30pt 0 15pt;font-weight:bold;text-transform:uppercase;}
+#editor p{margin-bottom:12pt;}
+#editor .statute{margin:14pt 36pt;padding:12px 20px;background:#faf9f7;border-left:3px solid #333;font-style:italic;line-height:1.7;font-size:11pt;}
+#editor table{border-collapse:collapse;width:100%;margin:14pt 0;}#editor td,#editor th{border:1px solid #555;padding:6px 10px;}
+
+/* STATUS */
+.status{position:sticky;bottom:0;z-index:5000;background:var(--brand);display:flex;align-items:center;padding:0 16px;height:28px;color:rgba(255,255,255,.85);font-size:11px;gap:18px;}
+.status b{font-weight:600;margin-left:3px;}.status span{opacity:.7;}
+.status-r{margin-left:auto;display:flex;gap:4px;}.status-r button{background:rgba(255,255,255,.1);border:none;color:rgba(255,255,255,.8);padding:3px 10px;border-radius:3px;font-size:10px;cursor:pointer;}.status-r button:hover{background:rgba(255,255,255,.2);}
+
+/* FIND */
+.fb{display:none;position:fixed;top:100px;right:10px;z-index:9800;background:#fff;border:1px solid var(--bdr);border-top:3px solid var(--brand);border-radius:0 0 0 8px;box-shadow:0 4px 20px rgba(0,0,0,.15);padding:12px 16px;width:360px;}.fb.show{display:block;}
+.fb h4{font-size:12px;margin-bottom:8px;color:var(--brand);display:flex;justify-content:space-between;}.fb h4 button{background:none;border:none;cursor:pointer;font-size:14px;color:var(--tx3);}
+.fr{display:flex;gap:6px;margin-bottom:6px;}.fr input{flex:1;padding:5px 8px;border:1px solid var(--bdr);border-radius:4px;font-size:12px;}.fr input:focus{outline:none;border-color:var(--blt);}
+.fr button{padding:5px 10px;border:1px solid var(--bdr);border-radius:4px;background:#fff;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;}.fr button:hover{background:var(--hover);}.fr .fp{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* MODAL */
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;justify-content:center;align-items:center;}.ov.show{display:flex;}
+.dlg{background:#fff;border-radius:10px;box-shadow:0 12px 48px rgba(0,0,0,.25);padding:28px;max-width:460px;width:92%;}.dlg h3{font-size:16px;color:var(--brand);margin-bottom:14px;}
+.dlg label{display:block;font-size:12px;font-weight:600;margin:8px 0 4px;color:var(--tx2);}
+.dlg input[type=text],.dlg input[type=url],.dlg select{width:100%;padding:8px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:13px;font-family:inherit;margin-bottom:4px;}.dlg input:focus,.dlg select:focus{outline:none;border-color:var(--blt);}
+.dlg input[type=file]{width:100%;margin:10px 0;}
+.dlg .df{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;}
+.db{padding:8px 22px;border:none;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;}.db-p{background:var(--brand);color:#fff;}.db-p:hover{background:#1e4a80;}.db-s{background:#eee;color:var(--tx);}.db-s:hover{background:#ddd;}
+
+@media print{.redressright-header,.mb,.tb1,.tb2,.ruler,.status,.fb{display:none!important;}.canvas{background:white;padding:0;}.page{box-shadow:none;margin:0;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="redressright-header"><nav class="redressright-nav-container">
+<a href="https://redressright.com/" class="redressright-logo">RedressRight</a>
+<ul class="redressright-nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="PFR.html" style="color:#ffd700;font-weight:700">PETITION FOR REDRESS</a></li>
+    <li><a href="GAAP.html">GAAP LEDGER</a></li>
+    <li><a href="CLMP.html">MEMORIAL AND CONGRESSIONAL PETITION</a></li>
+    <li><a href="CPSA.html">CPSA</a></li>
+    <li><a href="PORG.html">PORG</a></li>
+    <li><a href="TRCF.html">TRCF</a></li>
+    <li><a href="DIBE.html">DIBE</a></li>
+    <li><a href="CCSN.html">CCSN</a></li>
+    <li><a href="EEEJ.html">EEEJ</a></li>
+    <li><a href="FDRF.html">FDRF</a></li>
+    <li><a href="At-PAR.html">At-Par Tutorial</a></li>
+    <li><a href="Agent.html" style="color:#00d4ff;font-weight:700">AI AGENT</a></li>
+            <li><a href="huma.html" style="color:#ffd700">AI HUMANIZER</a></li>
+    <li><a href="Terms.html">TERMS &amp; CONDITIONS</a></li>
+</ul>
+<div class="redressright-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+</nav></header>
+
+<!-- MENU BAR -->
+<div class="mb">
+    <div class="mi" onclick="TM(this)">File<div class="dd">
+        <div class="mo" onclick="newDoc()"><i class="fas fa-file"></i> New <span class="k">Ctrl+N</span></div>
+        <div class="mo" onclick="document.getElementById('upOv').classList.add('show')"><i class="fas fa-folder-open"></i> Open… <span class="k">Ctrl+O</span></div><div class="ms"></div>
+        <div class="mo" onclick="saveDoc()"><i class="fas fa-floppy-disk"></i> Save <span class="k">Ctrl+S</span></div>
+        <div class="mo" onclick="xDocx()"><i class="fas fa-file-word"></i> Word (.docx)</div>
+        <div class="mo" onclick="xPDF()"><i class="fas fa-file-pdf"></i> PDF</div>
+        <div class="mo" onclick="xTXT()"><i class="fas fa-file-lines"></i> Text (.txt)</div><div class="ms"></div>
+        <div class="mo" onclick="window.print()"><i class="fas fa-print"></i> Print <span class="k">Ctrl+P</span></div>
+    </div></div>
+    <div class="mi" onclick="TM(this)">Edit<div class="dd">
+        <div class="mo" onclick="ex('undo')"><i class="fas fa-rotate-left"></i> Undo <span class="k">Ctrl+Z</span></div>
+        <div class="mo" onclick="ex('redo')"><i class="fas fa-rotate-right"></i> Redo <span class="k">Ctrl+Y</span></div><div class="ms"></div>
+        <div class="mo" onclick="ex('cut')"><i class="fas fa-scissors"></i> Cut</div>
+        <div class="mo" onclick="ex('copy')"><i class="fas fa-copy"></i> Copy</div>
+        <div class="mo" onclick="doPaste()"><i class="fas fa-paste"></i> Paste</div><div class="ms"></div>
+        <div class="mo" onclick="ex('selectAll')"><i class="fas fa-object-group"></i> Select All</div>
+        <div class="mo" onclick="openFB()"><i class="fas fa-magnifying-glass"></i> Find &amp; Replace <span class="k">Ctrl+H</span></div>
+    </div></div>
+    <div class="mi" onclick="TM(this)">Insert<div class="dd">
+        <div class="mo" onclick="showModal('link')"><i class="fas fa-link"></i> Hyperlink…</div>
+        <div class="mo" onclick="showModal('fn')"><i class="fas fa-shoe-prints"></i> Footnote…</div>
+        <div class="mo" onclick="showModal('en')"><i class="fas fa-list-check"></i> Endnote…</div>
+        <div class="mo" onclick="showModal('bm')"><i class="fas fa-bookmark"></i> Bookmark…</div><div class="ms"></div>
+        <div class="mo" onclick="showModal('tbl')"><i class="fas fa-table"></i> Table…</div>
+        <div class="mo" onclick="showModal('img')"><i class="fas fa-image"></i> Picture…</div><div class="ms"></div>
+        <div class="mo" onclick="showModal('hdr')"><i class="fas fa-window-maximize"></i> Header…</div>
+        <div class="mo" onclick="showModal('ftr')"><i class="fas fa-window-minimize"></i> Footer…</div><div class="ms"></div>
+        <div class="mo" onclick="insertSymbol('§')"><i class="fas fa-section"></i> § Section</div>
+        <div class="mo" onclick="insertSymbol('¶')"><i class="fas fa-paragraph"></i> ¶ Paragraph</div>
+        <div class="mo" onclick="insertSymbol('©')"><i class="fas fa-copyright"></i> © Copyright</div>
+        <div class="mo" onclick="insertSymbol('™')"><i class="fas fa-trademark"></i> ™ Trademark</div><div class="ms"></div>
+        <div class="mo" onclick="ex('insertHorizontalRule')"><i class="fas fa-minus"></i> Horizontal Line</div>
+        <div class="mo" onclick="insertPageBreak()"><i class="fas fa-file-lines"></i> Page Break</div>
+        <div class="mo" onclick="insertStatute()"><i class="fas fa-landmark"></i> Statute Block</div>
+    </div></div>
+    <div class="mi" onclick="TM(this)">Format<div class="dd">
+        <div class="mo" onclick="ex('bold')"><i class="fas fa-bold"></i> Bold <span class="k">Ctrl+B</span></div>
+        <div class="mo" onclick="ex('italic')"><i class="fas fa-italic"></i> Italic <span class="k">Ctrl+I</span></div>
+        <div class="mo" onclick="ex('underline')"><i class="fas fa-underline"></i> Underline <span class="k">Ctrl+U</span></div><div class="ms"></div>
+        <div class="mo" onclick="ex('justifyLeft')"><i class="fas fa-align-left"></i> Left</div>
+        <div class="mo" onclick="ex('justifyCenter')"><i class="fas fa-align-center"></i> Center</div>
+        <div class="mo" onclick="ex('justifyRight')"><i class="fas fa-align-right"></i> Right</div>
+        <div class="mo" onclick="ex('justifyFull')"><i class="fas fa-align-justify"></i> Justify</div><div class="ms"></div>
+        <div class="mo" onclick="ex('formatBlock','blockquote')"><i class="fas fa-quote-left"></i> Block Quote</div>
+        <div class="mo" onclick="ex('removeFormat')"><i class="fas fa-eraser"></i> Clear Formatting</div>
+    </div></div>
+    <div class="mi" onclick="TM(this)">References<div class="dd">
+        <div class="mo" onclick="insertTOC()"><i class="fas fa-list"></i> Table of Contents</div>
+        <div class="mo" onclick="showModal('fn')"><i class="fas fa-shoe-prints"></i> Footnote</div>
+        <div class="mo" onclick="showModal('en')"><i class="fas fa-list-check"></i> Endnote</div>
+        <div class="mo" onclick="insertStatute()"><i class="fas fa-landmark"></i> Statute Block</div>
+    </div></div>
+    <div class="mi" onclick="TM(this)">Tools<div class="dd">
+        <div class="mo" onclick="toggleMic()"><i class="fas fa-microphone"></i> Dictation</div>
+        <div class="mo" onclick="toggleSpeak()"><i class="fas fa-volume-high"></i> Read Aloud</div><div class="ms"></div>
+        <div class="mo" onclick="wordCount()"><i class="fas fa-calculator"></i> Word Count</div>
+        <div class="mo" onclick="openFB()"><i class="fas fa-magnifying-glass"></i> Find &amp; Replace</div>
+    </div></div>
+</div>
+
+<!-- TOOLBAR ROW 1 -->
+<div class="tb1">
+    <button class="b" onclick="ex('undo')" title="Undo"><i class="fas fa-rotate-left"></i></button>
+    <button class="b" onclick="ex('redo')" title="Redo"><i class="fas fa-rotate-right"></i></button>
+    <div class="sep"></div>
+    <button class="b bw" onclick="doPaste()"><i class="fas fa-paste"></i> Paste</button>
+    <button class="b" onclick="ex('cut')" title="Cut"><i class="fas fa-scissors"></i></button>
+    <button class="b" onclick="ex('copy')" title="Copy"><i class="fas fa-copy"></i></button>
+    <div class="sep"></div>
+    <select class="sel sel-f" onchange="ex('fontName',this.value)"><option>Times New Roman</option><option>Georgia</option><option>Garamond</option><option>Palatino Linotype</option><option>Arial</option><option>Calibri</option><option>Verdana</option><option>Helvetica</option><option>Courier New</option><option>Cambria</option></select>
+    <select class="sel sel-s" onchange="ex('fontSize',this.value)"><option value=1>8</option><option value=2>10</option><option value=3 selected>12</option><option value=4>14</option><option value=5>18</option><option value=6>24</option><option value=7>36</option></select>
+    <div class="sep"></div>
+    <button class="b" onclick="ex('bold')" title="Bold"><b>B</b></button>
+    <button class="b" onclick="ex('italic')" title="Italic"><i>I</i></button>
+    <button class="b" onclick="ex('underline')" title="Underline"><u>U</u></button>
+    <button class="b" onclick="ex('strikeThrough')"><i class="fas fa-strikethrough"></i></button>
+    <button class="b" onclick="ex('subscript')"><i class="fas fa-subscript"></i></button>
+    <button class="b" onclick="ex('superscript')"><i class="fas fa-superscript"></i></button>
+    <div class="sep"></div>
+    <button class="b cw" onclick="document.getElementById('cFG').click()"><i class="fas fa-font"></i><div class="cl" id="cBar" style="background:#000"></div></button>
+    <input type=color id=cFG value="#000000" hidden onchange="ex('foreColor',this.value);document.getElementById('cBar').style.background=this.value">
+    <button class="b" onclick="document.getElementById('cHL').click()"><i class="fas fa-highlighter"></i></button>
+    <input type=color id=cHL value="#ffff00" hidden onchange="ex('hiliteColor',this.value)">
+    <button class="b" onclick="ex('removeFormat')"><i class="fas fa-eraser"></i></button>
+</div>
+
+<!-- TOOLBAR ROW 2 -->
+<div class="tb2">
+    <button class="b" onclick="ex('justifyLeft')"><i class="fas fa-align-left"></i></button>
+    <button class="b" onclick="ex('justifyCenter')"><i class="fas fa-align-center"></i></button>
+    <button class="b" onclick="ex('justifyRight')"><i class="fas fa-align-right"></i></button>
+    <button class="b" onclick="ex('justifyFull')"><i class="fas fa-align-justify"></i></button>
+    <div class="sep"></div>
+    <button class="b" onclick="ex('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
+    <button class="b" onclick="ex('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
+    <button class="b" onclick="ex('indent')"><i class="fas fa-indent"></i></button>
+    <button class="b" onclick="ex('outdent')"><i class="fas fa-outdent"></i></button>
+    <div class="sep"></div>
+    <select class="sel sel-sp" onchange="E.style.lineHeight=this.value"><option value=1>1.0</option><option value=1.15>1.15</option><option value=1.5>1.5</option><option value=2 selected>2.0</option><option value=2.5>2.5</option><option value=3>3.0</option></select>
+    <div class="sep"></div>
+    <button class="b bw" onclick="showModal('link')"><i class="fas fa-link"></i> Link</button>
+    <button class="b bw" onclick="showModal('fn')"><i class="fas fa-shoe-prints"></i> Footnote</button>
+    <button class="b bw" onclick="showModal('en')"><i class="fas fa-list-check"></i> Endnote</button>
+    <button class="b" onclick="showModal('tbl')"><i class="fas fa-table"></i></button>
+    <button class="b" onclick="showModal('img')"><i class="fas fa-image"></i></button>
+    <button class="b" onclick="insertSymbol('§')"><i class="fas fa-section"></i></button>
+    <div class="sep"></div>
+    <button class="b" onclick="openFB()"><i class="fas fa-magnifying-glass"></i></button>
+    <button class="b" id="micBtn" onclick="toggleMic()"><i class="fas fa-microphone"></i></button>
+    <button class="b" id="spkBtn" onclick="toggleSpeak()"><i class="fas fa-volume-high"></i></button>
+    <div class="sep"></div>
+    <button class="b bw" onclick="saveDoc()"><i class="fas fa-floppy-disk"></i> Save</button>
+    <button class="b bw" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+</div>
+
+<!-- RULER -->
+<div class="ruler" id="rulerEl"><div class="ruler-t" id="rulerT"></div></div>
+
+<!-- FIND -->
+<div class="fb" id="fbEl">
+    <h4>Find &amp; Replace <button onclick="document.getElementById('fbEl').classList.remove('show')">✕</button></h4>
+    <div class="fr"><input id="fF" placeholder="Find…"><button onclick="doFind()">Find</button></div>
+    <div class="fr"><input id="fR" placeholder="Replace…"><button onclick="doReplace()">Replace</button><button class="fp" onclick="doReplaceAll()">All</button></div>
+</div>
+
+<!-- MULTI-PURPOSE MODAL (replaces all prompt() calls) -->
+<div class="ov" id="modal"><div class="dlg" id="dlgContent"></div></div>
+
+<!-- UPLOAD MODAL -->
+<div class="ov" id="upOv"><div class="dlg"><h3><i class="fas fa-folder-open"></i> Open Document</h3><p style="font-size:12px;color:#666;margin-bottom:8px">.docx .pdf .txt .html</p><input type=file id=fInput accept=".docx,.pdf,.txt,.md,.html"><div class="df"><button class="db db-s" onclick="document.getElementById('upOv').classList.remove('show')">Cancel</button><button class="db db-p" onclick="handleUpload()">Open</button></div></div></div>
+
+<!-- EDITOR -->
+<div class="canvas">
+<div class="page">
+<div id="editor" contenteditable="true" spellcheck="true">
+<h1>PETITION FOR REDRESS OF GRIEVANCES</h1>
+<h2>CONGRESSIONAL RECOGNITION OF SOVEREIGN CITIZENS</h2>
+<p>Congress enacted Joint Resolution, 54 Stat. 178 (May 3, 1940), which states:</p>
+<div class="statute">"Whereas some two million young men and women in the United States each year reach the age of twenty-one years; and Whereas it is desirable that the sovereign citizens of our Nation be prepared for the responsibilities and impressed with the significance of their status in our self-governing Republic: Therefore be it Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That the third Sunday in May each year be, and hereby is, set aside as Citizenship Day and that the President of the United States is hereby authorized and requested to issue annually a proclamation setting aside that day as a public occasion for the recognition of all who, by coming of age or naturalization, have attained the status of citizenship..."</div>
+<h2>WHAT CONGRESS ESTABLISHED</h2>
+<p>Congress identified individuals who reach the age of majority (twenty-one years) as sovereign citizens.</p>
+<p>Congress stated that sovereign citizens exist in a self-governing Republic.</p>
+<p>Congress mandated that civil and educational authorities make plans for full instruction of future citizens in their responsibilities and opportunities as sovereign citizens.</p>
+<p>Congress directed the judiciary to address newly naturalized citizens upon the form and genius of the Government and the privileges and responsibilities of citizenship.</p>
+<h2>PRESIDENTIAL PROCLAMATIONS CONFIRMING SOVEREIGN CITIZENSHIP</h2>
+<p>President Harry S. Truman issued Proclamation 2680 (March 12, 1946) pursuant to 54 Stat. 178, stating:</p>
+<div class="statute">"Now, Therefore, I, Harry S. Truman, President of the United States of America, pursuant to the aforesaid public resolution do hereby designate Sunday, May 19, 1946, as 'I Am An American Day,' and do set that day aside as a public occasion for the honoring of American citizenship by giving special recognition to all our citizens who have recently become full members of the body politic."</div>
+<p>Every President since 1940 has honored this recognition of sovereign citizenship status.</p>
+<h2>SOVEREIGN CITIZENSHIP STATUS CANNOT BE ABRIDGED BY CONGRESS</h2>
+<p>Congress acknowledged that individuals upon reaching majority become sovereign citizens in a self-governing Republic.</p>
+<p>Congress has no authority to revoke, suspend, or abridge the status of sovereign citizenship once attained.</p>
+<p>The emergency governance framework imposed since March 9, 1933, operates in direct violation of sovereign citizenship status.</p>
+<p>The Senate Special Committee documented that emergency statutes conferred authority "to rule the country without reference to normal constitutional processes."</p>
+<p>Governance without reference to normal constitutional processes is incompatible with a self-governing Republic of sovereign citizens.</p>
+<h2>TRADING WITH THE ENEMY ACT — NEVER REPEALED</h2>
+<p>The Trading with the Enemy Act amendment of March 9, 1933 (48 Stat. 1) extended executive authority from "time of war" to "any other period of national emergency declared by the President."</p>
+<p>This statute was NEVER repealed.</p>
+<p>The National Emergencies Act, Title IV, §401(a), 90 Stat. 1254 (1976) states:</p>
+<div class="statute">"The provisions of this Act shall not apply to the following provisions of law, the powers and authorities conferred thereby and actions taken thereunder: (1) Sections 5(b)... of the Act of October 6, 1917, as amended..."</div>
+<p>Section 5(b) of the Trading with the Enemy Act was expressly EXCLUDED from termination.</p>
+<h2>EMERGENCY PROCLAMATIONS — NEVER TERMINATED</h2>
+<p>Senate Report No. 93-549 (1973) documented:</p>
+<div class="statute">"Since March 9, 1933, the United States has been in a state of declared national emergency. In fact, there are now in effect four presidentially proclaimed states of national emergency..."</div>
+<p>The four proclamations were:</p>
+<p>Proclamation 2039 (March 6, 1933) — Banking Emergency</p>
+<p>Proclamation 2914 (December 16, 1950) — Korean Conflict Emergency</p>
+<p>Proclamation 3972 (March 23, 1970) — Postal Service Emergency</p>
+<p>Proclamation 4074 (August 15, 1971) — Economic Emergency</p>
+<p>None were terminated. Their legal effects were preserved by the National Emergencies Act §502(a), 90 Stat. 1265 (1976):</p>
+<div class="statute">"The termination of a national emergency shall not affect— (1) any action taken or proceeding pending not finally concluded or determined on such date; (2) any action or proceeding based on any act committed prior to such date; or (3) any rights or duties that matured or penalties that were incurred prior to such date."</div>
+<h2>PRESERVATION OF EMERGENCY FRAMEWORK</h2>
+<p>Congress acknowledged governance outside normal constitutional processes.</p>
+<p>Congress did NOT repeal the statutes enabling such governance.</p>
+<p>Congress did NOT terminate the emergency proclamations retroactively.</p>
+<p>Congress did NOT restore normal constitutional processes.</p>
+<p>Congress PRESERVED all actions taken under emergency authority.</p>
+<h2>VIOLATION OF SOVEREIGN CITIZENSHIP STATUS</h2>
+<p>Sovereign citizens in a self-governing Republic cannot be governed outside normal constitutional processes.</p>
+<p>Emergency governance violates the self-governing nature of the Republic acknowledged by Congress in 54 Stat. 178.</p>
+<p>The 470 emergency statutes documented by the Senate Special Committee delegate to the Executive powers ordinarily exercised by Congress.</p>
+<p>This delegation strips sovereign citizens of their self-governing status.</p>
+<h2>INDIVIDUALS HAVE THE RIGHT TO NON-STATUTORY CITIZENSHIP</h2>
+<p>Sovereign citizenship is a constitutional status, not a statutory creation.</p>
+<p>Congress acknowledged this status but did not create it.</p>
+<p>The status exists upon attainment of majority as recognized by 54 Stat. 178.</p>
+<p>Congress has no authority to convert sovereign citizenship into statutory citizenship subject to administrative regulation.</p>
+<p>Congress has no authority to abridge the self-governing rights of sovereign citizens through emergency statutes.</p>
+<h2>REMEDY DEMANDED</h2>
+<p>Immediate repeal of the Trading with the Enemy Act amendment (48 Stat. 1) as Congress has no constitutional authority to place American civilians under military jurisdiction and control.</p>
+<p>Immediate termination of all emergency proclamations and their preserved effects that purport to suspend the Constitution, as there is no delegation of authority for any public representative, servant, trustee, or fiduciary to suspend that sacred instrument.</p>
+<p>Immediate restoration of governance under normal constitutional processes — Congress is prohibited eternally from making any law that abridges the rights of the People as delineated in the Bill of Rights, whether enumerated or unenumerated.</p>
+<p>Recognition that Sovereign American-Citizens retain their right of autonomous self-governing status and cannot be subjected to emergency rule which purports to suspend the Constitution and the protections provided thereby under any circumstance.</p>
+<p>Recognition that individuals who have attained the age of majority are Sovereign American-Citizens as acknowledged by Congress in 54 Stat. 178.</p>
+</div></div></div>
+
+<!-- STATUS -->
+<div class="status"><span>Page<b id="sP">1</b></span><span>Words<b id="sW">0</b></span><span>Chars<b id="sC">0</b></span><div class="status-r"><button onclick="setZoom(80)">80%</button><button onclick="setZoom(100)" style="font-weight:700">100%</button><button onclick="setZoom(120)">120%</button><button onclick="setZoom(150)">150%</button></div></div>
+
+<script>
+const E=document.getElementById('editor');
+function ex(c,v){E.focus();document.execCommand(c,false,v||null);}
+function doPaste(){navigator.clipboard.readText().then(t=>ex('insertText',t)).catch(()=>{});}
+function upS(){const t=E.innerText||'';const w=t.trim()?t.trim().split(/\s+/).length:0;document.getElementById('sW').textContent=w.toLocaleString();document.getElementById('sC').textContent=t.length.toLocaleString();document.getElementById('sP').textContent=Math.max(1,Math.ceil(w/250));}
+E.addEventListener('input',upS);
+
+// Menus
+function TM(el){const w=el.classList.contains('open');document.querySelectorAll('.mi.open').forEach(m=>m.classList.remove('open'));if(!w)el.classList.add('open');}
+document.addEventListener('click',e=>{if(!e.target.closest('.mi'))document.querySelectorAll('.mi.open').forEach(m=>m.classList.remove('open'));});
+document.querySelectorAll('.mi').forEach(i=>{i.addEventListener('mouseenter',function(){if(document.querySelector('.mi.open')&&!this.classList.contains('open')){document.querySelectorAll('.mi.open').forEach(m=>m.classList.remove('open'));this.classList.add('open');}});});
+
+// Ruler
+function buildRuler(){const r=document.getElementById('rulerT');r.innerHTML='';const d=96;for(let i=0;i<=8.5;i+=.125){const x=i*d;const t=document.createElement('div');t.className='rt2';t.style.left=x+'px';if(i%1===0){t.classList.add('maj');const n=document.createElement('div');n.className='rn2';n.style.left=x+'px';n.textContent=i;r.appendChild(n);}else if(i%.5===0)t.classList.add('half');else t.classList.add('qtr');r.appendChild(t);}}
+
+// MODAL SYSTEM (replaces prompt/alert/confirm)
+function showModal(type){
+    const m=document.getElementById('modal');
+    const d=document.getElementById('dlgContent');
+    const forms={
+        link:'<h3><i class="fas fa-link"></i> Insert Hyperlink</h3><label>Display Text</label><input type=text id=mText value="'+(window.getSelection().toString()||'Click here')+'"><label>URL</label><input type=url id=mUrl value="https://"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertLink()">Insert</button></div>',
+        fn:'<h3><i class="fas fa-shoe-prints"></i> Insert Footnote</h3><label>Footnote Text</label><input type=text id=mText placeholder="Enter footnote text…"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertFN()">Insert</button></div>',
+        en:'<h3><i class="fas fa-list-check"></i> Insert Endnote</h3><label>Endnote Text</label><input type=text id=mText placeholder="Enter endnote text…"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertEN()">Insert</button></div>',
+        bm:'<h3><i class="fas fa-bookmark"></i> Insert Bookmark</h3><label>Bookmark Name</label><input type=text id=mText value="bookmark1"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertBM()">Insert</button></div>',
+        tbl:'<h3><i class="fas fa-table"></i> Insert Table</h3><label>Rows</label><input type=text id=mRows value="3"><label>Columns</label><input type=text id=mCols value="3"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertTbl()">Insert</button></div>',
+        img:'<h3><i class="fas fa-image"></i> Insert Picture</h3><label>Image URL</label><input type=url id=mUrl placeholder="https://…"><label>Or Upload</label><input type=file id=mFile accept="image/*"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertImg()">Insert</button></div>',
+        hdr:'<h3><i class="fas fa-window-maximize"></i> Insert Header</h3><label>Header Text</label><input type=text id=mText value="PETITION FOR REDRESS OF GRIEVANCES"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertHdr()">Insert</button></div>',
+        ftr:'<h3><i class="fas fa-window-minimize"></i> Insert Footer</h3><label>Footer Text</label><input type=text id=mText value="RedressRight — The People Are the Sovereignty"><div class="df"><button class="db db-s" onclick="closeModal()">Cancel</button><button class="db db-p" onclick="doInsertFtr()">Insert</button></div>',
+    };
+    d.innerHTML=forms[type]||'';
+    m.classList.add('show');
+    setTimeout(()=>{const inp=d.querySelector('input');if(inp)inp.focus();},100);
+}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+
+// Modal action handlers
+function doInsertLink(){const t=document.getElementById('mText').value;const u=document.getElementById('mUrl').value;if(u)ex('insertHTML','<a href="'+u+'" target="_blank" style="color:#2b579a;text-decoration:underline">'+t+'</a>');closeModal();}
+let fnC=0;function doInsertFN(){const n=++fnC;const t=document.getElementById('mText').value;ex('insertHTML','<sup style="color:#2b579a;font-weight:bold;cursor:pointer" id="fnr-'+n+'">'+n+'</sup>');let s=document.getElementById('fns');if(!s){s=document.createElement('div');s.id='fns';s.style.cssText='border-top:1px solid #333;margin-top:36pt;padding-top:12pt;font-size:10pt';s.innerHTML='<div style="font-weight:bold;margin-bottom:8pt">FOOTNOTES</div>';E.appendChild(s);}const d=document.createElement('div');d.id='fn-'+n;d.innerHTML='<sup style="color:#2b579a;font-weight:bold">'+n+'</sup> '+(t||'[footnote]');s.appendChild(d);closeModal();}
+let enC=0;function doInsertEN(){const n=++enC;const t=document.getElementById('mText').value;ex('insertHTML','<sup style="color:#8b0000;font-weight:bold">['+n+']</sup>');let s=document.getElementById('ens');if(!s){s=document.createElement('div');s.id='ens';s.style.cssText='border-top:2px solid #333;margin-top:48pt;padding-top:12pt;font-size:10pt';s.innerHTML='<div style="font-weight:bold;margin-bottom:8pt;font-size:13pt;text-align:center">ENDNOTES</div>';E.appendChild(s);}const d=document.createElement('div');d.innerHTML='<sup style="color:#8b0000;font-weight:bold">['+n+']</sup> '+(t||'[endnote]');s.appendChild(d);closeModal();}
+function doInsertBM(){const n=document.getElementById('mText').value;if(n)ex('insertHTML','<a id="bm-'+n+'" name="'+n+'" style="border-left:3px solid #d4af37;font-size:0">&#8203;</a>');closeModal();}
+function doInsertTbl(){const r=+document.getElementById('mRows').value||3;const c=+document.getElementById('mCols').value||3;let h='<table>';for(let i=0;i<r;i++){h+='<tr>';for(let j=0;j<c;j++)h+='<td>&nbsp;</td>';h+='</tr>';}ex('insertHTML',h+'</table>');closeModal();}
+function doInsertImg(){const u=document.getElementById('mUrl').value;const f=document.getElementById('mFile').files[0];if(f){const r=new FileReader();r.onload=function(e){ex('insertHTML','<img src="'+e.target.result+'" style="max-width:100%;margin:12pt 0;display:block">');closeModal();};r.readAsDataURL(f);}else if(u){ex('insertHTML','<img src="'+u+'" style="max-width:100%;margin:12pt 0;display:block">');closeModal();}}
+function doInsertHdr(){const t=document.getElementById('mText').value;if(!t)return;const p=document.querySelector('.page');let h=document.getElementById('pg-hdr');if(!h){h=document.createElement('div');h.id='pg-hdr';h.contentEditable='true';h.style.cssText='border-bottom:1px solid #ccc;padding:8px 0 6px;margin-bottom:12px;font-size:10pt;color:#555;text-align:center;';p.insertBefore(h,p.firstChild);}h.textContent=t;closeModal();}
+function doInsertFtr(){const t=document.getElementById('mText').value;if(!t)return;const p=document.querySelector('.page');let f=document.getElementById('pg-ftr');if(!f){f=document.createElement('div');f.id='pg-ftr';f.contentEditable='true';f.style.cssText='border-top:1px solid #ccc;padding:6px 0 0;margin-top:12px;font-size:10pt;color:#555;text-align:center;';p.appendChild(f);}f.textContent=t;closeModal();}
+
+// Direct insert functions
+function insertSymbol(s){ex('insertText',s);}
+function insertStatute(){ex('insertHTML','<div class="statute" contenteditable="true">[Statute text]</div><p><br></p>');}
+function insertPageBreak(){ex('insertHTML','<div style="page-break-after:always;border-bottom:2px dashed #bbb;margin:20px 0;text-align:center;color:#999;font-size:10px;padding:4px">— PAGE BREAK —</div>');}
+function insertTOC(){const h=E.querySelectorAll('h1,h2,h3');if(!h.length)return;let t='<div style="border:1px solid #ddd;padding:16px 24px;margin:18pt 0;background:#fafafa"><h3 style="margin:0 0 12px;color:#2b579a;border-bottom:2px solid #2b579a;padding-bottom:6px">TABLE OF CONTENTS</h3>';h.forEach((x,i)=>{const l=parseInt(x.tagName[1]);x.id='toc-'+i;t+='<div style="margin:4px 0;padding-left:'+((l-1)*20)+'px"><a href="#toc-'+i+'" style="color:#333;text-decoration:none;font-weight:'+(l<=2?'bold':'normal')+'">'+x.textContent.trim()+'</a></div>';});t+='</div>';E.innerHTML=t+E.innerHTML;}
+
+// File ops
+function bH(b){return'<!DOCTYPE html><html><head><meta charset=UTF-8><style>body{font-family:Times New Roman,serif;line-height:2;padding:1in;max-width:8.5in;margin:0 auto}h1{text-align:center;font-size:18pt;margin-bottom:30pt}h2{font-size:14pt;margin:30pt 0 15pt;text-transform:uppercase}p{margin-bottom:12pt}.statute{margin:14pt 36pt;padding:12px 20px;background:#faf9f7;border-left:3px solid #333;font-style:italic}</style></head><body>'+b+'</body></html>';}
+function dl(b,n){const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=n;a.click();URL.revokeObjectURL(u);}
+function newDoc(){E.innerHTML='<h1>Untitled</h1><p><br></p>';upS();}
+function saveDoc(){dl(new Blob([bH(E.innerHTML)],{type:'text/html'}),'document.html');}
+function xTXT(){dl(new Blob([E.innerText],{type:'text/plain'}),'document-2.html');}
+function xDocx(){try{dl(htmlDocx.asBlob(bH(E.innerHTML)),'document.docx');}catch(e){saveDoc();}}
+async function xPDF(){try{const{jsPDF}=window.jspdf;const c=await html2canvas(E,{scale:2,backgroundColor:'#fff'});const i=c.toDataURL('image/png');const p=new jsPDF('p','in','letter');const pw=p.internal.pageSize.getWidth(),ph=p.internal.pageSize.getHeight();const ih=(c.height*pw)/c.width;let y=0;while(y<ih){if(y>0)p.addPage();p.addImage(i,'PNG',0,-y,pw,ih);y+=ph;}p.save('document-3.html');}catch(e){}}
+async function handleUpload(){const f=document.getElementById('fInput').files[0];if(!f)return;const x=f.name.split('.').pop().toLowerCase();try{if(x==='txt'||x==='md')E.innerHTML='<p>'+(await f.text()).replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>')+'</p>';else if(x==='html')E.innerHTML=new DOMParser().parseFromString(await f.text(),'text/html').body.innerHTML;else if(x==='docx')E.innerHTML=(await mammoth.convertToHtml({arrayBuffer:await f.arrayBuffer()})).value;else if(x==='pdf'){pdfjsLib.GlobalWorkerOptions.workerSrc='../cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';const p=await pdfjsLib.getDocument({data:await f.arrayBuffer()}).promise;let h='';for(let i=1;i<=p.numPages;i++){const pg=await p.getPage(i);const tc=await pg.getTextContent();h+='<p>'+tc.items.map(x=>x.str).join(' ')+'</p>';}E.innerHTML=h;}upS();document.getElementById('upOv').classList.remove('show');}catch(e){}}
+
+// Find
+function openFB(){document.getElementById('fbEl').classList.toggle('show');document.getElementById('fF').focus();}
+function doFind(){const v=document.getElementById('fF').value;if(v)window.find(v);}
+function doReplace(){const f=document.getElementById('fF').value,r=document.getElementById('fR').value;const s=window.getSelection();if(s.toString()===f)ex('insertText',r);else window.find(f);}
+function doReplaceAll(){const f=document.getElementById('fF').value,r=document.getElementById('fR').value;if(f)E.innerHTML=E.innerHTML.split(f).join(r);upS();}
+
+// View
+function setZoom(p){document.querySelector('.page').style.transform='scale('+(p/100)+')';document.querySelector('.page').style.transformOrigin='top center';}
+function wordCount(){const t=E.innerText,w=t.trim()?t.trim().split(/\s+/).length:0;const d=document.getElementById('dlgContent');d.innerHTML='<h3><i class="fas fa-calculator"></i> Word Count</h3><p style="font-size:14px;line-height:2"><b>Words:</b> '+w.toLocaleString()+'<br><b>Characters:</b> '+t.length.toLocaleString()+'<br><b>Paragraphs:</b> '+t.split(/\n\n+/).filter(x=>x.trim()).length+'</p><div class="df"><button class="db db-p" onclick="closeModal()">OK</button></div>';document.getElementById('modal').classList.add('show');}
+
+// Speech
+let rec=null,isR=false;
+function toggleMic(){const b=document.getElementById('micBtn');if(isR){rec?.stop();isR=false;b.classList.remove('on');return;}if(!('webkitSpeechRecognition'in window||'SpeechRecognition'in window))return;const SR=window.SpeechRecognition||window.webkitSpeechRecognition;rec=new SR();rec.continuous=true;rec.interimResults=false;rec.lang='en-US';rec.onresult=e=>{let t='';for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal)t+=e.results[i][0].transcript+' ';if(t){E.focus();ex('insertText',t);}};rec.onend=()=>{if(isR)rec.start();};rec.start();isR=true;b.classList.add('on');}
+function toggleSpeak(){const b=document.getElementById('spkBtn');if(speechSynthesis.speaking){speechSynthesis.cancel();b.classList.remove('on');return;}const s=window.getSelection();const t=(s&&s.toString().trim())?s.toString():E.innerText;if(!t.trim())return;const u=new SpeechSynthesisUtterance(t);u.rate=0.95;u.onend=()=>b.classList.remove('on');b.classList.add('on');speechSynthesis.speak(u);}
+
+// Keys
+document.addEventListener('keydown',e=>{const c=e.ctrlKey||e.metaKey;if(c&&e.key==='s'){e.preventDefault();saveDoc();}if(c&&e.key==='h'){e.preventDefault();openFB();}if(c&&e.key==='k'){e.preventDefault();showModal('link');}});
+
+// Init
+document.addEventListener('DOMContentLoaded',function(){var t=document.getElementById('mobileToggle'),n=document.getElementById('navLinks');if(t&&n){t.addEventListener('click',function(){t.classList.toggle('active');n.classList.toggle('active');});}upS();buildRuler();});
+</script>
+  <!-- E2ZERO AGENT SYPHER -->
+  <script src="e2zero-sypher.js"></script>
+</body>
+
+<!-- Mirrored from redressright.me/PFR.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:40 GMT -->
+</html>

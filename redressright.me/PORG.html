@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- REDRESSRIGHT NAVIGATION HEADER - START -->
+<style>
+    @media (max-width: 768px) {
+    }
+
+    /* === STANDARD REDRESSRIGHT NAV === */
+    .redressright-header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+    .redressright-nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+    .redressright-logo { font-size: 28px; font-weight: bold; color: #ffffff; text-decoration: none; letter-spacing: 1px; transition: color 0.3s ease; }
+    .redressright-logo:hover { color: #ffd700; }
+    .redressright-nav-links { display: flex; gap: 5px; list-style: none; overflow-x: auto; }
+    .redressright-nav-links::-webkit-scrollbar { height: 0; }
+    .redressright-nav-links li a { display: block; padding: 12px 15px; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 500; border-radius: 6px; transition: all 0.3s ease; position: relative; white-space: nowrap; }
+    .redressright-nav-links li a:hover { background-color: rgba(255,255,255,0.15); color: #ffd700; }
+    .redressright-nav-links li a::after { content: ''; position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: #ffd700; transition: width 0.3s; }
+    .redressright-nav-links li a:hover::after { width: 60%; }
+    .redressright-mobile-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+    .redressright-mobile-toggle span { width: 30px; height: 3px; background-color: #ffffff; border-radius: 3px; transition: all 0.3s ease; }
+    @media (max-width: 768px) {
+        .redressright-nav-links { position: absolute; top: 70px; left: 0; right: 0; background: linear-gradient(135deg, #1e3c72, #2a5298); flex-direction: column; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .redressright-nav-links.active { max-height: 600px; }
+        .redressright-nav-links li { border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .redressright-nav-links li a { padding: 16px 20px; border-radius: 0; }
+        .redressright-mobile-toggle { display: flex; }
+    }
+    /* === END STANDARD NAV === */
+
+</style>
+
+<header class="redressright-header">
+    <nav class="redressright-nav-container">
+        <a href="https://redressright.com/" class="redressright-logo">RedressRight</a>
+        <ul class="redressright-nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="PFR.html" style="color:#ffd700;font-weight:700">PETITION FOR REDRESS</a></li>
+            <li><a href="GAAP.html">GAAP LEDGER</a></li>
+            <li><a href="CLMP.html">MEMORIAL AND CONGRESSIONAL PETITION</a></li>
+            <li><a href="CPSA.html">CPSA</a></li>
+            <li><a href="PORG.html">PORG</a></li>
+            <li><a href="TRCF.html">TRCF</a></li>
+            <li><a href="DIBE.html">DIBE</a></li>
+            <li><a href="CCSN.html">CCSN</a></li>
+            <li><a href="EEEJ.html">EEEJ</a></li>
+            <li><a href="FDRF.html">FDRF</a></li>
+            <li><a href="At-PAR.html">At-Par Tutorial</a></li>
+            <li><a href="Agent.html" style="color:#00d4ff;font-weight:700">AI AGENT</a></li>
+            <li><a href="huma.html" style="color:#ffd700">AI HUMANIZER</a></li>
+            <li><a href="Terms.html">TERMS &amp; CONDITIONS</a></li>
+        </ul>
+        <div class="redressright-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('mobileToggle');
+        var navLinks = document.getElementById('navLinks');
+
+        if (toggle && navLinks) {
+            toggle.addEventListener('click', function () {
+                toggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function (event) {
+                var isClickInsideNav =
+                    toggle.contains(event.target) || navLinks.contains(event.target);
+                if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                    toggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
+<!-- REDRESSRIGHT NAVIGATION HEADER - END -->
+
+<!-- Mirrored from redressright.me/PORG.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:46 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congressional Petition for Redress - Electronic Signature Portal</title>
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&amp;family=EB+Garamond:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="../www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="../www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <style>
+        :root {
+            --navy-dark: #0a1628;
+            --navy-primary: #1a2a4a;
+            --navy-light: #2c3e5a;
+            --gold-dark: #8b7355;
+            --gold-primary: #c9a962;
+            --gold-light: #e8d5a3;
+            --cream: #faf8f3;
+            --cream-dark: #f0ebe0;
+            --parchment: #f5f0e6;
+            --ink-black: #1a1a1a;
+            --ink-gray: #4a4a4a;
+            --seal-red: #8b2942;
+            --success-green: #2d5a3d;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            color: var(--ink-black);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+
+        .header {
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--gold-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23c9a962' fill-opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .seal {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, var(--navy-light) 0%, var(--navy-dark) 100%);
+            box-shadow: 0 0 20px rgba(201, 169, 98, 0.3);
+        }
+
+
+        .seal-text {
+            color: var(--gold-primary);
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+
+        .header h1 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+
+        .header h2 {
+            font-family: 'EB Garamond', serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--cream);
+            letter-spacing: 0.1em;
+        }
+
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            background: var(--navy-primary);
+            padding: 0;
+            border-bottom: 2px solid var(--gold-dark);
+        }
+
+
+        .nav-tab {
+            padding: 1rem 2rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+
+        .nav-tab:hover {
+            background: var(--navy-light);
+            color: var(--gold-light);
+        }
+
+
+        .nav-tab.active {
+            background: var(--navy-light);
+            color: var(--gold-primary);
+            border-bottom-color: var(--gold-primary);
+        }
+
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+
+        .tab-content.active {
+            display: block;
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        .document-section {
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+
+        .document-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-dark));
+        }
+
+
+        .document-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+
+        .document-content {
+            font-size: 1.05rem;
+            text-align: justify;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+
+        .document-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+
+        .document-content::-webkit-scrollbar-track {
+            background: var(--cream-dark);
+            border-radius: 4px;
+        }
+
+
+        .document-content::-webkit-scrollbar-thumb {
+            background: var(--gold-dark);
+            border-radius: 4px;
+        }
+
+
+        .document-content p {
+            margin-bottom: 1.5rem;
+            text-indent: 2rem;
+        }
+
+
+        .document-content h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy-primary);
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+
+        .document-content h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy-light);
+            margin: 1.5rem 0 0.75rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--gold-primary);
+        }
+
+
+        .document-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+
+        .document-header h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+
+        .document-header h4 {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--ink-gray);
+            margin: 0;
+            text-align: center;
+            border: none;
+            padding: 0;
+        }
+
+
+        .statute-quote {
+            background: var(--cream-dark);
+            border-left: 4px solid var(--gold-primary);
+            padding: 1rem 1.5rem;
+            margin: 1rem 2rem;
+            font-style: italic;
+            font-size: 0.95rem;
+            text-indent: 0;
+        }
+
+
+        .document-content ul {
+            margin: 1rem 3rem;
+            list-style-type: disc;
+        }
+
+
+        .document-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+
+        .signature-panel {
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+
+        .signature-panel h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .signature-panel .subtitle {
+            text-align: center;
+            color: var(--ink-gray);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+
+        .form-group label {
+            display: block;
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-family: 'EB Garamond', serif;
+            font-size: 1.1rem;
+            border: 2px solid var(--gold-dark);
+            border-radius: 4px;
+            background: var(--cream);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            user-select: text;
+        }
+
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px rgba(201, 169, 98, 0.3);
+        }
+
+
+        .signature-canvas-container {
+            margin: 1.5rem 0;
+        }
+
+
+        .signature-canvas-container label {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 600;
+            color: var(--navy-primary);
+            font-size: 1.1rem;
+        }
+
+
+        .canvas-wrapper {
+            margin-top: 0.5rem;
+            border: 3px solid var(--navy-primary);
+            border-radius: 4px;
+            background: #fff;
+            position: relative;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+
+        #signatureCanvas {
+            width: 100%;
+            height: 200px;
+            cursor: crosshair;
+            display: block;
+            touch-action: none;
+        }
+
+
+        .canvas-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--ink-gray);
+            font-style: italic;
+            pointer-events: none;
+            opacity: 0.5;
+            font-size: 1.2rem;
+        }
+
+
+        .signature-line {
+            position: absolute;
+            bottom: 40px;
+            left: 10%;
+            right: 10%;
+            border-bottom: 1px solid var(--ink-gray);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+
+        .signature-x {
+            position: absolute;
+            bottom: 35px;
+            left: 8%;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--ink-gray);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+
+        .signature-instruction {
+            text-align: center;
+            font-style: italic;
+            color: var(--ink-gray);
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+
+        .citizenship-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--cream);
+            border: 2px solid var(--gold-dark);
+            border-radius: 4px;
+        }
+
+
+        .citizenship-section .section-label {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            color: var(--navy-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+
+        .citizenship-section .required {
+            color: var(--seal-red);
+        }
+
+
+        .citizenship-instruction {
+            color: var(--ink-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+
+        .citizenship-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+
+        .citizenship-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+
+        .citizenship-option:hover {
+            border-color: var(--gold-primary);
+            box-shadow: 0 2px 8px rgba(201, 169, 98, 0.2);
+        }
+
+
+        .citizenship-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 0.2rem;
+            accent-color: var(--navy-primary);
+            cursor: pointer;
+        }
+
+
+        .citizenship-option label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+
+        .citizenship-option label strong {
+            display: block;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            color: var(--navy-dark);
+            margin-bottom: 0.25rem;
+        }
+
+
+        .citizenship-option .option-desc {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--ink-gray);
+            font-style: italic;
+        }
+
+
+        .citizenship-option:has(input:checked) {
+            border-color: var(--navy-primary);
+            background: var(--gold-light);
+            box-shadow: 0 2px 8px rgba(26, 42, 74, 0.15);
+        }
+
+
+        .canvas-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+
+        .btn-secondary {
+            background: var(--cream-dark);
+            color: var(--navy-primary);
+            border: 2px solid var(--gold-dark);
+        }
+
+
+        .btn-secondary:hover {
+            background: var(--gold-light);
+        }
+
+
+        .btn-primary {
+            background: linear-gradient(180deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+            color: var(--gold-light);
+            border: 2px solid var(--gold-primary);
+            flex: 1;
+        }
+
+
+        .btn-primary:hover {
+            background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy-primary) 100%);
+            box-shadow: 0 4px 15px rgba(201, 169, 98, 0.3);
+        }
+
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--cream);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+        }
+
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 0.25rem;
+            accent-color: var(--navy-primary);
+        }
+
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            color: var(--ink-black);
+            line-height: 1.6;
+        }
+
+
+        .success-message {
+            display: none;
+            background: linear-gradient(180deg, var(--success-green) 0%, #1e4030 100%);
+            color: var(--cream);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 1.5rem;
+            border: 2px solid var(--gold-primary);
+        }
+
+
+        .success-message h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .signatory-count {
+            background: var(--navy-primary);
+            color: var(--gold-light);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 2px solid var(--gold-primary);
+        }
+
+
+        .signatory-count span {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+
+        .addendum-section {
+            background: var(--parchment);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+
+        .addendum-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+
+        .addendum-subtitle {
+            text-align: center;
+            color: var(--ink-gray);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+
+        .signatories-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+
+        .signatory-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: var(--cream);
+            border: 1px solid var(--gold-dark);
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+
+        .signatory-item:hover {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+
+        .signatory-number {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--navy-primary);
+            min-width: 40px;
+        }
+
+
+        .signatory-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+
+        .signatory-name {
+            font-size: 1.1rem;
+        }
+
+
+        .signatory-location {
+            font-size: 0.9rem;
+            color: var(--ink-gray);
+        }
+
+
+        .signatory-status {
+            font-size: 0.85rem;
+            color: var(--navy-primary);
+            font-style: italic;
+            padding: 0.2rem 0.5rem;
+            background: var(--gold-light);
+            border-radius: 3px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+
+        .signatory-signature {
+            max-width: 150px;
+            max-height: 60px;
+            border: 1px solid var(--gold-dark);
+            border-radius: 3px;
+            padding: 3px;
+            background: #fff;
+        }
+
+
+        .signatory-date {
+            font-size: 0.9rem;
+            color: var(--ink-gray);
+            min-width: 120px;
+            text-align: right;
+        }
+
+
+        .no-signatories {
+            text-align: center;
+            color: var(--ink-gray);
+            font-style: italic;
+            padding: 3rem;
+        }
+
+
+        .export-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gold-primary);
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        .footer {
+            background: var(--navy-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            border-top: 4px solid var(--gold-primary);
+        }
+
+
+        .footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .nav-tab {
+                flex: 1;
+                min-width: 120px;
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .document-section,
+            .signature-panel,
+            .addendum-section {
+                padding: 1.5rem;
+            }
+            
+            .citizenship-section {
+                padding: 1rem;
+            }
+            
+            .citizenship-option {
+                padding: 0.75rem;
+            }
+            
+            .citizenship-option label strong {
+                font-size: 1rem;
+            }
+            
+            .signatory-item {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            
+            .signatory-info {
+                flex: 1 1 100%;
+                order: 1;
+            }
+            
+            .signatory-number {
+                order: 0;
+            }
+            
+            .signatory-signature {
+                order: 2;
+                max-width: 120px;
+            }
+            
+            .signatory-date {
+                order: 3;
+                text-align: left;
+                min-width: auto;
+            }
+        }
+
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .nav-tabs,
+            .export-section,
+            .footer,
+            .header {
+                display: none !important;
+            }
+            
+            #sign,
+            #sign.tab-content {
+                display: none !important;
+            }
+            
+            .tab-content {
+                display: block !important;
+                animation: none !important;
+            }
+            
+            #document,
+            #document.tab-content,
+            #signatories,
+            #signatories.tab-content {
+                display: block !important;
+                page-break-inside: avoid;
+            }
+            
+            .document-content {
+                max-height: none !important;
+                overflow: visible !important;
+                page-break-inside: auto;
+            }
+            
+            .document-section {
+                page-break-after: auto;
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .addendum-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            p, h1, h2, h3, h4, h5, h6, div, span {
+                page-break-inside: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            .document-section,
+            .signature-panel,
+            .addendum-section,
+            .signatory-item,
+            .signatory-count {
+                background: #f5f0e6 !important;
+                border: 1px solid #8b7355 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-content">
+        <div class="seal">
+            <div class="seal-text">We The<br>People</div>
+        </div>
+        <h1>Congressional Petition for Redress</h1>
+        <h2>Access to Article III Common Law Courts and Constitutional Governance</h2>
+    </div>
+</header>
+
+
+<nav class="nav-tabs">
+    <button class="nav-tab active" data-tab="document">The Petition</button>
+    <button class="nav-tab" data-tab="sign">Sign the Petition</button>
+    <button class="nav-tab" data-tab="signatories">View Signatories</button>
+</nav>
+
+
+<main class="container">
+
+    <!-- Document Tab -->
+    <div id="document" class="tab-content active">
+        <div class="document-section">
+            <h2 class="document-title">Congressional Petition for Redress of Grievances<br>Emergency Restoration of Access to Article III Common Law Courts and Constitutional Governance</h2>
+            
+            <div class="document-content" id="documentContent">
+                <!-- Document content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sign Tab -->
+    <div id="sign" class="tab-content">
+        <div class="signatory-count">
+            Total Signatories: <span id="totalCount">0</span>
+        </div>
+        
+        <div class="signature-panel">
+            <h3>Become a Signatory</h3>
+            <p class="subtitle">By signing below, you affirm your support for this Congressional Petition for Redress</p>
+            
+            <form id="signatureForm">
+                <div class="form-group">
+                    <label for="fullName">Full Legal Name (Print)</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full legal name">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="city">City, State, ZIP</label>
+                    <input type="text" id="city" name="city" required placeholder="City, State ZIP">
+                </div>
+
+
+                <div class="citizenship-section">
+                    <label class="section-label">Citizenship Status Declaration <span class="required">*</span></label>
+                    <p class="citizenship-instruction">Select the classification that applies to your status (required):</p>
+                    
+                    <div class="citizenship-options">
+                    <div class="citizenship-option">
+                    <input type="radio" id="citizenUS" name="citizenshipStatus" value="United States citizen" required>
+                    <label for="citizenUS">
+                    <strong>United States citizen</strong>
+                    <span class="option-desc">As defined under the Immigration and Nationality Act of 1952, 66 Stat. 163 (8 U.S.C. § 1401)</span>
+                    </label>
+                    </div>
+                    
+                    <div class="citizenship-option">
+                    <input type="radio" id="citizenAmerican" name="citizenshipStatus" value="American citizen">
+                    <label for="citizenAmerican">
+                    <strong>American citizen</strong>
+                    <span class="option-desc">As recognized under the Constitution and common law</span>
+                    </label>
+                    </div>
+                    
+                    <div class="citizenship-option">
+                    <input type="radio" id="citizenSovereign" name="citizenshipStatus" value="Congressionally recognized Sovereign citizen">
+                    <label for="citizenSovereign">
+                    <strong>Congressionally recognized Sovereign citizen</strong>
+                    <span class="option-desc">As identified pursuant to 54 Stat. 67 (1940), 66 Stat. 108 (1952), and 70 Stat. 777 (1956)</span>
+                    </label>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="signature-canvas-container">
+                    <label>Electronic Signature <span style="color: var(--seal-red);">*</span></label>
+                    <p class="signature-instruction">Use your mouse, stylus, or finger to sign in the box below</p>
+                    <div class="canvas-wrapper">
+                    <canvas id="signatureCanvas" width="800" height="200"></canvas>
+                    <div class="signature-line"></div>
+                    <div class="signature-x">✕</div>
+                    <div class="canvas-placeholder" id="canvasPlaceholder">Sign Here</div>
+                    </div>
+                    <p class="signature-instruction">Your electronic signature will be captured and recorded with your submission</p>
+                    <div class="canvas-actions">
+                    <button type="button" class="btn btn-secondary" id="clearCanvas">Clear Signature</button>
+                    </div>
+                </div>
+
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="affirmation" required>
+                    <label for="affirmation">
+                    I declare under penalty of the laws of the United States of America that I have read and understand this Congressional Petition for Redress of Grievances. I affirm that the facts stated herein are derived from the official records and findings of the United States Congress, and I add my name as a signatory in support of the demands stated herein. I am competent to make this declaration.
+                    </label>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    Sign and Add My Name to the Petition
+                </button>
+            </form>
+
+
+            <div class="success-message" id="successMessage">
+                <h4>✓ Your Signature Has Been Recorded</h4>
+                <p>Thank you for becoming a signatory to this Congressional Petition for Redress.</p>
+                <p>Your name has been added to the official addendum of signatories.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Signatories Tab -->
+    <div id="signatories" class="tab-content">
+        <div class="signatory-count">
+            Total Signatories: <span id="totalCountDisplay">0</span>
+        </div>
+        
+        <div class="addendum-section">
+            <h3 class="addendum-title">Addendum A</h3>
+            <p class="addendum-subtitle">List of Signatories to the Congressional Petition for Redress of Grievances</p>
+            
+            <div class="signatories-list" id="signatoriesList">
+                <p class="no-signatories">No signatories yet. Be the first to sign this Petition.</p>
+            </div>
+
+
+            <div class="export-section">
+                <button class="btn btn-secondary" id="printBtn">Print Document with Signatures</button>
+                <button class="btn btn-secondary" id="exportBtn">Export Signatories (CSV)</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<footer class="footer">
+    <p>This Petition is filed pursuant to the First Amendment right of petition, congressional rules mandating receipt and referral, and the common law preserved by the Seventh Amendment.</p>
+</footer>
+
+
+<script>
+    // Document content - Congressional Petition for Redress from PORG
+    const documentText = `
+        <div class="document-header">
+            <h3>CONGRESSIONAL PETITION FOR REDRESS OF GRIEVANCES</h3>
+            <h4>EMERGENCY RESTORATION OF ACCESS TO ARTICLE III COMMON LAW COURTS AND CONSTITUTIONAL GOVERNANCE</h4>
+        </div>
+
+        <p style="text-align: center; font-style: italic; margin-bottom: 2rem;"><strong>From: The Class of AGE OF THE MAJORITY STATUS ENTITLER's</strong></p>
+        <p style="text-align: center; font-style: italic; margin-bottom: 2rem;"><strong>To: The United States House of Representatives and United States Senate</strong></p>
+        <p style="text-align: center; font-style: italic; margin-bottom: 2rem;"><strong>Re: Emergency Restoration of Access to Article III Common Law Courts and Constitutional Governance</strong></p>
+
+        <p style="text-align: center; font-style: italic; margin-bottom: 2rem;"><strong>THIS IS AN AFFIDAVIT, based on first-hand knowledge and/or facts and/or information, the allegations are truthful based on historical facts and actual records as well as documentary evidence admitted on the record and acknowledged by the NATIONAL EMERGENCY ACT of 1976 confirming the Senate report.</strong></p>
+
+        <h3>THE SAVINGS CLAUSE AND ITS EFFECT ON PRESIDENTIAL PROCLAMATION 2039</h3>
+
+        <h4>I. FACT - The National Emergencies Act Savings Clause</h4>
+        <p>The National Emergencies Act, Public Law 94-412, 90 Stat. 1255 (September 14, 1976), codified at 50 U.S.C. §1601(a), states:</p>
+        <p class="statute-quote">"All powers and authorities possessed by the President, any other officer or employee of the Federal Government, or any executive agency... as a result of the existence of any declaration of national emergency in effect on September 14, 1976, are terminated two years from September 14, 1976."</p>
+        <p>However, the savings clause in §1601(b) preserves certain authorities from termination.</p>
+
+        <h4>Presidential Proclamation 2039</h4>
+        <p>Issued on March 6, 1933, Proclamation 2039 declared a national banking emergency under the authority of the Trading with the Enemy Act of 1917, 40 Stat. 411.</p>
+
+        <h4>The Emergency Banking Act of March 9, 1933</h4>
+        <p>The Emergency Banking Act, Public Law 73-1, 48 Stat. 1 (March 9, 1933), in Section 1, approved and confirmed Presidential Proclamation 2039.</p>
+        <p class="statute-quote">"No such circulating notes shall be issued under this paragraph after the President has declared by proclamation that the emergency recognized by the President by proclamation of March 6, 1933, has terminated..."</p>
+        <p>This establishes that only the President can terminate the emergency declared by Proclamation 2039.</p>
+
+        <h4>The Trading with the Enemy Act Amendment</h4>
+        <p class="statute-quote">"During time of war or during any other period of national emergency declared by the President, the President may... investigate, regulate, or prohibit... any transactions in foreign exchange, transfers of credit between or payments by banking institutions..."</p>
+        <p>This broadened the Act's scope beyond wartime to encompass presidential emergency declarations.</p>
+
+        <h4>II. WHAT THE SAVINGS CLAUSE DID WITH REFERENCE TO PROCLAMATION 2039</h4>
+        <p>The Savings Clause of the National Emergencies Act <strong>exempted</strong> Proclamation 2039 and its underlying authority from automatic termination because:</p>
+        <ul>
+            <li>Section 401 of the Emergency Banking Act requires a presidential proclamation to terminate the March 6, 1933 emergency.</li>
+            <li>Congress lacks authority to terminate the emergency under the terms of the Act—only the President holds this power.</li>
+            <li>No President has issued a proclamation terminating the March 6, 1933 emergency.</li>
+            <li>The Trading with the Enemy Act authority, as amended, remains in effect at 50 U.S.C. §4305(b).</li>
+            <li>The National Emergencies Act cannot override the specific termination provision enacted by Congress in the Emergency Banking Act.</li>
+        </ul>
+        <p><strong>FACT:</strong> The Emergency Banking Act has never been amended to remove the presidential termination requirement or to grant Congress termination authority.</p>
+        <p><strong>FACT:</strong> Since Congress stipulated in the Act that only the President could terminate the emergency, and since no President has done so, Proclamation 2039 and its underlying statutory authority remain in effect under 50 U.S.C. §4305(b).</p>
+
+        <h3>CONTROLLING AUTHORITY</h3>
+        <ul>
+            <li>Emergency Banking Act of March 9, 1933, Public Law 73-1, 48 Stat. 1</li>
+            <li>Trading with the Enemy Act of October 6, 1917, 40 Stat. 411, as amended by 48 Stat. 1</li>
+            <li>National Emergencies Act, Public Law 94-412, 90 Stat. 1255 (September 14, 1976), codified at 50 U.S.C. §1601</li>
+            <li>50 U.S.C. §4305(b) (current codification of Trading with the Enemy Act Section 5(b) as amended)</li>
+            <li>Presidential Proclamation 2039 (March 6, 1933)</li>
+        </ul>
+
+        <h3>FACT 1 — Congressional Admission of Unconstitutional Emergency Governance</h3>
+        <p>The 1973 Senate Special Committee on the Termination of the National Emergency documented that since March 9, 1933, the United States has operated under continuous national emergency declarations.</p>
+        <p>Senate Report 93-549 (93rd Congress, 1st Session, 1973) states: "Since March 9, 1933, the United States has been in a state of declared national emergency."</p>
+        <p class="statute-quote">"These proclamations give force to 470 provisions of Federal law. These hundreds of statutes delegate to the President extraordinary powers, ordinarily exercised by the Congress, which affect the lives of American citizens in a host of all-encompassing manners. This vast range of powers, taken together, confer enough authority to rule the country without reference to normal constitutional processes."</p>
+        <p class="statute-quote">"A majority of the people of the United States have lived all of their lives under emergency rule... And, in the United States, actions taken by the Government in times of great crises have—from, at least, the Civil War—in important ways, shaped the present phenomenon of a permanent state of national emergency."</p>
+
+        <h3>FACT 2 — The 1933 Emergency Banking Act Was Enacted Without Constitutional Procedure</h3>
+        <p>Representative Ernest Lundeen stated in the Congressional Record (March 9, 1933):</p>
+        <p class="statute-quote">"The House of Representatives has passed, after forty minutes debate, a bill its Members never read and never saw, a bill whose author is unknown... I have petitioned a roll call, but have been unable to get the attention of the Chair... Fifteen men were standing, demanding a roll call... we have been refused recognition by the Chair."</p>
+        <p class="statute-quote">"There appears to be a printed copy at the Speaker's desk, but no printed copies are available for the House Members."</p>
+        <p class="statute-quote">"This bill would never have passed this House or any other House under normal constitutional procedure."</p>
+        <p>This violates Article I, Section 5, which requires roll call votes upon demand of one-fifth of Members present, and Article I, Section 7, which requires proper legislative deliberation.</p>
+
+        <h3>FACT 3 — No Constitutional Authority Exists for Emergency Suspension of Constitutional Processes</h3>
+        <p>The Constitution contains no clause authorizing:</p>
+        <ul>
+            <li>Suspension of the Constitution itself</li>
+            <li>Governance "without reference to normal constitutional processes"</li>
+            <li>Legislative abdication to Executive emergency powers</li>
+            <li>Replacement of Article III judicial power with emergency tribunals</li>
+        </ul>
+        <p>Article I, Section 9 permits only suspension of habeas corpus during rebellion or invasion—not suspension of constitutional government.</p>
+
+        <h3>FACT 4 — Common Law Predates the Constitution and Cannot Be Suspended</h3>
+        <p>English common law consisted of the rights, liberties, and customs of the people, documented in:</p>
+        <ul>
+            <li>Magna Carta (1297), 25 Edw. I, c. 29 — "We will sell to no man... justice or right"</li>
+            <li>Petition of Right (1628), 3 Car. I, c. 1 — protecting "rights and liberties of the people"</li>
+            <li>Habeas Corpus Act (1679), 31 Car. II, c. 2 — recognizing "the writ of habeas corpus"</li>
+            <li>English Bill of Rights (1689), 1 W. & M. Sess. 2, c. 2 — protecting "ancient and undoubted rights"</li>
+        </ul>
+        <p>The Northwest Ordinance (1787), Article II, guaranteed: "The inhabitants of the said territory shall always be entitled to the benefits of the writ of habeas corpus, and of the trial by jury... and of judicial proceedings according to the course of the common law."</p>
+
+        <h3>FACT 5 — American Adoption of Common Law Was Legislative, Not Judicial</h3>
+        <p>Judiciary Act of 1789, Section 34, 1 Stat. 73, 92 (codified at 28 U.S.C. §1652) provides: "The laws of the several states... shall be regarded as rules of decision in trials at common law..."</p>
+        <p>This Act adopted English common law as foundational American law.</p>
+        <p>California Civil Code §22.2 (enacted 1872) provides: "The common law of England, so far as it is not repugnant to or inconsistent with the Constitution of the United States, or the Constitution or laws of this State, is the rule of decision in all the courts of this State." This common law was not so-called judicial decisions of the English courts, but the laws put in place that protected the rights of people under that parliamentary government</p>
+
+        <h3>FACT 6 — The Constitution created Article III Courts through Congress and Possess Article III Protections</h3>
+        <p>The Constitution vests judicial power exclusively in Article III courts: "The judicial Power of the United States, shall be vested in one supreme Court, and in such inferior Courts as the Congress may from time to time ordain and establish." — Article III, Section 1</p>
+        <p>Congress created the first inferior Article III courts in the Judiciary Act of 1789, 1 Stat. 73.</p>
+        <p>Article III courts require:</p>
+        <ul>
+            <li>Life tenure during good behavior</li>
+            <li>Salary protection (cannot be diminished)</li>
+            <li>Exercise of constitutional judicial power</li>
+        </ul>
+        <p>Courts lacking these characteristics are legislative tribunals, not Article III courts.</p>
+
+        <h3>FACT 7 — The AGE OF THE MAJORITY STATUS ENTITLER's Are Being Denied Access to Article III Courts</h3>
+        <p>Individuals who have attained the age of majority are constitutionally entitled to:</p>
+        <ul>
+            <li>Access to Article III common law courts</li>
+            <li>Petition for writ of habeas corpus</li>
+            <li>Trial by jury</li>
+            <li>Due process under the Fifth Amendment</li>
+            <li>Equal protection under the Fourteenth Amendment</li>
+            <li>Exercise of rights retained under the Ninth Amendment</li>
+        </ul>
+        <p>Current federal district courts operate under statutory authority created during the acknowledged period of governance "without reference to normal constitutional processes."</p>
+        <p>No court has provided proof that it operates under pure Article III constitutional authority rather than emergency-derived statutory authority.</p>
+        <p>Filing fees are collected, complaints are filed, but challenges to jurisdiction based on constitutional grounds are systematically ignored or dismissed without addressing the fundamental constitutional defects.</p>
+
+        <h3>FACT 8 — This Displacement Constitutes a Coup Against Constitutional Government</h3>
+        <p>Black's Law Dictionary (4th Ed.) defines "coup d'etat" as: "A sudden and decisive action in politics, especially one effecting a change of government in violation of law."</p>
+        <p>When Congress admits it has governed "without reference to normal constitutional processes" for 88+ years, and when all three branches participate in this displacement without constitutional authorization, this constitutes:</p>
+        <ul>
+            <li>Usurpation of power not delegated by the Constitution</li>
+            <li>Violation of the oath to "support and defend" the Constitution</li>
+            <li>Deprivation of the people's right to constitutional government</li>
+            <li>Overthrow of the separation of powers established by the people</li>
+        </ul>
+        <p>This was accomplished without:</p>
+        <ul>
+            <li>Constitutional amendment</li>
+            <li>Delegation from the people</li>
+            <li>Lawful authority</li>
+            <li>Restoration after the emergency ended</li>
+        </ul>
+
+        <h3>FACT 9 — The Right to Petition Congress Is the Constitutional Remedy</h3>
+        <p>The First Amendment provides: "Congress shall make no law... abridging... the right of the people... to petition the Government for a redress of grievances."</p>
+        <p>2 U.S.C. §191 provides: "Petitions and memorials shall be referred by the Speaker to the appropriate committee."</p>
+        <p>House Rule XII, Clause 3, requires Congress to receive, docket, and refer petitions to the appropriate committee.</p>
+        <p>Because Congress alone possesses the constitutional power to create Article III courts under Article III, Section 1, Congress is the proper recipient of this Petition.</p>
+
+        <h3>CONSTITUTIONAL PROVISIONS</h3>
+        <ul>
+            <li>Article I, Section 1 — All legislative powers vested in Congress</li>
+            <li>Article I, Section 5 — Roll call required upon demand of one-fifth of Members</li>
+            <li>Article I, Section 7 — Bills must be properly enacted through constitutional procedure</li>
+            <li>Article I, Section 9 — Habeas corpus suspension limited to rebellion or invasion only</li>
+            <li>Article III, Section 1 — Judicial power vested in Supreme Court and inferior courts Congress creates</li>
+            <li>Article VI, Clause 2 — Constitution is supreme law; all officers bound by oath</li>
+            <li>First Amendment — Right to petition for redress cannot be abridged</li>
+            <li>Fifth Amendment — Due process required for deprivation of life, liberty, or property</li>
+            <li>Ninth Amendment — Rights retained by the people cannot be denied or disparaged</li>
+            <li>Tenth Amendment — Powers not delegated are reserved to states or the people</li>
+        </ul>
+
+        <h3>COMPULSORY CONCLUSION OF LAW</h3>
+
+        <h4>Conclusion 1</h4>
+        <p>Because the Constitution contains no clause authorizing suspension of constitutional processes, and because Congress admitted in Senate Report 93-549 that the government operated "without reference to normal constitutional processes" for 40+ years (now 92 years), the compelled conclusion is that the federal government has operated outside constitutional authorization since 1933.</p>
+
+        <h4>Conclusion 2</h4>
+        <p>Because the Emergency Banking Act of 1933 was passed without proper constitutional procedure—without Members reading it, without roll call vote despite demand, and without deliberation—the enactment violated Article I, Sections 5 and 7, rendering the Act and all derivative emergency powers constitutionally defective ab initio.</p>
+
+        <h4>Conclusion 3</h4>
+        <p>Because common law consists of foundational rights (Magna Carta, Petition of Right, Habeas Corpus Act, English Bill of Rights, Northwest Ordinance) that predate the Constitution and judicial decisions, and because these rights were legislatively adopted through the Judiciary Act of 1789 (1 Stat. 73, 92 / 28 U.S.C. §1652), common law rights are not subject to judicial creation, modification, or suspension.</p>
+
+        <h4>Conclusion 4</h4>
+        <p>Because habeas corpus is a right retained by the people under the Ninth Amendment, not a government-granted privilege, and because the Northwest Ordinance guarantees inhabitants "shall always be entitled" to habeas corpus, and because the First Amendment protects the right to petition for redress (including writs), there is no provision in the Constitution for any suspension of habeas corpus specifically Article I, Section 9 conditions rebellion or invasion, as such is unconstitutional.</p>
+
+        <h4>Conclusion 5</h4>
+        <p>Article III courts can only be created by Congress under constitutional authority in particular Article III, Section 1, these courts must possess life tenure, salary protection, and constitutional judicial power, any court operating under emergency-derived statutory authority rather than pure Article III authority is not a Article III court as defined by the Constitution.</p>
+
+        <h4>Conclusion 6</h4>
+        <p>The AGE OF THE MAJORITY STATUS ENTITLER's—each of the petitioners are individuals who have attained majority status and are entitled to full exercise of self-autonomous constitutionally secured individual sovereign capacity rights—are being and have been systematically denied access to true Article III common law courts operating under constitutional authority, this denial constitutes an unconstitutional abridgment of rights.</p>
+
+        <h4>Conclusion 7</h4>
+        <p>The investigation has been conducted, Congress has evaluated Congress and admitted emergency governance displaced constitutional processes, abridge the rights of Americans and a host of all-encompassing manners one of those encompassing manners was that of accessing the court under its constitutional authority and because all three branches (Legislative, Executive, Judicial) continued operating under this displaced structure without constitutional authorization, without termination of the emergency, and without restoration of constitutional government, this displacement constitutes a coup d'état against the constitutional government ordained and established by the people.</p>
+
+        <h4>Conclusion 8</h4>
+        <p>The grant is to Congress alone who possesses the constitutional power to create Article III courts under Article III, Section 1, and the First Amendment guarantees the right to petition Congress for redress, the proper constitutional remedy for denial of access to Article III courts is to petition Congress directly.</p>
+
+        <h3>PETITION FOR REDRESS</h3>
+        <p style="text-align: center; font-style: italic; margin-bottom: 2rem;"><strong>TO: The Honorable Members of the United States House of Representatives and United States Senate</strong></p>
+        <p>The undersigned Petitioners, members of the class AGE OF THE MAJORITY STATUS ENTITLER's, who have attained the age of majority and are entitled to full exercise of unalienable and inalienable constitutionally secured rights as well as access to constitutionally installed and maintained governance, hereby petition Congress for immediate redress of the following grievances:</p>
+
+        <h3>GRIEVANCE 1 — DENIAL OF ACCESS TO ARTICLE III COMMON LAW COURTS</h3>
+        <p>Petitioners are denied access to Article III courts operating under pure constitutional authority. Current federal district courts cannot demonstrate they operate under Article III judicial power rather than emergency-derived statutory authority created during the period Congress admits was "without reference to normal constitutional processes."</p>
+        <p><strong>REMEDY PETITIONED:</strong> Congress shall immediately create, designate, or restore Article III common law courts possessing full Article III protections (life tenure, salary protection, constitutional judicial power) and operating exclusively under constitutional authority, not emergency or statutory authority.</p>
+
+        <h3>GRIEVANCE 2 — UNCONSTITUTIONAL EMERGENCY GOVERNANCE WITHOUT DELEGATION</h3>
+        <p>Congress has admitted in Senate Report 93-549 that since March 9, 1933, the federal government has operated "without reference to normal constitutional processes" for 92 years. This displacement occurred without constitutional amendment, without delegation from the people, and in violation of the separation of powers established by the Constitution.</p>
+        <p><strong>REMEDY PETITIONED:</strong> Congress shall immediately declare the termination of all emergency powers that operate outside constitutional processes, restore constitutional separation of powers, and nullify all statutes, regulations, and actions taken under unconstitutional emergency authority that violate the rights retained by the people.</p>
+
+        <h3>GRIEVANCE 3 — VIOLATION OF DUE PROCESS AND FUNDAMENTAL RIGHTS</h3>
+        <p>The emergency regime has systematically deprived Petitioners of:</p>
+        <ul>
+            <li>Due process under the Fifth Amendment</li>
+            <li>Access to habeas corpus relief</li>
+            <li>Trial by jury in common law proceedings</li>
+            <li>Access to courts with constitutional jurisdiction</li>
+            <li>The right to petition for redress before constitutionally empowered tribunals</li>
+            <li>Rights retained under the Ninth Amendment</li>
+        </ul>
+        <p><strong>REMEDY PETITIONED:</strong> Congress shall document that an investigation has already occurred and that there is no need for any further delay by conducting another investigation of something that's already been decided. That all common law rights, including habeas corpus, trial by jury, due process, and access to Article III courts, have never been suspended and could not ever have been suspended as there is no so-called suspension clause in the Constitution!</p>
+
+        <h3>GRIEVANCE 4 — SYSTEMATIC REFUSAL TO ADDRESS JURISDICTIONAL CHALLENGES</h3>
+        <p>The District Courts systematically dismiss, ignore, or refuse to address challenges to their lack of Article III status and unconstitutional jurisdiction. Filing fees are collected, complaints are filed, but fundamental constitutional protections in the right to challenge are not adjudicated on the merits.</p>
+        <p><strong>REMEDY PETITIONED:</strong> Congress has the constitutional authority to mandate that all constitutionally created district courts prove their Article III status upon challenge, demonstrate they operate under constitutional rather than emergency authority, and adjudicate jurisdictional challenges on the merits rather than through a refusal to entertain and/or summarial dismissal.</p>
+
+        <h3>GRIEVANCE 5 — FAILURE TO ADJUDICATE CONSTITUTIONAL GOVERNMENT</h3>
+        <p>Despite the 1973 Senate Committee finding through a thorough investigation that emergency governance was unnecessary and constitutionally defective, Congress passed the National Emergencies Act of 1976 with a savings clause that preserved rather than terminated the pre-existing emergency powers, the intention of the original petition for redress on the subject matter, in other words Congress failed in its duty to provide redress for the grievance brought before it making its actions unconstitutional by definition and operation of law.</p>
+        <p><strong>REMEDY PETITIONED:</strong> Congress must as a matter of due process repeal the National Emergencies Act savings clause, formally terminate all emergency declarations dating to 1917 that apply to the civilian population, as this is a military act and the military cannot ever be used against the civilian population in the United States even in cases of insurrection and rebellion.</p>
+
+        <h3>GRIEVANCE 6 — PARTICIPATION OF THREE BRANCHES IN UNCONSTITUTIONAL GOVERNANCE</h3>
+        <p>All three branches—Legislative, Executive, and Judicial—have participated in and perpetuated unconstitutional governance "without reference to normal constitutional processes" for 92 years, constituting a coup against the sovereignty of the people (the people being the collective and not the individual) and the rights of individual sovereignty otherwise known as self-autonomy as well as the constitutional government ordained by the people.</p>
+        <p><strong>REMEDY PETITIONED:</strong> Congress shall conduct a full investigation into the unconstitutional emergency governance framework, hold hearings on the systematic denial of constitutional rights, and take all necessary legislative action to restore the constitutional government established by the people in 1789.</p>
+
+        <h3>GRIEVANCE 7 — VIOLATION OF FIRST AMENDMENT RIGHT TO PETITION</h3>
+        <p>Petitioners' right to petition for redress has been effectively nullified because:</p>
+        <ul>
+            <li>Courts operating under emergency authority cannot provide constitutional remedies</li>
+            <li>Jurisdictional challenges are systematically dismissed</li>
+            <li>Access to true Article III courts is denied</li>
+            <li>The government continues operating outside constitutional processes</li>
+        </ul>
+        <p><strong>REMEDY PETITIONED:</strong> Congress shall guarantee meaningful access to constitutional remedies by creating or restoring Article III courts, mandating adjudication of constitutional challenges on the merits, and ensuring all three branches operate under constitutional authority subject to the people's right to petition for redress.</p>
+
+        <h3>SPECIFIC RELIEF REQUESTED</h3>
+        <p>Petitioners respectfully request that Congress take the following immediate actions:</p>
+
+        <h4>1. CREATE OR DESIGNATE ARTICLE III COMMON LAW COURTS</h4>
+        <p>Pursuant to Article III, Section 1, authorize enactment legislation creating or designating inferior Article III courts possessing:</p>
+        <ul>
+            <li>Life tenure for judges</li>
+            <li>Salary protection</li>
+            <li>Exclusive constitutional jurisdiction</li>
+            <li>Authority to apply common law as defined by foundational rights (Magna Carta, Northwest Ordinance, etc.)</li>
+            <li>Immunity from emergency or statutory override</li>
+        </ul>
+
+        <h4>2. TERMINATE ALL UNCONSTITUTIONAL EMERGENCY POWERS</h4>
+        <p>Immediately terminate all national emergency declarations, executive orders, and delegated powers that operate "without reference to normal constitutional processes" and lack constitutional authorization.</p>
+
+        <h4>3. RECONFIRM CONSTITUTIONAL SEPARATION OF POWERS</h4>
+        <p>Enact legislation restoring:</p>
+        <ul>
+            <li>Legislative power exclusively to Congress (Article I)</li>
+            <li>Executive power within constitutional limits (Article II)</li>
+            <li>Judicial power exclusively to Article III courts (Article III)</li>
+        </ul>
+
+        <h4>4. NULLIFY UNCONSTITUTIONAL ENACTMENTS</h4>
+        <p>Declare null and void all statutes, regulations, executive orders, and judicial decisions enacted under the unconstitutional emergency regime that violate rights retained by the people under the Ninth Amendment.</p>
+
+        <h4>5. INVESTIGATE AND REMEDY THE COUP</h4>
+        <p>In 1973 a comprehensive set of hearings through the House and Senate Judiciary Committees was established investigating:</p>
+        <ul>
+            <li>How emergency governance displaced constitutional processes</li>
+            <li>Why Congress failed to restore constitutional government after 1973</li>
+            <li>How all three branches participated in unconstitutional governance</li>
+            <li>What measures are necessary to restore the constitutional republic</li>
+        </ul>
+        <p>It was conclusively determined that violations had occurred, and yet no remedy was provided. Whitewashing is not remedying!</p>
+
+        <h4>6. THE CONSTITUTION, NOT CONGRESS, GUARANTEES ACCESS TO CONSTITUTIONAL REMEDIES</h4>
+        <p> The Constitution is the enactment of the people through legislation, guaranteeing:</p>
+        <ul>
+            <li>Meaningful access to Article III courts for all AGE OF THE MAJORITY STATUS ENTITLER's</li>
+            <li>Adjudication of jurisdictional challenges on the merits, the right to petition for redress implies and requires action to remedy and not just to consider</li>
+            <li>Judicial, legislative, administrative duty to prove delegated authority status upon challenge</li>
+            <li>Prohibition against dismissal of constitutional claims without addressing constitutional defects</li>
+        </ul>
+
+        <h4>7. RESTORE COMMON LAW RIGHTS</h4>
+        <p>Reaffirm and protect all common law rights, including:</p>
+        <ul>
+            <li>Habeas corpus (as guaranteed by the Northwest Ordinance), is a common-law right not one of discretion</li>
+            <li>Trial by jury, as oppose a jury trial, is a mandatory provision under law when chosen by any party</li>
+            <li>Due process is a fundamental principle requiring adherence to law</li>
+            <li>The right to access every branch of government, including Access to courts</li>
+            <li>The right to petition for redress of grievances</li>
+            <li>All rights, liberties, and immunities inherited from English common law and adopted by the Judiciary Act of 1789</li>
+        </ul>
+
+        <h4>8. ISSUE FORMAL FINDINGS</h4>
+        <p>In 1976 Congress adopted the formal Congressional findings that:</p>
+        <ul>
+            <li>Emergency governance since 1933 operated without constitutional authorization</li>
+            <li>The 1933 Emergency Banking Act was unconstitutionally enacted</li>
+            <li>All three branches participated in displacement of constitutional processes</li>
+            <li>The people's constitutionally secured rights have been systematically abridged and violated for 92 continuous years</li>
+            <li>Constitutional government must be immediately reconfirmed, as the oath of office establishes acknowledgment of the contract</li>
+        </ul>
+
+        <h3>CONSTITUTIONAL MANDATE FOR CONGRESSIONAL ACTION</h3>
+        <p>Congress is constitutionally required to act on this Petition because:</p>
+        <ul>
+            <li><strong>Article III, Section 1</strong> — Congress alone possesses authority to create Article III courts</li>
+            <li><strong>First Amendment</strong> — Congress cannot abridge the right to petition for redress</li>
+            <li><strong>2 U.S.C. §191</strong> — Congress must receive and refer petitions to appropriate committee</li>
+            <li><strong>House Rule XII</strong> — Petitions must be received, docketed, and referred</li>
+            <li><strong>Oath of Office</strong> — All Members swear to "support and defend" the Constitution</li>
+            <li><strong>Article VI</strong> — All officers are bound by the Constitution as supreme law</li>
+            <li><strong>Marbury v. Madison</strong> — Unconstitutional acts are void and must be remedied</li>
+            <li><strong>United States v. Cruikshank</strong> — Right to petition is "precious liberty safeguarded by Bill of Rights"</li>
+        </ul>
+        <p>Congress may not lawfully refuse to receive this Petition, nor can it dismiss it without action, because redress implies a duty to correct the wrong one has committed.</p>
+
+        <h3>CONCLUSION</h3>
+        <p>The AGE OF THE MAJORITY STATUS ENTITLER's—individuals who have attained majority status and are entitled to full exercise of constitutionally secured rights—have been systematically deprived of access to Article III common law courts, access to the legislative process as well as due process, habeas corpus via the constraints of administrative government, this unconstitutional governance has continued continuously for 92 years, the legislatures that have been elected to official capacity had a duty and obligation to redress these issues and each year has failed to do so.</p>
+        <p>Congress has admitted this deprivation occurred "without reference to normal constitutional processes" in Senate Report 93-549 (1973). This knowledge was had during the hearing on the enactment of the March 9, 1933 ACT, and the chairman of the committee, Mr. Steagall and yes conspirators ignored each and all guardrails, benchmarks, and jurisdictional boundaries to place the American people in the relegated position of minors, stripping them of their rights, taking their securities that was held in trust and redistributing them amongst custodians without due process of law. <strong>THIS IS A TAKINGS VIOLATION</strong>!</p>
+        <p>The Constitution provides no authority for this displacement. In 1933, the United States Congress amended the Federal Reserve Act, identifying eligible papers for subsequent time as securities, collateral received at par when deposited with a Federal Reserve agent and/or member bank and/or United States Treasury. Over the years they have reneged on this deal, this contract. A contract because they seized all of the gold in the hands of the American people, and the remedy was to provide for the necessities of the people during the emergency; they even created the Farming Act, otherwise known as the Necessities of Life Act, documenting this fact. They unlawfully authorize the treasurer through its secretary to seize the gold in the hands of Americans "The first section of the bill, as I grasped it, is practically the War powers that were given back in 1917, with some slight amendments. The other gives supreme authority to the Secretary of the Treasury of the United States to impound all the gold in the United States in the hands of individuals, corporations, companies…” Did you notice, they said it was practically the war powers given back in 1917 was being amended, Congress was now applying it to the civilian population, making them, “enemies of the United States”, by the definition, intent and purpose of the act. They then proceed to state that they were giving supreme authority to the treasurer, to impound and or seize all the gold in the United States in the hands of individuals, which is called a takings. Congress confirmed it “The gold that is given up by the people in the present crisis should be delivered to the Government. It should be used to issue additional money upon which the people will not have to pay interest while it is in circulation."</p>
+        </p> If that were not enough, the courts have systematically ignored that notes deposited with the Federal Reserve for the advancement of Federal Reserve notes are to be received at par; Congress hasn't reminded them of it. However, the Federal Reserve Act still says that the notes are to be received at par and are redeemable at par in all parts of the United States. Homes are being seized, and false claims of a so-called crisis and a meltdown are being blamed on the people, despite over-collateralization, unjust enrichment, and the retention of pledge collateral in the "restricted collateral account." Depriving the people of their home, the so-called American dream, having them kicked out onto the street as if they had attempted to defraud the banks, when the facts are, their notes were the payment in full, and that the so-called banks received the even exchange in addition to over collateralization, has resulted in the abridgment of the rights of the people to be secure in their persons, possessions, property, papers, affects and houses. Congress, the executive branch, and the judicial branches have failed in their duties to protect the people and their right to be secure and are liable as a result thereof because they accepted the responsibility when they attempted the now-admitted coup for the past 92 years, of which there is no statute of limitations as a result of the continuation of the overt acts!<p>
+        <p>The remedy lies exclusively with Congress, which alone possesses the constitutional power to create/reestablish/designate Article III courts, terminate unconstitutional emergency powers, and restore the constitutional government ordained by the people.</p>
+        <p>This Petition is presented under the First Amendment right to petition for redress, pursuant to 2 U.S.C. §191 and House Rule XII, and demands immediate Congressional action to restore constitutional governance and access to Article III common law courts.</p>
+        <p>Petitioners reserve all rights, remedies, and constitutional protections, including but not limited to rights retained under the Ninth Amendment and all common law rights inherited from English law and adopted through the Judiciary Act of 1789 (1 Stat. 73, 92 / 28 U.S.C. §1652).</p>
+
+        <h3>VERIFICATION</h3>
+        <p>The undersigned Petitioners, members of the class AGE OF THE MAJORITY STATUS ENTITLER's, hereby verify under penalty of the law that the facts stated herein are true and accurate to the best of their knowledge and belief, and that the controlling authorities cited are accurate and binding. That I, Eeon have the authority to speak for the group and to present this petition on their behalf in conjunction with the other petition for redress on similar grounds. The two petitions are not to be consolidated into one but are to be recognized at two separate petitions with the signatures attached to the two petitions there is no jurisdiction and/or justification for consolidation and or construing otherwise!</p>
+        <p>This Petition is presented in good faith for the purpose of evidencing criminal wrongs respecting unconstitutional government and documenting the lack of access to Article III judicial power as mandated by the Constitution of the United States.</p>
+
+        <h3>PRESENTED TO:</h3>
+        <p style="text-align: center;">
+            The Honorable Speaker of the House of Representatives<br>
+            United States House of Representatives<br>
+            Washington, D.C. 20515<br><br>
+            The Honorable President Pro Tempore of the Senate<br>
+            United States Senate<br>
+            Washington, D.C. 20510
+        </p>
+
+        <h3>WITH DEMAND TO SUPPLY COPIES TO:</h3>
+        <ul>
+            <li>House Committee on the Judiciary</li>
+            <li>Senate Committee on the Judiciary</li>
+        </ul>
+
+        <h3>CERTIFICATE OF SERVICE</h3>
+        <p>The undersigned certifies that true and correct copies of this Petition for Redress of Grievances have been served upon the United States House of Representatives and United States Senate, and upon the House Committee on the Judiciary and Senate Committee on the Judiciary, pursuant to 2 U.S.C. §191 and House Rule XII, on or about this January 5, 2026 </p>
+    `;
+
+
+    // Firebase configuration - Using same Firebase project as CLMP
+    const firebaseConfig = {
+        apiKey: "AIzaSyD8-FW-gsw6mHv7ra9Xm8SMt4TJsgd1yhw",
+        authDomain: "congressional-memorial.firebaseapp.com",
+        projectId: "congressional-memorial",
+        storageBucket: "congressional-memorial.firebasestorage.app",
+        messagingSenderId: "41807806180",
+        appId: "1:41807806180:web:79db270a7e813ab63776f1"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+
+    // Initialize document content
+    document.getElementById('documentContent').innerHTML = documentText;
+
+
+    // Tab navigation
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.dataset.tab;
+            
+            navTabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            
+            tab.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+            
+            if (targetTab === 'signatories') {
+                renderSignatories();
+            }
+        });
+    });
+
+
+    // Signature Canvas
+    const canvas = document.getElementById('signatureCanvas');
+    if (!canvas) {
+        console.error('ERROR: Canvas element not found!');
+        alert('ERROR: Signature canvas not found. Please refresh the page.');
+    } else {
+        console.log('Canvas found:', canvas);
+    }
+    
+    const ctx = canvas.getContext('2d');
+    const placeholder = document.getElementById('canvasPlaceholder');
+    let isDrawing = false;
+    let hasSignature = false;
+
+
+    function resizeCanvas() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        const newWidth = rect.width > 0 ? rect.width : 800;
+        canvas.width = newWidth;
+        canvas.height = 200;
+        ctx.strokeStyle = '#1a1a1a';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        console.log('Canvas resized to:', canvas.width, 'x', canvas.height);
+    }
+
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+
+    function getCoordinates(e) {
+        const rect = canvas.getBoundingClientRect();
+        if (e.touches) {
+            return {
+                x: e.touches[0].clientX - rect.left,
+                y: e.touches[0].clientY - rect.top
+            };
+        }
+        return {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+        };
+    }
+
+
+    function startDrawing(e) {
+        console.log('START DRAWING', e.type);
+        isDrawing = true;
+        hasSignature = true;
+        placeholder.style.display = 'none';
+        const coords = getCoordinates(e);
+        ctx.beginPath();
+        ctx.moveTo(coords.x, coords.y);
+        e.preventDefault();
+    }
+
+
+    function draw(e) {
+        if (!isDrawing) return;
+        const coords = getCoordinates(e);
+        ctx.lineTo(coords.x, coords.y);
+        ctx.stroke();
+        e.preventDefault();
+    }
+
+
+    function stopDrawing() {
+        if (isDrawing) {
+            console.log('STOP DRAWING');
+        }
+        isDrawing = false;
+    }
+
+
+    console.log('Adding mouse event listeners to canvas...');
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
+
+
+    console.log('Adding touch event listeners to canvas...');
+    canvas.addEventListener('touchstart', startDrawing, { passive: false });
+    canvas.addEventListener('touchmove', draw, { passive: false });
+    canvas.addEventListener('touchend', stopDrawing, { passive: false });
+
+
+    document.getElementById('clearCanvas').addEventListener('click', () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        hasSignature = false;
+        placeholder.style.display = 'block';
+        console.log('Canvas cleared');
+    });
+
+
+    // Signatories storage - Firebase
+    async function getSignatories() {
+        try {
+            const snapshot = await db.collection('signatories').orderBy('timestamp', 'asc').get();
+            const signatories = [];
+            snapshot.forEach(doc => {
+                signatories.push({ id: doc.id, ...doc.data() });
+            });
+            return signatories;
+        } catch (error) {
+            console.error('Error getting signatories:', error);
+            return [];
+        }
+    }
+
+
+    async function saveSignatory(signatory) {
+        try {
+            await db.collection('signatories').add(signatory);
+            await updateCount();
+        } catch (error) {
+            console.error('Error saving signatory:', error);
+            alert('Error saving signature. Please try again.');
+        }
+    }
+
+
+    async function updateCount() {
+        const signatories = await getSignatories();
+        const count = signatories.length;
+        document.getElementById('totalCount').textContent = count;
+        document.getElementById('totalCountDisplay').textContent = count;
+    }
+
+
+    updateCount();
+
+
+    // Form submission
+    document.getElementById('signatureForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        if (!hasSignature) {
+            alert('Please provide your electronic signature before presentting.');
+            return;
+        }
+        
+        const citizenshipRadio = document.querySelector('input[name="citizenshipStatus"]:checked');
+        if (!citizenshipRadio) {
+            alert('Please select your citizenship status before presentting.');
+            return;
+        }
+        
+        const name = document.getElementById('fullName').value.trim();
+        const city = document.getElementById('city').value.trim();
+        const citizenshipStatus = citizenshipRadio.value;
+        const signatureData = canvas.toDataURL('image/png');
+        const date = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        const signatory = {
+            name: name,
+            city: city,
+            citizenshipStatus: citizenshipStatus,
+            signature: signatureData,
+            date: date,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        };
+        
+        await saveSignatory(signatory);
+        
+        // Reset form
+        document.getElementById('signatureForm').reset();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        hasSignature = false;
+        placeholder.style.display = 'block';
+        
+        // Show success message
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('signatureForm').style.display = 'none';
+        
+        setTimeout(() => {
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('signatureForm').style.display = 'block';
+        }, 5000);
+    });
+
+
+    // Render signatories
+    async function renderSignatories() {
+        const signatories = await getSignatories();
+        const container = document.getElementById('signatoriesList');
+        
+        if (signatories.length === 0) {
+            container.innerHTML = '<p class="no-signatories">No signatories yet. Be the first to sign this Petition.</p>';
+            return;
+        }
+        
+        let html = '';
+        signatories.forEach((sig, index) => {
+            html += `
+                <div class="signatory-item">
+                    <span class="signatory-number">${index + 1}.</span>
+                    <div class="signatory-info">
+                    <span class="signatory-name"><strong>${sig.name}</strong></span>
+                    <span class="signatory-location">${sig.city}</span>
+                    <span class="signatory-status">${sig.citizenshipStatus || 'Status not specified'}</span>
+                    </div>
+                    <img class="signatory-signature" src="${sig.signature}" alt="Electronic Signature of ${sig.name}">
+                    <span class="signatory-date">${sig.date}</span>
+                </div>
+            `;
+        });
+        
+        container.innerHTML = html;
+    }
+
+
+    // Print functionality
+    document.getElementById('printBtn').addEventListener('click', () => {
+        window.print();
+    });
+
+
+    // Export to CSV
+    document.getElementById('exportBtn').addEventListener('click', async () => {
+        const signatories = await getSignatories();
+        if (signatories.length === 0) {
+            alert('No signatories to export.');
+            return;
+        }
+        
+        let csv = 'Number,Name,Location,Citizenship Status,Date Signed\n';
+        signatories.forEach((sig, index) => {
+            csv += `${index + 1},"${sig.name}","${sig.city}","${sig.citizenshipStatus || 'Not specified'}","${sig.date}"\n`;
+        });
+        
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'porg_petition_signatories.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+</script>
+  <!-- E2ZERO AGENT SYPHER -->
+  <script src="e2zero-sypher.js"></script>
+</body>
+
+<!-- Mirrored from redressright.me/PORG.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:46 GMT -->
+</html>

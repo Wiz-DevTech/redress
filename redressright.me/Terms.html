@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from redressright.me/Terms.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:57 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Terms and Conditions - SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T.</title>
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Exo+2:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00f5ff;
+            --secondary-color: #ff00ff;
+            --accent-color: #00ff88;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --bg-glass: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: #b8c5d6;
+            --text-muted: #6b7280;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-neon: linear-gradient(135deg, #00f5ff 0%, #ff00ff 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 50px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Exo 2', sans-serif;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 245, 255, 0.15);
+            border-color: rgba(0, 245, 255, 0.6);
+            transform: translateX(-3px);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+        }
+
+        /* Particle Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(odd) {
+            background: var(--secondary-color);
+            animation-delay: -2s;
+        }
+
+        .particle:nth-child(3n) {
+            background: var(--accent-color);
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            text-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .content-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        /* Card Styles */
+        .legal-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .legal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-neon);
+        }
+
+        .legal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.1);
+            border-color: rgba(0, 245, 255, 0.4);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .card-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .legal-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .legal-content h1,
+        .legal-content h2,
+        .legal-content h3 {
+            font-family: 'Orbitron', monospace;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .legal-content h1 { font-size: 2rem; }
+        .legal-content h2 { font-size: 1.5rem; }
+        .legal-content h3 { font-size: 1.25rem; }
+
+        .legal-content p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .legal-content ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .legal-content .section-number {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-family: 'Orbitron', monospace;
+        }
+
+        .highlight-box {
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '\26A1';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-dark);
+            padding: 0 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .toc-link:hover {
+            color: var(--primary-color);
+            background: rgba(0, 245, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(0, 245, 255, 0.2);
+            padding: 3rem 0 2rem 0;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .signature-block {
+            background: var(--bg-glass);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .signature-title {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .legal-card {
+                padding: 2rem;
+                margin: 1rem 0;
+            }
+
+            .main-content {
+                padding: 4rem 1rem;
+            }
+
+            .toc {
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .back-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .legal-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Glowing effect for interactive elements */
+        .glow-on-hover {
+            transition: all 0.3s ease;
+        }
+
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Quick Links Hover Effects */
+        .quick-links-section a:hover {
+            background: rgba(0, 245, 255, 0.2) !important;
+            border-color: rgba(0, 245, 255, 0.6) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 245, 255, 0.3);
+        }
+
+        .quick-links-section a:active {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="index-2.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">We will help your strategy get better</h1>
+            <p class="hero-subtitle">Privacy Terms and Conditions</p>
+            <a href="#content" class="cta-button">View Terms</a>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links-section" style="padding: 4rem 2rem 2rem 2rem; max-width: 1200px; margin: 0 auto;">
+        <div style="background: var(--bg-glass); backdrop-filter: blur(20px); border: 1px solid rgba(0, 245, 255, 0.2); border-radius: 20px; padding: 2rem; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gradient-neon);"></div>
+
+            <h3 style="font-family: 'Orbitron', monospace; font-size: 1.5rem; font-weight: 700; color: var(--primary-color); text-align: center; margin-bottom: 2rem;">
+                Site Navigation
+            </h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <a href="index-2.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#127968; Home
+                </a>
+                <a href="PFR.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128203; PETITION FOR REDRESS
+                </a>
+                <a href="GAAP.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128202; GAAP LEDGER
+                </a>
+                <a href="CLMP.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128220; MEMORIAL AND CONGRESSIONAL PETITION
+                </a>
+                <a href="CPSA.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128737; CPSA
+                </a>
+                <a href="PORG.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#127758; PORG
+                </a>
+                <a href="TRCF.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128178; TRCF
+                </a>
+                <a href="DIBE.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#127793; DIBE
+                </a>
+                <a href="CCSN.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128224; CCSN
+                </a>
+                <a href="EEEJ.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#9878; EEEJ
+                </a>
+                <a href="FDRF.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128221; FDRF
+                </a>
+                <a href="At-PAR.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128187; At-Par Tutorial
+                </a>
+                <a href="Agent.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#129302; AI AGENT
+                </a>
+                <a href="huma.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 10px; text-decoration: none; color: var(--text-primary); font-weight: 500; text-align: center; transition: all 0.3s ease;">
+                    &#128300; AI HUMANIZER
+                </a>
+                <a href="Terms.html" style="display: block; padding: 1rem; background: rgba(0, 245, 255, 0.15); border: 1px solid rgba(0, 245, 255, 0.5); border-radius: 10px; text-decoration: none; color: var(--primary-color); font-weight: 600; text-align: center; transition: all 0.3s ease;">
+                    &#128203; TERMS &amp; CONDITIONS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- C.L.O.C.E.S.T. Policies Overview -->
+    <section style="padding: 2rem 2rem 0 2rem; max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2 style="font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 900; background: var(--gradient-neon); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
+                SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. Policies
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                Overview &middot; Arbitration &middot; Copyright &middot; Caveat Notice &middot; No Refund Policy &middot; CLOCEST Trust Agreement
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content" id="content">
+        <div class="content-grid">
+            <!-- Table of Contents -->
+            <aside class="toc">
+                <h3 class="toc-title">Table of Contents</h3>
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#overview" class="toc-link">Overview</a></li>
+                    <li class="toc-item"><a href="#clocest-trust" class="toc-link">CLOCEST Trust Agreement</a></li>
+                    <li class="toc-item"><a href="#no-refund" class="toc-link">No Refund Policy</a></li>
+                    <li class="toc-item"><a href="#arbitration" class="toc-link">Arbitration Immunity</a></li>
+                    <li class="toc-item"><a href="#inclusive" class="toc-link">Inclusive Comment</a></li>
+                    <li class="toc-item"><a href="#commentary" class="toc-link">Commentary</a></li>
+                    <li class="toc-item"><a href="#copyright" class="toc-link">Copyright Notice</a></li>
+                    <li class="toc-item"><a href="#caveat" class="toc-link">Caveat</a></li>
+                    <li class="toc-item"><a href="#arbitration-admin" class="toc-link">Arbitration &mdash; Administrative Remedy</a></li>
+                    <li class="toc-item"><a href="#notice-agent" class="toc-link">Notice to Agent</a></li>
+                </ul>
+            </aside>
+
+            <!-- Overview Section -->
+            <section class="legal-card fade-in" id="overview">
+                <div class="card-header">
+                    <div class="card-icon">&#128203;</div>
+                    <h2 class="card-title">Privacy Terms and Conditions</h2>
+                </div>
+                <div class="legal-content">
+                    <p>These terms establish the legal framework for arbitration and dispute resolution between parties under the authority of SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T.</p>
+                </div>
+            </section>
+
+            <!-- CLOCEST Trust Agreement Section -->
+            <section class="legal-card fade-in" id="clocest-trust">
+                <div class="card-header">
+                    <div class="card-icon">&#128506;</div>
+                    <h2 class="card-title">CLOCEST Trust Agreement</h2>
+                </div>
+                <div class="card-subtitle">Trust Framework &amp; Party-Beneficiary Relationship</div>
+                <div class="legal-content">
+                    <p>Arbitration services rendered under the CLOCEST Trust Agreement. By accessing or utilizing any TCAA services, parties acknowledge and accept the terms herein.</p>
+
+                    <p><span class="section-number">Effective Date:</span> Immediate<br>
+                    <span class="section-number">Document Reference:</span> NRP-TCAA-001</p>
+
+                    <h3>1. Nature of Services Rendered</h3>
+                    <p>The Conglomerate Arbitration Association (TCAA&trade;) provides professional arbitration services established under the Federal Arbitration Act of 1925, 43 Stat. 883 (9 U.S.C. &sect;&sect; 1-16). All services rendered are provided immediately upon engagement. Communications, documentation, legal research, case preparation, and administrative labor are expended without delay. Consequently, all costs incurred are irreversible.</p>
+
+                    <div class="highlight-box">
+                        <p><strong>Important Notice</strong></p>
+                        <p>This is a service. Individuals are paying for professional arbitration services&mdash;not for a so-called product. As labor, documentation, and communications are produced and delivered immediately upon initiation, no refunds shall be issued under any circumstances.</p>
+                    </div>
+
+                    <p>The Federal Arbitration Act establishes that written arbitration agreements "shall be valid, irrevocable, and enforceable" and creates "a body of federal substantive law of arbitrability" requiring courts to "rigorously enforce agreements to arbitrate" (<em>Moses H. Cone Memorial Hospital v. Mercury Construction Corp.</em>, 460 U.S. 1, 24-25).</p>
+
+                    <h3>2. Scope of Arbitration Services</h3>
+                    <p>TCAA arbitrations are solely and strictly for violations of property interests. This includes, but is not limited to, trespass upon property interests by other agencies and/or organizations that are:</p>
+                    <ul>
+                        <li>Training and/or selling and/or bartering and/or storing and/or utilizing an individual's property interests;</li>
+                        <li>Utilizing an individual's name, reputation, and/or image for commercial gain without express permission or authority;</li>
+                        <li>Interfering with constitutionally secured property rights held in trust.</li>
+                    </ul>
+
+                    <p>Constitutional rights ARE property interests (<em>Lynch v. Household Finance Corp.</em>, 405 U.S. 538, 552). The PROPERTY is the subject matter of arbitration&mdash;the RIGHT is what has been interfered with&mdash;not merely contractual relationships between parties.</p>
+
+                    <p>The Civil Rights Act of 1866, 14 Stat. 27, secured to all citizens "the full and equal benefit of all laws and proceedings for the security of person and property." The individual possesses UNLIMITED power to contract (<em>Hale v. Henkel</em>, 201 U.S. 43, 74-75) to place such property interests into trust arrangements for protection.</p>
+
+                    <h3>3. The CLOCEST Trust Agreement</h3>
+                    <p>By signing up at <a href="index.html" style="color: var(--primary-color);">https://redressright.me</a>, parties become party-beneficiaries to the CLOCEST trust agreement. As a result, they have agreed to place their property interests&mdash;and not the property itself&mdash;into trust for protection.</p>
+
+                    <p>The trustee's duty is to protect those property interests. However, that duty is discretionary, not absolute. The trustee exercises judgment in determining the appropriate course of action to safeguard trust assets and enforce rights against trespassers.</p>
+
+                    <div class="highlight-box">
+                        <p><strong>Party-Beneficiary</strong> signs up at redressright.me &rarr; <strong>Trustee</strong> (discretionary duty to protect) &rarr; <strong>Property Interests</strong> held in trust (not the property itself)</p>
+                    </div>
+
+                    <p><strong>Trustee's Role:</strong> The trustee is the party that sends out notices&mdash;not the beneficiary. The beneficiary has no direct rights respecting arbitration or the issuance of notices.</p>
+
+                    <p><strong>Petition for Arbitration:</strong> The trustee must petition for arbitration. Beneficiaries may ask and notify the trustee of any malfeasance and/or trespass upon trust property.</p>
+
+                    <p><strong>Trustee's Discretion:</strong> The trustee shall decide whether or not such trespass has occurred. This determination is within the trustee's sole discretion.</p>
+
+                    <h3>4. Notice and Dispute Resolution</h3>
+                    <p>There is no requirement for any party to disapprove that they are not utilizing a person's name and/or character and/or image and/or reputation and/or property interest for commercial gain. The burden is not on the protected party to continually contest unauthorized use.</p>
+
+                    <p>The trustee, upon notification from beneficiaries of malfeasance or trespass upon trust property, shall evaluate such claims and determine the appropriate remedy. Any person who utilizes constitutional property of another for commercial business without consent subjects themselves to liability for interference with trust property under the Civil Rights Act of 1871, 17 Stat. 13 (42 U.S.C. &sect; 1983).</p>
+
+                    <p><strong>Beneficiary Rights:</strong> While beneficiaries have no direct rights respecting arbitration or notices, they retain the ability to ask and notify the trustee of any malfeasance and/or trespass upon trust property. The trustee shall then decide whether or not such trespass has happened.</p>
+
+                    <h3>5. The Naming Convention: All Capital Letters</h3>
+                    <p>The practice of placing a name in all capital letters is not theoretical speculation&mdash;it is formally recognized in the style manual of the Statutes at Large, as well as the style manuals of the Clerk of the Court and the style manuals of the Secretary of State for the United States and the several states of the United States. This is known as the naming convention.</p>
+
+                    <p>The NAME in all capital letters represents a corporate entity until proven otherwise, as a result of the naming convention. The presumption is that the naming convention is applied whenever an individual's name is placed in a juristic format, and a juristic format of a so-called legal name is all capitalization.</p>
+
+                    <div class="highlight-box">
+                        <p><strong>Legal Presumption:</strong> This naming convention creates a rebuttable presumption that the ALL CAPS designation refers to a juristic entity&mdash;a corporate fiction&mdash;rather than the living individual. Understanding this distinction is essential in all arbitration proceedings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- No Refund Policy Section -->
+            <section class="legal-card fade-in" id="no-refund">
+                <div class="card-header">
+                    <div class="card-icon">&#128178;</div>
+                    <h2 class="card-title">No Refund Policy</h2>
+                </div>
+                <div class="card-subtitle">All Sales and Service Engagements Are Final</div>
+                <div class="legal-content">
+                    <h3>6. No Refund Policy</h3>
+                    <p>All sales and service engagements are final. TCAA offers no refunds. The services rendered are provided immediately upon engagement. Communications are produced, documentation is generated, legal research is conducted, and administrative labor is expended. These costs are irreversible.</p>
+
+                    <p>By engaging TCAA arbitration services, or by signing up at <a href="index.html" style="color: var(--primary-color);">https://redressright.me</a> as a party-beneficiary to the CLOCEST trust agreement, you acknowledge and agree that:</p>
+                    <ul>
+                        <li>You are purchasing a professional service, not a product;</li>
+                        <li>Services commence immediately upon payment and/or engagement;</li>
+                        <li>Labor, communications, and documentation are produced without delay;</li>
+                        <li>All costs associated with these services are non-refundable;</li>
+                        <li>No chargebacks, reversals, or refunds shall be issued for any reason;</li>
+                        <li>You have read, understood, and agree to be bound by this No Refund Policy and the associated Privacy Terms and Conditions.</li>
+                    </ul>
+
+                    <p>The Enforcement Act of 1870, 16 Stat. 140 (42 U.S.C. &sect; 1981), provides that "All persons within the jurisdiction of the United States shall have the same right in every State and Territory to make and enforce contracts." By engaging these services, you enter into a binding agreement acknowledging the irrevocable nature of service costs.</p>
+
+                    <h3>7. Legal Foundation</h3>
+                    <p>The Fifth and Fourteenth Amendment Due Process Clauses prohibit deprivation of life, liberty, or property without due process of law. Rights of personal liberty and private property are held sacred and cannot be lawfully interfered with absent due process (<em>Wilkinson v. Leland</em>, 27 U.S. 627, 657).</p>
+
+                    <p>The Civil Rights Act of 1871, 17 Stat. 13 (42 U.S.C. &sect; 1983), provides that "Every person who, under color of any statute, ordinance, regulation, custom, or usage... subjects, or causes to be subjected, any citizen of the United States... to the deprivation of any rights, privileges, or immunities secured by the Constitution and laws, shall be liable to the party injured."</p>
+
+                    <p>The Federal Arbitration Act creates a body of federal substantive law requiring rigorous enforcement of arbitration agreements. TCAA operates within this framework to vindicate constitutionally secured property interests held in trust.</p>
+
+                    <h3>8. Questions or Inquiries</h3>
+                    <p>For questions regarding this No Refund Policy, the CLOCEST trust agreement, or TCAA arbitration services, please contact us through the appropriate channels listed on our Contact page.</p>
+
+                    <p>By continuing to use this website and its services, you acknowledge that you have read, understood, and agree to all terms set forth in this No Refund Policy.</p>
+                </div>
+            </section>
+
+            <!-- Arbitration Immunity Section -->
+            <section class="legal-card fade-in" id="arbitration">
+                <div class="card-header">
+                    <div class="card-icon">&#9878;</div>
+                    <h2 class="card-title">Immunity of the Arbitrator and/or SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T.</h2>
+                </div>
+                <div class="card-subtitle">Competency to Testify; Attorney's Fees and Costs</div>
+                <div class="legal-content">
+                    <p><span class="section-number">(a)</span> An arbitrator and/or SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. and/or an arbitration organization acting in that capacity is immune from civil liability to the same extent as a judge of a court of this State acting in a judicial capacity.</p>
+
+                    <p><span class="section-number">(b)</span> The immunity afforded by this section supplements any immunity under other law.</p>
+
+                    <p><span class="section-number">(c)</span> The failure of an arbitrator to make a disclosure required by Section 12 does not cause any loss of immunity under this section.</p>
+
+                    <p><span class="section-number">(d)</span> In a judicial, administrative, or similar proceeding, an arbitrator or representative of an arbitration organization is not competent to testify, and may not be required to produce records as to any statement, conduct, decision, or ruling occurring during the arbitration proceeding, to the same extent as a judge of a court of this State acting in a judicial capacity. In this instance, the arbitrator acts as a legal representative for both parties with respect to the contract, and is incapable of surrendering, and/or delivering, and/or offering evidence, testimony, and/or records against either client for the benefit of either client or another party. This is a private matter between private parties, and the arbitrator is granted full immunity under all circumstances by all involved parties to include the representative organization associated with the arbitration, and/or their affiliates, and/or their subsidiaries, and/or their parent organizations. This subsection does not apply in the aforementioned such instances:</p>
+
+                    <div class="highlight-box">
+                        <p><span class="section-number">(1)</span> to the extent necessary to determine the claim of an arbitrator, arbitration organization, or representative of the arbitration organization against a party to the arbitration proceeding; or</p>
+
+                        <p><span class="section-number">(2)</span> to a hearing on a [motion] to vacate an award under Section 23(a)(1) or (2) if the [movant] establishes prima facie that a ground for vacating the award exists, such shall not have any effect on the original contract, and all parties agree that the arbitrator is free to rehear and to amend the original award if the award is deemed by any organization and/or party to be invalid.</p>
+                    </div>
+
+                    <p><span class="section-number">(e)</span> If a person commences a civil action against an arbitrator, arbitration organization, or representative of an arbitration organization arising from the services of the arbitrator, organization, or representative or if a person seeks to compel an arbitrator or a representative of an arbitration organization to testify or produce records in violation of subsection (d), and the court decides that the arbitrator, arbitration organization, or representative of the arbitration organization is immune from civil liability or that the arbitrator or representative of the organization is not competent to testify, the court shall award to the arbitrator, organization, or representative reasonable attorneys' fees and other reasonable expenses of litigation.</p>
+                </div>
+            </section>
+
+            <!-- Inclusive Comment Section -->
+            <section class="legal-card fade-in" id="inclusive">
+                <div class="card-header">
+                    <div class="card-icon">&#129309;</div>
+                    <h2 class="card-title">Inclusive Comment</h2>
+                </div>
+                <div class="legal-content">
+                    <p>Institution of a self-executing binding irrevocable contract coupled with interests, all parties visiting and/or viewing this site and/or contracting with this organization agrees to the terms contained herein and within the framework of this site. That any and all disputes associated with any and all arbitrations will be decided by arbitration, and all parties agree and consent to these terms, and the policies as stipulated within the framework of the policies and procedures of SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. This agreement shall be construed contractually and not otherwise, and shall remain in effect so long as there is a relationship with the parties, and shall remain binding and irrevocable, as the sole and exclusive provisions and remedy for the parties in the event that there should be a discrepancy, and/or controversy, and/or this agreement and/or challenge and/or otherwise claim, without exception. All parties associated with this agreement are bound by the terms of the agreement, henceforth, forthwith, heretofore. The Threat Outbreak Preparedness Program, AKA TTOPP (Casual Arms) shall be held as the grantor of the agreement, and the intentions of the grantor shall be held as law of the agreement, and this law as well as agreement shall supersede any and all other laws, and/or associated agreements irrespective of their date, and/or time, and/or mode of creation.</p>
+
+                    <p>Parties recognizing that the arbitration process is a private process, and any and all parties to include third parties are subject to the policies and procedures and the terms of this binding self-executing irrevocable contract coupled with interests. SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. agrees to act with respect to the policies as stipulated herein and throughout this site without any attachments and/or adhesions, to due process, the fairness, to equality, to reasonableness, with honesty, without partiality, without bias, without discrimination, without respect to the person be they corporation and/or otherwise. To act with complete transparency respecting the parties, with respect to the contract, and the rendering of a decision. All parties agree to hold harmless the arbitrator and the arbitration organization, and agreed that the arbitration decision shall be final, no-appealable, non-reviewable. That there is a process in place for any cause and/or concern and/or complaint about the arbitrator's conduct, but the arbitration decision is final and no party may review and/or overturn the arbitration decision as agreed upon by the parties in the first instance.</p>
+                </div>
+            </section>
+
+            <!-- Commentary Section -->
+            <section class="legal-card fade-in" id="commentary">
+                <div class="card-header">
+                    <div class="card-icon">&#128218;</div>
+                    <h2 class="card-title">Commentary</h2>
+                </div>
+                <div class="legal-content">
+                    <p><span class="section-number">1.</span> Section (a) regarding an arbitrator's immunity is based on the language of former section 1280.1 of the California Code of Civil Procedure establishing immunity for arbitrators. Section 1280.1 was enacted with an expiration date and was not renewed. See also Cal. Civ. Proc. Code &sect; 1297.119 which gives the same protection to arbitrators in international arbitrations and unlike &sect; 1280.1 has no expiration date and is still in effect. Three other states presently provide some form of arbitral immunity in their arbitration statutes. Fla. Stat. Ann. &sect; 44.107 (West 1995); N.C. Gen. Stat. &sect; 7A-37.1 (1995); Utah Code Ann. &sect; 78-31b-4 (1994).</p>
+
+                    <p>Arbitral immunity has its origins in common law judicial immunity; most jurisdictions track the common law directly. The key to this identity is the "functional comparability" of the role of arbitrators and judges. See <em>Butz v. Economou</em>, 438 U.S. 478, 511-12 (1978) (establishing the principle that the extension of judicial-like immunity to non-judicial officials is properly based on the "functional comparability" of the individual's acts and judgments to the acts and judgments of judges); see also <em>Corey v. New York Stock Exch.</em>, 691 F.2d 1205, 1209 (6th Cir. 1982) (applying the "functional comparability" standard for immunity); <em>Antoine v. Byers &amp; Anderson, Inc.</em>, 508 U.S. 429, 435-36 (1993) (holding that the key to the extension of judicial immunity to non-judicial officials is the "performance of the function of resolving disputes between parties or of authoritatively adjudicating private rights").</p>
+
+                    <p><span class="section-number">2.</span> Section 14(a) also provides the same immunity as is provided to an arbitrator to an arbitration organization. Extension of judicial immunity to those arbitration organizations is appropriate to the extent that they are acting "in certain roles and with certain responsibilities" that are comparable to those of a judge. <em>Corey v. New York Stock Exch.</em>, 691 F.2d 1205, 1209 (6th Cir. 1982). This immunity to neutral arbitration organizations is appropriate because the duties that they perform in administering the arbitration process are the functional equivalent of the roles and responsibilities of judges administering the adjudication process in a court of law. There is substantial precedent for this conclusion. See, e.g., <em>New England Cleaning Serv., Inc. v. American Arbitration Ass'n</em>, 199 F.3d 542 (1st Cir. 1999); <em>Honn v. National Ass'n of Sec. Dealers, Inc.</em>, 182 F.3d 1014 (8th Cir. 1999); <em>Hawkins v. National Ass'n of Sec. Dealers, Inc.</em>, 149 F.3d 330 (5th Cir. 1998); <em>Olson v. National Ass'n of Sec. Dealers, Inc.</em>, 85 F.3d 381 (8th Cir. 1996); <em>Aerojet-General Corp. v. American Arbitration Ass'n</em>, 478 F.2d 248 (9th Cir. 1973); <em>Cort v. American Arbitration Ass'n</em>, 795 F. Supp. 970 (N.D. Cal. 1992); <em>Boraks v. American Arbitration Ass'n</em>, 205 Mich.App. 149, 517 N.W.2d 771 (1994); <em>Candor v. American Arbitration Ass'n</em>, 97 Misc. 2d 267, 411 N.Y.S.2d 162 (Sup. Ct., Tioga Cty. 1978).</p>
+
+                    <div class="highlight-box">
+                        <p><span class="section-number">3.</span> Section 14(b) makes clear that the statutory grant of immunity is intended to supplement, and not diminish, the immunity granted arbitrators and neutral arbitration organizations under any judicial, statutory or other law.</p>
+                    </div>
+
+                    <p><span class="section-number">4.</span> Section 14(c) is included to insure that, if an arbitrator fails to make a disclosure required by section 12, then the typical remedy is vacatur under section 23 and not loss of arbitral immunity under section 14. Such a result is similar to the effect of judicial immunity.</p>
+
+                    <p><span class="section-number">5.</span> Section 14(d) is based on the California Evidence Code, which provides that arbitrators shall not be "competent to testify * * * as to any statement, conduct, decision, or ruling occurring at or in conjunction with the prior proceeding." Cal. Evid. Code &sect; 703.5. New York and New Jersey have adopted similar provisions that prohibit anyone from calling an arbitrator as a witness in a subsequent proceeding. N.J.R. Super. Ct. R. 4:21A-4; N.Y. Ct. R. &sect; 28.12. Consistent with the protections afforded judges, section 14(d) is intended to protect an arbitrator or a representative of an arbitration organization from being required to testify or produce records from an arbitration proceeding in any civil action, administrative proceeding, or related matter. However, if the law of a given state would require a judge to testify in a proceeding for strong public-policy reasons, such as involvement in a criminal matter, an arbitrator or representative of an arbitration organization would likewise be required to testify.</p>
+
+                    <p>An exception is made in section 14(d)(1) for situations such as when an arbitrator, arbitration organization, or representative of an arbitration organization asserts a claim against a party to the arbitration proceeding. For instance, an arbitrator may bring an action against one of the parties for nonpayment of fees to the arbitrator and may have to give testimony in order to recover. If, in an action by the arbitrator to recover a fee, the other party files a counterclaim against the arbitrator attacking the award, this section is intended to allow the arbitrator to testify as to the arbitrator's claim, but the arbitrator cannot be required to testify or produce records as to the party's counterclaim attacking the merits of the award. Otherwise the party can circumvent the general rule against requiring an arbitrator to provide testimony by forcing an action by the arbitrator by, for instance, not paying a contractually required fee for the arbitrator's services.</p>
+
+                    <p>Section (d)(2) recognizes that arbitrators who have engaged in corruption, fraud, partiality or other misconduct that are grounds to vacate an award under sections 23(a)(1) and (2) may not be compelled or required to give testimony so that a party will have evidence to prove such grounds. Such testimony or records from an arbitrator are never to be required after the objecting party makes a sufficient initial showing that such grounds exist. A party's allegation of these grounds without a showing of independent, objective evidence should be insufficient to require an arbitrator to testify or produce records from the arbitration proceeding.</p>
+
+                    <p><span class="section-number">6.</span> Section (e) is intended to promote arbitral immunity. By definition, all suits against arbitrators, arbitration organizations, or representatives of an arbitration organization arising out of the good-faith discharge of arbitral powers are frivolous because of the breadth of their respective immunity. Spurious lawsuits against arbitrators, arbitration organizations, and representatives of an arbitration organization or involvement in collateral judicial or administrative proceedings deter individuals and entities from serving in such capacities and thereby harm the arbitration process because of the costs involved in defending even frivolous actions. Parties considering such litigation should be discouraged by the prospect of paying the litigation expenses of the arbitrator, arbitration organizations, or representatives of an arbitration organization. When they are not, the statute enables the arbitrators, arbitration organizations, or representatives of an arbitration organization to recover their litigation expenses and not to lose their fee and incur other expenses in the defense of a frivolous lawsuit. The terms "other reasonable expenses of litigation" are intended to include both actions at the trial-court level and on appeal. A party bringing such suit agrees to pay to the order of the arbitrator and the arbitration organization the full amount of the arbitration award, prior to the institution of such suit, and if one portion of their complaint and/or claim is held at common law, by a court of original jurisdiction to be improper, invalid, unsubstantiated, insufficient, incomplete, and/or otherwise which adversely affects the original claim, they forfeit the amount deposited in the name of the arbitrator and the arbitration organization, to the arbitration organization to disperse as they deem fit.</p>
+                </div>
+            </section>
+
+            <!-- Copyright Section -->
+            <section class="legal-card fade-in" id="copyright">
+                <div class="card-header">
+                    <div class="card-icon">&copy;</div>
+                    <h2 class="card-title">SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. &trade;</h2>
+                </div>
+                <div class="card-subtitle">Copyright Notice and Legal Protection</div>
+                <div class="legal-content">
+                    <p><span class="section-number">26801.</span> SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T.&trade; respects the intellectual property of others. *Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research.</p>
+
+                    <p>Arbitration agreement&mdash;WSEFH7-3YEN1-5SD5FSDLHG SAE-WEGTAF1-6EEON&copy; by accessing, utilizing, and/or taking advantage of any information contained on this site, and/or services under any circumstance shall constitute your agreeing to the terms and conditions associated with SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. organization(s) and/or its affiliates. You also agree that knowledge and/or information cannot be patented and/or copyrighted, as knowledge cannot be the possession of any one person. Fair use is a use permitted by copyright statute that might otherwise be infringing, for no one person is the inventor of knowledge, as there is nothing new under the sun! Non-profit, educational or personal use tips the balance in favor of fair use. No copyright infringement intended. ALL RIGHTS BELONG TO THEIR RESPECTIVE OWNERS* We take matters of Intellectual Property very seriously and We are committed to meeting the needs of content owners while helping them manage publication of our content online. We are a non-profit education and information service provider, here to educate the public and all of our work is in full compliance with the fair-use act. If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement and is accessible on this site, you may notify our copyright agent, as set forth in the Digital Millennium Copyright Act of 1998 (DMCA).</p>
+
+                    <div class="highlight-box">
+                        <p>Attn: SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T., 304 South Jones Boulevard Unit C.L.O.C.E.S.T.-1967, Las Vegas, Nevada 89107 (You must follow this address format precisely. No bulk, special, restricted, or otherwise mail will be accepted. We opt-out and disaffirm any attempt to re-contract and/or alter the terms of this agreement.) And you forever agree and waive any and all rights to send bulk and/or parcel and/or legal and/or contractual communications to this address at any time as such is strictly prohibited and this disclaimer shall constitute an estoppel for the next 85 years continuously from day of issue or incident.</p>
+                    </div>
+
+                    <p>WE CAUTION YOU THAT UNDER FEDERAL LAW, IF YOU KNOWINGLY MISREPRESENT THAT ONLINE MATERIAL IS INFRINGING, YOU MAY BE SUBJECT TO HEAVY CIVIL PENALTIES. THESE INCLUDE MONETARY DAMAGES, COURT COSTS, AND ATTORNEYS' FEES INCURRED BY US, BY ANY COPYRIGHT OWNER, OR BY ANY COPYRIGHT OWNER'S LICENSEE THAT IS INJURED AS A RESULT OF OUR RELYING UPON YOUR MISREPRESENTATION. YOU MAY ALSO BE SUBJECT TO CRIMINAL PROSECUTION FOR PERJURY. This information should not be construed as legal advice, for further details on the information required for valid DMCA notifications, see 17 U.S.C. 512(c)(3).</p>
+                </div>
+            </section>
+
+            <!-- Caveat Section -->
+            <section class="legal-card fade-in" id="caveat">
+                <div class="card-header">
+                    <div class="card-icon">&#9888;</div>
+                    <h2 class="card-title">III. CAVEAT</h2>
+                </div>
+                <div class="legal-content">
+                    <p><span class="section-number">1010.10501</span> 3.1 Please understand that while SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. the Undersigned wishes and desires to resolve all disputed matters as promptly as possible, SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. the Undersigned can only do so upon Respondent(s') 'official response' to this Conditional Acceptance for Value and counter offer/claim for Proof of Claim by Respondent(s) providing the Undersigned with the requested and necessary Proof of Claims raised herein above.</p>
+
+                    <p><span class="section-number">1010.10502</span> 3.2 Therefore, as the Undersigned is not a signatory; NOR a party, to your "social compact" (contract) NOR noticed NOR cognizant, of any agreement/contract between YOU, and the Undersigned and specifically any obtained through FULL DISCLOSURE and containing any FAIR/VALUABLE CONSIDERATION therein, which would act/operate to create and establish a "relationship" (nexus) and thereby; and therein, bind the Undersigned to the specific "source of authority" for the creation and existence of the alleged statute(s)/law(s) as contained and allegedly promulgated within the "Code" known as the United States Code; which, with the privity of contract or contract itself would thereby; and therein, create and establish legal force and/or effect of said statute(s)/law(s) over and upon the Undersigned; and, would also act/operate to subject the Undersigned to the "statutory jurisdiction" of the UNITED STATES, its laws, venue, jurisdiction, and the like of its commercial courts/administrative tribunals/units and thereby; and therein, bind the Undersigned to said courts/administrative tribunal's/unit's decisions, orders, judgments, and the like; and specifically as within the above referenced alleged Instant matter/Criminal Case/Civil Cause/Action upon exercise of a right; and, which would act/operate to establish and confer upon said court/administrative tribunal/unit the necessary requirement/essential of "subject-matter jurisdiction" without which it is powerless to move in any action other than to dismiss. The Undersigned once more respectfully requests the Respondent(s) provide said necessary Proof of Claims so as to resolve the Undersigned's confusion and concerns within this/these matter(s). Otherwise, the Undersigned must ask, "What is the Undersigned's remedy?"</p>
+                </div>
+            </section>
+
+            <!-- Arbitration Administrative Remedy Section -->
+            <section class="legal-card fade-in" id="arbitration-admin">
+                <div class="card-header">
+                    <div class="card-icon">&#9878;</div>
+                    <h2 class="card-title">IV. ARBITRATION&mdash;AN ADMINISTRATIVE REMEDY COGNIZABLE AT COMMON-LAW</h2>
+                </div>
+                <div class="legal-content">
+                    <p><span class="section-number">10000.</span> ADDITIONALLY it is exigent and of consequence for the Undersigned to inform Respondent(s), in accordance with and pursuant to the principles and doctrines of "clean hands" and "good faith," that by Respondents(s) failure and/or refusal to respond and provide the requested and necessary Proof of Claims raised herein above and thereby; and it shall be held and noted and agreed to by all parties, that a general response, a nonspecific response, or a failure to respond with specificities and facts and conclusions of common law, and/or to provide the requested information and documentation that is necessary and in support of the agreement shall constitute a failure and a deliberate and intentional refusal to respond and as a result thereby and/or therein, expressing the defaulting party's consent and agreement to said facts and as a result of the self-executing agreement, the following is contingent upon their failure to respond in good faith, with specificity, with facts and conclusions of common-law to each and every averment, condition, and/or claim raised; as they operate in favor of the Undersigned, through "tacit acquiescence," Respondent(s) NOT ONLY expressly affirm the truth and validity of said facts set, established, and agreed upon between the parties to this Conditional Acceptance for Value and counter offer/claim for Proof of Claim, but Respondent(s); having agreed and consented to Respondent(s) having a duty and obligation to provide the requested and necessary Proof of Claims raised herein above, will create and establish for Respondent(s) an estoppel in this matter(s), and ALL matters relating hereto; and arising necessarily therefrom;</p>
+                </div>
+            </section>
+
+            <!-- Notice to Agent Section -->
+            <section class="legal-card fade-in" id="notice-agent">
+                <div class="card-header">
+                    <div class="card-icon">&#128221;</div>
+                    <h2 class="card-title">II. NOTICE TO AGENT IS NOTICE TO PRINCIPLE AND VICE VERSA</h2>
+                </div>
+                <div class="legal-content">
+                    <p><span class="section-number">10010.</span> NOTICE: In this Conditional Acceptance for Value and counter offer/claim for Proof of Claim (a) the words "include," "includes," and "including," are not limiting; (b) the word "all" includes "any" and the word "any" includes "all"; (c) the word "or" is not exclusive except when used in conjunction with the word "and"; as in, "and/or"; and (d) words and terms (i) in the singular number include the plural, and in the plural, the singular; (ii) in the masculine gender include both feminine and neuter. That due to the fact that this presentment/document/contract can only be construed contextually and not otherwise, it is not necessary for a question to contain a "?", and whether or not a "?" is followed by a specific question such instances does not excuse a party from having an obligation of responding with specificity and facts and conclusions of common-law.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text" id="footer-year"> SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. All rights reserved. This document constitutes a legally binding agreement.</p>
+
+            <div class="signature-block">
+                <h3 class="signature-title">Signatures</h3>
+                <p><strong>/S/:</strong> THE CONGLOMERATE ARBITRATION ASSOCIATION (TCAA&trade;)</p>
+                <p>A Private Foundational Trust Organization</p>
+                <br>
+                <p>WSEFH7-3YEN1-5SD5FSDLHG SAE-WEGTAF1-6EEON&copy; is secured and reserved with all rights retained. Private Property&mdash;no trespass permitted or allowed under common law restrictions and prohibitions.</p>
+                <br>
+                <p><strong>March 12, 2021</strong></p>
+                <p>s/: SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T.</p>
+            </div>
+
+            <p class="footer-text" style="margin-top: 2rem; font-style: italic;">
+                THE REMAINDER OF THIS AGREEMENT IS INTENTIONALLY LEFT BLANK
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Particle System
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 100;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+
+                // Random positioning
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+
+                // Random animation delay
+                particle.style.animationDelay = Math.random() * 6 + 's';
+
+                // Random animation duration
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(element => observer.observe(element));
+        }
+
+        // Smooth scrolling for navigation links
+        function handleSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize all functions
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            handleScrollAnimations();
+            handleSmoothScrolling();
+
+            // Dynamic year for footer
+            const currentYear = new Date().getFullYear();
+            document.getElementById('footer-year').innerHTML =
+                `&copy; ${currentYear} SATCOMM/EEON FOUNDATION/C.L.O.C.E.S.T. All rights reserved. This document constitutes a legally binding agreement.`;
+        });
+    </script>
+</body>
+
+<!-- Mirrored from redressright.me/Terms.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 23:21:58 GMT -->
+</html>
